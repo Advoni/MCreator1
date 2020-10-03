@@ -1,0 +1,8 @@
+{
+  "parent": "gratest_inventions:custom/zahnstangeew",
+  "textures": {
+    "all": "gratest_inventions:blocks/metal",
+    "particle": "gratest_inventions:blocks/metal",
+    "Metal": "gratest_inventions:blocks/metal"
+  }
+}

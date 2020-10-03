@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "gratest_inventions:block/support_beam_double"
+    },
+    "facing=east": {
+      "model": "gratest_inventions:block/support_beam_double",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "gratest_inventions:block/support_beam_double",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "gratest_inventions:block/support_beam_double",
+      "y": 270
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "gratest_inventions:block/support_beam_quatruple"
+    },
+    "facing=east": {
+      "model": "gratest_inventions:block/support_beam_quatruple",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "gratest_inventions:block/support_beam_quatruple",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "gratest_inventions:block/support_beam_quatruple",
+      "y": 270
+    }
+  }
+}

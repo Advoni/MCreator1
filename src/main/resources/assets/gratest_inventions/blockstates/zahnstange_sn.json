@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "gratest_inventions:block/zahnstange_sn"
+    },
+    "facing=east": {
+      "model": "gratest_inventions:block/zahnstange_sn",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "gratest_inventions:block/zahnstange_sn",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "gratest_inventions:block/zahnstange_sn",
+      "y": 270
+    }
+  }
+}

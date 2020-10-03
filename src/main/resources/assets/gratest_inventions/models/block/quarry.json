@@ -1,0 +1,7 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "gratest_inventions:blocks/machine_top",
+    "particle": "gratest_inventions:blocks/machine_top"
+  }
+}

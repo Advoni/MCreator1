@@ -1,0 +1,7 @@
+{
+  "_fv": 10,
+  "_type": "procedure",
+  "definition": {
+    "procedurexml": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"run_function\" x=\"43\" y=\"150\"><value name=\"function\"><block type=\"text\"><field name=\"TEXT\">gratest_inventions:positiondetection</field></block></value><value name=\"x\"><block type=\"math_number\"><field name=\"NUM\">0</field></block></value><value name=\"y\"><block type=\"math_number\"><field name=\"NUM\">0</field></block></value><value name=\"z\"><block type=\"math_number\"><field name=\"NUM\">0</field></block></value></block><block type=\"coord_x\" x=\"403\" y=\"196\"/><block type=\"coord_y\" x=\"478\" y=\"195\"/><block type=\"coord_z\" x=\"548\" y=\"238\"/><block type=\"event_trigger\" deletable=\"false\" x=\"975\" y=\"271\"><field name=\"trigger\">player_use_hoe</field><next><block type=\"variables_set_text\"><field name=\"VAR\">global:NetherCoords</field><value name=\"VAL\"><block type=\"text\"><field name=\"TEXT\"/></block></value></block></next></block></xml>"
+  }
+}
