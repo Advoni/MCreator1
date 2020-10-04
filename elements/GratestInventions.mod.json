@@ -1,0 +1,11 @@
+{
+  "_fv": 10,
+  "_type": "tab",
+  "definition": {
+    "name": "Gratest Inventions",
+    "icon": {
+      "value": "CUSTOM:ObsidianShard"
+    },
+    "showSearch": true
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "group": "gratest_inventions",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "0 2",
+    "345",
+    "678"
+  ],
+  "key": {
+    "0": {
+      "item": "gratest_inventions:obsidian_shard"
+    },
+    "2": {
+      "item": "gratest_inventions:obsidian_shard"
+    },
+    "3": {
+      "item": "gratest_inventions:obsidian_shard"
+    },
+    "4": {
+      "item": "gratest_inventions:obsidian_shard"
+    },
+    "5": {
+      "item": "gratest_inventions:obsidian_shard"
+    },
+    "6": {
+      "item": "gratest_inventions:obsidian_shard"
+    },
+    "7": {
+      "item": "gratest_inventions:obsidian_shard"
+    },
+    "8": {
+      "item": "gratest_inventions:obsidian_shard"
+    }
+  },
+  "result": {
+    "item": "gratest_inventions:obsidian_armor_chestplate",
+    "count": 1
+  }
+}

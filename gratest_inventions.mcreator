@@ -739,6 +739,75 @@
           }
         ]
       }
+    },
+    {
+      "name": "ObsidianShard",
+      "type": "item",
+      "sortid": 39,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "obsidian_shard"
+    },
+    {
+      "name": "GratestInventions",
+      "type": "tab",
+      "sortid": 40,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "gratest_inventions"
+    },
+    {
+      "name": "ObsidianArmor",
+      "type": "armor",
+      "sortid": 41,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "obsidian_armor",
+      "metadata": {
+        "eh": true,
+        "el": true,
+        "eb": true,
+        "ec": true
+      }
+    },
+    {
+      "name": "ObsidianChestplateCrafting",
+      "type": "recipe",
+      "sortid": 42,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "obsidian_chestplate_crafting"
+    },
+    {
+      "name": "ObsidianHelmetCrafting",
+      "type": "recipe",
+      "sortid": 43,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "obsidian_helmet_crafting"
+    },
+    {
+      "name": "ObsidianBootsCrafting",
+      "type": "recipe",
+      "sortid": 44,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "obsidian_boots_crafting"
+    },
+    {
+      "name": "ObsidianLeggingsCrafting",
+      "type": "recipe",
+      "sortid": 45,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "obsidian_leggings_crafting"
     }
   ],
   "variable_elements": [
@@ -753,6 +822,9 @@
   "language_map": {
     "en_us": {
       "block.gratest_inventions.support_beam_double_2": "Support Beam",
+      "itemGroup.tabgratest_inventions": "Gratest Inventions",
+      "item.gratest_inventions.obsidian_shard": "Obsidian Shard",
+      "item.gratest_inventions.obsidian_armor_leggings": "Obsidian Leggings",
       "item.gratest_inventions.dimension_braker": "Dimension Braker",
       "block.gratest_inventions.support_beam_quatruple": "Support Beam",
       "block.gratest_inventions.support_beam_3": "Support Beam",
@@ -760,10 +832,13 @@
       "block.gratest_inventions.nether_builder": "Nether Builder",
       "block.gratest_inventions.support_beam_2": "Support Beam",
       "block.gratest_inventions.zahnstange_sn": "Zahnstange",
+      "item.gratest_inventions.obsidian_armor_helmet": "Obsidian Helmet",
       "block.gratest_inventions.support_beam": "Support Beam",
       "block.gratest_inventions.support_beam_single": "Support Beam",
+      "item.gratest_inventions.obsidian_armor_chestplate": "Obsidian Body",
       "block.gratest_inventions.zahnstange_ew": "Zahnstange",
       "block.gratest_inventions.support_beam_1b": "Support Beam",
+      "item.gratest_inventions.obsidian_armor_boots": "Obsidian Boots",
       "block.gratest_inventions.dimensional_fabric": "Dimensional Fabric",
       "block.gratest_inventions.quarry": "Quarry",
       "block.gratest_inventions.support_beam_double": "Support Beam",

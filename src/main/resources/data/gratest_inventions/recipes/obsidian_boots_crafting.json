@@ -1,0 +1,22 @@
+{
+  "group": "gratest_inventions",
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "gratest_inventions:obsidian_shard"
+    },
+    {
+      "item": "gratest_inventions:obsidian_shard"
+    },
+    {
+      "item": "gratest_inventions:obsidian_shard"
+    },
+    {
+      "item": "gratest_inventions:obsidian_shard"
+    }
+  ],
+  "result": {
+    "item": "gratest_inventions:obsidian_armor_boots",
+    "count": 1
+  }
+}
