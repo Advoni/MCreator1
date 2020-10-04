@@ -1,6 +1,6 @@
 {
-  "item.gratest_inventions.obsidian_armor_leggings": "Obsidian Leggings",
   "item.gratest_inventions.obsidian_pickaxe": "Obsidian Pickaxe",
+  "item.gratest_inventions.obsidian_armor_leggings": "Obsidian Leggings",
   "item.gratest_inventions.dimension_braker": "Dimension Braker",
   "item.gratest_inventions.obsidian_sword": "Obsidian Sword",
   "item.gratest_inventions.gold_gear": "Gold Gear",
@@ -16,6 +16,7 @@
   "itemGroup.tabgratest_inventions": "Gratest Inventions",
   "item.gratest_inventions.obsidian_shard": "Obsidian Shard",
   "item.gratest_inventions.iron_gear": "Iron Gear",
+  "fluid.milk": "Milk",
   "block.gratest_inventions.support_beam_quatruple": "Support Beam",
   "block.gratest_inventions.support_beam_3": "Support Beam",
   "block.gratest_inventions.support_beam_4": "Support Beam",
@@ -24,6 +25,7 @@
   "block.gratest_inventions.support_beam_2": "Support Beam",
   "block.gratest_inventions.zahnstange_sn": "Zahnstange",
   "block.gratest_inventions.support_beam_1b": "Support Beam",
+  "item.gratest_inventions.milk_bucket": "Milk Bucket",
   "item.gratest_inventions.obsidian_armor_boots": "Obsidian Boots",
   "block.gratest_inventions.dimensional_fabric": "Dimensional Fabric",
   "block.gratest_inventions.quarry": "Quarry"
