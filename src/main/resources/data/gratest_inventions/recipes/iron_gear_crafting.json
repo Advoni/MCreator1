@@ -1,0 +1,27 @@
+{
+  "group": "gratest_inventions",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " 1 ",
+    "3 5",
+    " 7 "
+  ],
+  "key": {
+    "1": {
+      "item": "gratest_inventions:iron_stick"
+    },
+    "3": {
+      "item": "gratest_inventions:iron_stick"
+    },
+    "5": {
+      "item": "gratest_inventions:iron_stick"
+    },
+    "7": {
+      "item": "gratest_inventions:iron_stick"
+    }
+  },
+  "result": {
+    "item": "gratest_inventions:iron_gear",
+    "count": 1
+  }
+}

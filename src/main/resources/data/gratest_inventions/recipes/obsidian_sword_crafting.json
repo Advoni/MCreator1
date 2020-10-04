@@ -1,0 +1,19 @@
+{
+  "group": "gratest_inventions",
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "gratest_inventions:obsidian_shard"
+    },
+    {
+      "item": "gratest_inventions:obsidian_shard"
+    },
+    {
+      "item": "minecraft:stick"
+    }
+  ],
+  "result": {
+    "item": "gratest_inventions:obsidian_sword",
+    "count": 1
+  }
+}

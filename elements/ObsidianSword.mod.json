@@ -1,0 +1,30 @@
+{
+  "_fv": 10,
+  "_type": "tool",
+  "definition": {
+    "renderType": 0,
+    "texture": "obsidian_sword",
+    "customModelName": "Normal",
+    "name": "Obsidian Sword",
+    "specialInfo": [],
+    "creativeTab": {
+      "value": "CUSTOM:GratestInventions"
+    },
+    "toolType": "Sword",
+    "harvestLevel": 0,
+    "efficiency": 1.0,
+    "attackSpeed": 1.6,
+    "enchantability": 14,
+    "damageVsEntity": 5.5,
+    "usageCount": 2000,
+    "blocksAffected": [],
+    "hasGlow": false,
+    "repairItems": [
+      {
+        "value": "CUSTOM:ObsidianShard"
+      }
+    ],
+    "stayInGridWhenCrafting": false,
+    "damageOnCrafting": false
+  }
+}

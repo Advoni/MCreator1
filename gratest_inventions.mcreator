@@ -808,6 +808,114 @@
       "locked_code": false,
       "ids": {},
       "registry_name": "obsidian_leggings_crafting"
+    },
+    {
+      "name": "ObsidianSword",
+      "type": "tool",
+      "sortid": 46,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "obsidian_sword"
+    },
+    {
+      "name": "ObsidianSwordCrafting",
+      "type": "recipe",
+      "sortid": 47,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "obsidian_sword_crafting"
+    },
+    {
+      "name": "IronStick",
+      "type": "item",
+      "sortid": 48,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "iron_stick"
+    },
+    {
+      "name": "IronStickCrafting",
+      "type": "recipe",
+      "sortid": 49,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "iron_stick_crafting"
+    },
+    {
+      "name": "GoldStick",
+      "type": "item",
+      "sortid": 50,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "gold_stick"
+    },
+    {
+      "name": "GoldStickCrafting",
+      "type": "recipe",
+      "sortid": 51,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "gold_stick_crafting"
+    },
+    {
+      "name": "GoldGear",
+      "type": "item",
+      "sortid": 52,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "gold_gear"
+    },
+    {
+      "name": "IronGear",
+      "type": "item",
+      "sortid": 53,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "iron_gear"
+    },
+    {
+      "name": "IronGearCrafting",
+      "type": "recipe",
+      "sortid": 54,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "iron_gear_crafting"
+    },
+    {
+      "name": "GoldGearCrafting",
+      "type": "recipe",
+      "sortid": 55,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "gold_gear_crafting"
+    },
+    {
+      "name": "ObsidianPickaxe",
+      "type": "tool",
+      "sortid": 56,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "obsidian_pickaxe"
+    },
+    {
+      "name": "ObsidianPickaxeCrafting",
+      "type": "recipe",
+      "sortid": 57,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "obsidian_pickaxe_crafting"
     }
   ],
   "variable_elements": [
@@ -821,28 +929,34 @@
   "sound_elements": [],
   "language_map": {
     "en_us": {
-      "block.gratest_inventions.support_beam_double_2": "Support Beam",
-      "itemGroup.tabgratest_inventions": "Gratest Inventions",
-      "item.gratest_inventions.obsidian_shard": "Obsidian Shard",
       "item.gratest_inventions.obsidian_armor_leggings": "Obsidian Leggings",
+      "item.gratest_inventions.obsidian_pickaxe": "Obsidian Pickaxe",
       "item.gratest_inventions.dimension_braker": "Dimension Braker",
-      "block.gratest_inventions.support_beam_quatruple": "Support Beam",
-      "block.gratest_inventions.support_beam_3": "Support Beam",
-      "block.gratest_inventions.support_beam_4": "Support Beam",
-      "block.gratest_inventions.nether_builder": "Nether Builder",
-      "block.gratest_inventions.support_beam_2": "Support Beam",
-      "block.gratest_inventions.zahnstange_sn": "Zahnstange",
+      "item.gratest_inventions.obsidian_sword": "Obsidian Sword",
+      "item.gratest_inventions.gold_gear": "Gold Gear",
       "item.gratest_inventions.obsidian_armor_helmet": "Obsidian Helmet",
+      "item.gratest_inventions.gold_stick": "Gold Stick",
       "block.gratest_inventions.support_beam": "Support Beam",
       "block.gratest_inventions.support_beam_single": "Support Beam",
       "item.gratest_inventions.obsidian_armor_chestplate": "Obsidian Body",
       "block.gratest_inventions.zahnstange_ew": "Zahnstange",
+      "block.gratest_inventions.support_beam_double": "Support Beam",
+      "block.gratest_inventions.support_beam_triple": "Support Beam",
+      "block.gratest_inventions.support_beam_double_2": "Support Beam",
+      "itemGroup.tabgratest_inventions": "Gratest Inventions",
+      "item.gratest_inventions.obsidian_shard": "Obsidian Shard",
+      "item.gratest_inventions.iron_gear": "Iron Gear",
+      "block.gratest_inventions.support_beam_quatruple": "Support Beam",
+      "block.gratest_inventions.support_beam_3": "Support Beam",
+      "block.gratest_inventions.support_beam_4": "Support Beam",
+      "block.gratest_inventions.nether_builder": "Nether Builder",
+      "item.gratest_inventions.iron_stick": "Iron Stick",
+      "block.gratest_inventions.support_beam_2": "Support Beam",
+      "block.gratest_inventions.zahnstange_sn": "Zahnstange",
       "block.gratest_inventions.support_beam_1b": "Support Beam",
       "item.gratest_inventions.obsidian_armor_boots": "Obsidian Boots",
       "block.gratest_inventions.dimensional_fabric": "Dimensional Fabric",
-      "block.gratest_inventions.quarry": "Quarry",
-      "block.gratest_inventions.support_beam_double": "Support Beam",
-      "block.gratest_inventions.support_beam_triple": "Support Beam"
+      "block.gratest_inventions.quarry": "Quarry"
     }
   },
   "workspaceSettings": {

@@ -1,0 +1,16 @@
+{
+  "group": "gratest_inventions",
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:iron_ingot"
+    },
+    {
+      "item": "minecraft:iron_ingot"
+    }
+  ],
+  "result": {
+    "item": "gratest_inventions:iron_stick",
+    "count": 1
+  }
+}
