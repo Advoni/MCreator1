@@ -1,0 +1,10 @@
+{
+  "mappings": {
+    "default": {
+      "map": {
+        "copper_cable": "copper_cable"
+      },
+      "name": "default"
+    }
+  }
+}
