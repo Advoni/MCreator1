@@ -1,0 +1,10 @@
+{
+  "mappings": {
+    "default": {
+      "map": {
+        "ultimate_cable": "ultimate_cable"
+      },
+      "name": "default"
+    }
+  }
+}

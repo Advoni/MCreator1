@@ -1,0 +1,10 @@
+{
+  "mappings": {
+    "default": {
+      "map": {
+        "platinum_cable": "platinum_cable"
+      },
+      "name": "default"
+    }
+  }
+}

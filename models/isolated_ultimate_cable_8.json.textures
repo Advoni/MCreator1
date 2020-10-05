@@ -1,0 +1,10 @@
+{
+  "mappings": {
+    "default": {
+      "map": {
+        "isolated_ultimate_cable": "basicgrinderfront"
+      },
+      "name": "default"
+    }
+  }
+}

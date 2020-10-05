@@ -1,0 +1,10 @@
+{
+  "mappings": {
+    "default": {
+      "map": {
+        "silver_cable": "silver_cable"
+      },
+      "name": "default"
+    }
+  }
+}
