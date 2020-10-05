@@ -1,0 +1,19 @@
+{
+  "_fv": 10,
+  "_type": "tag",
+  "definition": {
+    "type": "Blocks",
+    "items": [],
+    "blocks": [
+      {
+        "value": "CUSTOM:BasicGrinder"
+      },
+      {
+        "value": "CUSTOM:CoalGenerator"
+      }
+    ],
+    "functions": [],
+    "name": "power_tools",
+    "namespace": "forge"
+  }
+}

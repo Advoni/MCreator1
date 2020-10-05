@@ -1,0 +1,49 @@
+{
+  "_fv": 10,
+  "_type": "gui",
+  "definition": {
+    "type": 1,
+    "width": 352,
+    "height": 332,
+    "renderBgLayer": true,
+    "doesPauseGame": false,
+    "components": [
+      {
+        "type": "inputslot",
+        "data": {
+          "inputLimit": {
+            "value": ""
+          },
+          "id": 0,
+          "disableStackInteraction": false,
+          "dropItemsWhenNotBound": true,
+          "name": "Slot #0",
+          "x": 300,
+          "y": 114
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "battery.png",
+          "name": "battery.png",
+          "x": 516,
+          "y": 114
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "<BNBT:logic:test>",
+          "color": {
+            "value": -6724096,
+            "falpha": 0.0
+          },
+          "name": "<BNBT:logic:test>",
+          "x": 342,
+          "y": 83
+        }
+      }
+    ]
+  }
+}

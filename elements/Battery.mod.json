@@ -1,0 +1,22 @@
+{
+  "_fv": 10,
+  "_type": "overlay",
+  "definition": {
+    "priority": "HIGHEST",
+    "components": [
+      {
+        "type": "image",
+        "data": {
+          "image": "battery1.png",
+          "name": "battery1.png",
+          "x": 516,
+          "y": 114
+        }
+      }
+    ],
+    "baseTexture": "",
+    "displayCondition": {
+      "name": "BatteryDisplayOverlayIngame"
+    }
+  }
+}

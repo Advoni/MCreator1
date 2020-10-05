@@ -1008,6 +1008,93 @@
       "locked_code": false,
       "ids": {},
       "registry_name": "coal_generator"
+    },
+    {
+      "name": "PowerTools",
+      "type": "tag",
+      "sortid": 67,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "power_tools"
+    },
+    {
+      "name": "Battery",
+      "type": "overlay",
+      "sortid": 68,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "battery"
+    },
+    {
+      "name": "CoalGeneratorGui",
+      "type": "gui",
+      "sortid": 69,
+      "compiles": true,
+      "locked_code": true,
+      "ids": {},
+      "registry_name": "coal_generator_gui"
+    },
+    {
+      "name": "BatteryDisplayOverlayIngame",
+      "type": "procedure",
+      "sortid": 70,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "battery_display_overlay_ingame",
+      "metadata": {
+        "return_type": "LOGIC",
+        "dependencies": []
+      }
+    },
+    {
+      "name": "CoalGeneratorOnBlockRightClicked",
+      "type": "procedure",
+      "sortid": 70,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "coal_generator_on_block_right_clicked",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "ZweiTest",
+      "type": "gui",
+      "sortid": 71,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "zwei_test"
+    },
+    {
+      "name": "CoalGeneratorGui2",
+      "type": "gui",
+      "sortid": 72,
+      "compiles": true,
+      "locked_code": true,
+      "ids": {},
+      "registry_name": "coal_generator_gui_2"
     }
   ],
   "variable_elements": [
