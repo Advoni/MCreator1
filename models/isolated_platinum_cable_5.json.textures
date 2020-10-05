@@ -1,0 +1,10 @@
+{
+  "mappings": {
+    "default": {
+      "map": {
+        "isolated_platinum_cable": "isolated_platinum_cable"
+      },
+      "name": "default"
+    }
+  }
+}

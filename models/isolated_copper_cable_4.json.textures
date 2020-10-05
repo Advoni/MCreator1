@@ -1,0 +1,10 @@
+{
+  "mappings": {
+    "default": {
+      "map": {
+        "isolated_copper_cable": "isolated_copper_cable"
+      },
+      "name": "default"
+    }
+  }
+}
