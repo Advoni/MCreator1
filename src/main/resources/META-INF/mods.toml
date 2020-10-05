@@ -7,7 +7,7 @@ version="1.0.0"
 displayName="Gratest Inventions"
 credits="Created using mod maker MCreator - https://mcreator.net/about"
 displayURL="https://mcreator.net"
-authors="Adam, MCreator"
+authors="Ad1200am, Voltiq"
 
 [[dependencies.gratest_inventions]]
     modId="minecraft"

@@ -1022,8 +1022,8 @@
   "language_map": {
     "en_us": {
       "block.gratest_inventions.coal_generator": "Coal Generator",
-      "item.gratest_inventions.obsidian_armor_leggings": "Obsidian Leggings",
       "item.gratest_inventions.obsidian_pickaxe": "Obsidian Pickaxe",
+      "item.gratest_inventions.obsidian_armor_leggings": "Obsidian Leggings",
       "item.gratest_inventions.dimension_braker": "Dimension Breaker",
       "item.gratest_inventions.obsidian_sword": "Obsidian Sword",
       "block.gratest_inventions.basic_grinder": "Basic Grinder",
@@ -1062,7 +1062,7 @@
     "modid": "gratest_inventions",
     "modName": "Gratest Inventions",
     "version": "1.0.0",
-    "author": "Adam, MCreator",
+    "author": "Ad1200am, Voltiq",
     "websiteURL": "https://mcreator.net",
     "disableForgeVersionCheck": true,
     "serverSideOnly": false,
@@ -1071,6 +1071,7 @@
     "dependants": [],
     "mcreatorDependencies": [],
     "currentGenerator": "forge-1.15.2",
+    "credits": "Created using mod maker MCreator - https://mcreator.net/about",
     "modElementsPackage": "net.mcreator.gratestinventions",
     "lockBaseModFiles": false
   },
