@@ -42,7 +42,7 @@ public class DimensionBrakerItem extends GratestInventionsModElements.ModElement
 			}
 
 			public int getHarvestLevel() {
-				return 4;
+				return 10;
 			}
 
 			public int getEnchantability() {

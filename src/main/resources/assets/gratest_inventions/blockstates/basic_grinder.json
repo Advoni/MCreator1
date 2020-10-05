@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "gratest_inventions:block/basic_grinder"
+    },
+    "facing=east": {
+      "model": "gratest_inventions:block/basic_grinder",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "gratest_inventions:block/basic_grinder",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "gratest_inventions:block/basic_grinder",
+      "y": 270
+    }
+  }
+}

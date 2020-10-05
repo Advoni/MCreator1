@@ -1,6 +1,6 @@
 {
   "parent": "item/handheld",
   "textures": {
-    "layer0": "gratest_inventions:items/dimension_pickaxe"
+    "layer0": "gratest_inventions:items/dimension_breaker"
   }
 }

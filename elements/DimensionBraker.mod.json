@@ -3,9 +3,9 @@
   "_type": "tool",
   "definition": {
     "renderType": 0,
-    "texture": "dimension_pickaxe",
+    "texture": "dimension_breaker",
     "customModelName": "Normal",
-    "name": "Dimension Braker",
+    "name": "Dimension Breaker",
     "specialInfo": [
       "Is used to break through dimensions"
     ],
@@ -13,7 +13,7 @@
       "value": "TOOLS"
     },
     "toolType": "Pickaxe",
-    "harvestLevel": 4,
+    "harvestLevel": 10,
     "efficiency": 12.0,
     "attackSpeed": 1.2,
     "enchantability": 10,

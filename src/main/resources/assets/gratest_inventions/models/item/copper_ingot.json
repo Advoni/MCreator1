@@ -1,0 +1,6 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "gratest_inventions:items/copper_ingot"
+  }
+}

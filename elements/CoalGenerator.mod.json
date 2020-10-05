@@ -2,16 +2,16 @@
   "_fv": 10,
   "_type": "block",
   "definition": {
-    "texture": "dimensionalfabric",
-    "textureTop": "",
-    "textureLeft": "",
-    "textureFront": "",
-    "textureRight": "",
-    "textureBack": "",
-    "renderType": 11,
-    "customModelName": "Single texture",
+    "texture": "basicmachinebottom",
+    "textureTop": "basicmachinetop",
+    "textureLeft": "basicmachineside",
+    "textureFront": "coalgeneratorfront",
+    "textureRight": "basicmachineside",
+    "textureBack": "basicmachineback",
+    "renderType": 10,
+    "customModelName": "Normal",
     "rotationMode": 0,
-    "emissiveRendering": true,
+    "emissiveRendering": false,
     "itemTexture": "",
     "hasTransparency": false,
     "connectedSides": false,
@@ -22,15 +22,15 @@
     "Mx": 1.0,
     "My": 1.0,
     "Mz": 1.0,
-    "name": "Dimensional Fabric",
+    "name": "Coal Generator",
     "specialInfo": [],
-    "hardness": 70.0,
-    "resistance": 8000.0,
+    "hardness": 3.5,
+    "resistance": 3.5,
     "hasGravity": false,
     "creativeTab": {
-      "value": "BUILDING_BLOCKS"
+      "value": "CUSTOM:GratestInventions"
     },
-    "destroyTool": "pickaxe",
+    "destroyTool": "Not specified",
     "customDrop": {
       "value": ""
     },
@@ -41,7 +41,7 @@
     "canProvidePower": false,
     "lightOpacity": 255,
     "material": {
-      "value": "ROCK"
+      "value": "IRON"
     },
     "tickRate": 10,
     "tickRandomly": false,
@@ -56,14 +56,14 @@
     "fireSpreadSpeed": 0,
     "isLadder": false,
     "slipperiness": 0.6,
-    "reactionToPushing": "BLOCK",
+    "reactionToPushing": "NORMAL",
     "isNotColidable": false,
     "soundOnStep": {
-      "value": "STONE"
+      "value": "METAL"
     },
-    "luminance": 0.2,
+    "luminance": 0.0,
     "unbreakable": false,
-    "breakHarvestLevel": 10,
+    "breakHarvestLevel": 1,
     "spawnParticles": false,
     "particleToSpawn": {
       "value": "EXPLOSION_NORMAL"
@@ -88,21 +88,16 @@
     "isFluidTank": false,
     "fluidCapacity": 8000,
     "fluidRestrictions": [],
-    "onDestroyedByPlayer": {
-      "name": "DimensionalFabricBlockDestroyedByPlayer"
-    },
-    "spawnWorldTypes": [
-      "Surface"
-    ],
+    "spawnWorldTypes": [],
     "restrictionBiomes": [],
     "blocksToReplace": [
       {
-        "value": "Blocks.BEDROCK"
+        "value": "Blocks.STONE"
       }
     ],
     "frequencyPerChunks": 10,
     "frequencyOnChunk": 16,
     "minGenerateHeight": 0,
-    "maxGenerateHeight": 1
+    "maxGenerateHeight": 64
   }
 }

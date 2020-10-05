@@ -58,7 +58,7 @@ public class DimensionalFabricBlock extends GratestInventionsModElements.ModElem
 	}
 	public static class CustomBlock extends Block {
 		public CustomBlock() {
-			super(Block.Properties.create(Material.ROCK).sound(SoundType.STONE).hardnessAndResistance(70f, 8000f).lightValue(3).harvestLevel(4)
+			super(Block.Properties.create(Material.ROCK).sound(SoundType.STONE).hardnessAndResistance(70f, 8000f).lightValue(3).harvestLevel(10)
 					.harvestTool(ToolType.PICKAXE));
 			setRegistryName("dimensional_fabric");
 		}

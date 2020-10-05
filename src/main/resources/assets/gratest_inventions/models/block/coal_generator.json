@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "gratest_inventions:blocks/basicmachinebottom",
+    "up": "gratest_inventions:blocks/basicmachinetop",
+    "north": "gratest_inventions:blocks/coalgeneratorfront",
+    "east": "gratest_inventions:blocks/basicmachineside",
+    "south": "gratest_inventions:blocks/basicmachineback",
+    "west": "gratest_inventions:blocks/basicmachineside",
+    "particle": "gratest_inventions:blocks/basicmachinebottom"
+  }
+}
