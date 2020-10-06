@@ -1,0 +1,12 @@
+{
+  "group": "gratest_inventions",
+  "type": "minecraft:smelting",
+  "experience": 0.7,
+  "cookingtime": 200,
+  "ingredient": {
+    "item": "gratest_inventions:lead_ore"
+  },
+  "result": {
+    "item": "gratest_inventions:lead_ingot"
+  }
+}

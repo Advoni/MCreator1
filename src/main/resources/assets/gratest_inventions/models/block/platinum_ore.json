@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "gratest_inventions:blocks/platinum_ore",
+    "up": "gratest_inventions:blocks/platinum_ore",
+    "north": "gratest_inventions:blocks/platinum_ore",
+    "east": "gratest_inventions:blocks/platinum_ore",
+    "south": "gratest_inventions:blocks/platinum_ore",
+    "west": "gratest_inventions:blocks/platinum_ore",
+    "particle": "gratest_inventions:blocks/platinum_ore"
+  }
+}

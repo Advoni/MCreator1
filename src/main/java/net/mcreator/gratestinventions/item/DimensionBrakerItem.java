@@ -20,7 +20,7 @@ import java.util.List;
 
 @GratestInventionsModElements.ModElement.Tag
 public class DimensionBrakerItem extends GratestInventionsModElements.ModElement {
-	@ObjectHolder("gratest_inventions:dimension_braker")
+	@ObjectHolder("gratest_inventions:dimension_breaker")
 	public static final Item block = null;
 	public DimensionBrakerItem(GratestInventionsModElements instance) {
 		super(instance, 28);
@@ -58,6 +58,6 @@ public class DimensionBrakerItem extends GratestInventionsModElements.ModElement
 				super.addInformation(itemstack, world, list, flag);
 				list.add(new StringTextComponent("Is used to break through dimensions"));
 			}
-		}.setRegistryName("dimension_braker"));
+		}.setRegistryName("dimension_breaker"));
 	}
 }
