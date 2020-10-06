@@ -1,0 +1,124 @@
+{
+  "_fv": 10,
+  "_type": "gui",
+  "definition": {
+    "type": 1,
+    "width": 352,
+    "height": 332,
+    "renderBgLayer": true,
+    "doesPauseGame": false,
+    "components": [
+      {
+        "type": "inputslot",
+        "data": {
+          "inputLimit": {
+            "value": ""
+          },
+          "id": 0,
+          "disableStackInteraction": false,
+          "dropItemsWhenNotBound": true,
+          "name": "Slot #0",
+          "x": 408,
+          "y": 114
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "battery.png",
+          "name": "battery.png",
+          "x": 516,
+          "y": 114
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "<BNBT:number:Energy>",
+          "color": {
+            "value": -39424,
+            "falpha": 0.0
+          },
+          "name": "<BNBT:number:Energy>",
+          "x": 516,
+          "y": 86
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "<BNBT:number:fuel>",
+          "color": {
+            "value": -11776948,
+            "falpha": 0.0
+          },
+          "name": "<BNBT:number:fuel>",
+          "x": 408,
+          "y": 204
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "Coal Generator",
+          "color": {
+            "value": -11776948,
+            "falpha": 0.0
+          },
+          "name": "Coal Generator",
+          "x": 264,
+          "y": 85
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "Gen.: 1IE/T",
+          "color": {
+            "value": -11776948,
+            "falpha": 0.0
+          },
+          "name": "Gen.: 1IE/T",
+          "x": 264,
+          "y": 132
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "Out: 10IE/T",
+          "color": {
+            "value": -11776948,
+            "falpha": 0.0
+          },
+          "name": "Out: 10IE/T",
+          "x": 264,
+          "y": 150
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "dimensionalfabric.png",
+          "name": "dimensionalfabric.png",
+          "x": 408,
+          "y": 168
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "  ",
+          "onClick": {
+            "name": "CoalGeneratorButtonPushed"
+          },
+          "width": 40,
+          "height": 40,
+          "name": "  ",
+          "x": 264,
+          "y": 186
+        }
+      }
+    ]
+  }
+}

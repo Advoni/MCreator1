@@ -1217,6 +1217,158 @@
       "locked_code": false,
       "ids": {},
       "registry_name": "lead_ore_smelting"
+    },
+    {
+      "name": "Cake",
+      "type": "recipe",
+      "sortid": 84,
+      "compiles": true,
+      "locked_code": true,
+      "ids": {},
+      "registry_name": "cake"
+    },
+    {
+      "name": "CoalGeneratorGui3",
+      "type": "gui",
+      "sortid": 85,
+      "compiles": true,
+      "locked_code": true,
+      "ids": {},
+      "registry_name": "coal_generator_gui_3"
+    },
+    {
+      "name": "CoalGeneratorButtonPushed",
+      "type": "procedure",
+      "sortid": 86,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "coal_generator_button_pushed",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "CoalGenerator4",
+      "type": "gui",
+      "sortid": 87,
+      "compiles": true,
+      "locked_code": true,
+      "ids": {},
+      "registry_name": "coal_generator_4"
+    },
+    {
+      "name": "CoalGeneratorRedstoneOn",
+      "type": "procedure",
+      "sortid": 88,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "coal_generator_redstone_on",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "CoalGeneratorRedstoneOff",
+      "type": "procedure",
+      "sortid": 89,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "coal_generator_redstone_off",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "BasicGrinderGui",
+      "type": "gui",
+      "sortid": 90,
+      "compiles": true,
+      "locked_code": true,
+      "ids": {},
+      "registry_name": "basic_grinder_gui"
+    },
+    {
+      "name": "BasicGrinderUpdateTick",
+      "type": "procedure",
+      "sortid": 91,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "basic_grinder_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
     }
   ],
   "variable_elements": [

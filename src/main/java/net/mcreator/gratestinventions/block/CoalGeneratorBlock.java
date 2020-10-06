@@ -58,10 +58,12 @@ import net.minecraft.block.BlockState;
 import net.minecraft.block.Block;
 
 import net.mcreator.gratestinventions.procedures.CoalGeneratorTickProcedure;
+import net.mcreator.gratestinventions.procedures.CoalGeneratorRedstoneOnProcedure;
+import net.mcreator.gratestinventions.procedures.CoalGeneratorRedstoneOffProcedure;
 import net.mcreator.gratestinventions.procedures.CoalGeneratorOnBlockRightClickedProcedure;
 import net.mcreator.gratestinventions.procedures.CoalGeneratorBlockAddedProcedure;
 import net.mcreator.gratestinventions.itemgroup.GratestInventionsItemGroup;
-import net.mcreator.gratestinventions.gui.CoalGeneratorGui2Gui;
+import net.mcreator.gratestinventions.gui.CoalGenerator4Gui;
 import net.mcreator.gratestinventions.GratestInventionsModElements;
 
 import javax.annotation.Nullable;
@@ -155,6 +157,33 @@ public class CoalGeneratorBlock extends GratestInventionsModElements.ModElement 
 		}
 
 		@Override
+		public void neighborChanged(BlockState state, World world, BlockPos pos, Block neighborBlock, BlockPos fromPos, boolean moving) {
+			super.neighborChanged(state, world, pos, neighborBlock, fromPos, moving);
+			int x = pos.getX();
+			int y = pos.getY();
+			int z = pos.getZ();
+			if (world.getRedstonePowerFromNeighbors(new BlockPos(x, y, z)) > 0) {
+				{
+					Map<String, Object> $_dependencies = new HashMap<>();
+					$_dependencies.put("x", x);
+					$_dependencies.put("y", y);
+					$_dependencies.put("z", z);
+					$_dependencies.put("world", world);
+					CoalGeneratorRedstoneOnProcedure.executeProcedure($_dependencies);
+				}
+			} else {
+				{
+					Map<String, Object> $_dependencies = new HashMap<>();
+					$_dependencies.put("x", x);
+					$_dependencies.put("y", y);
+					$_dependencies.put("z", z);
+					$_dependencies.put("world", world);
+					CoalGeneratorRedstoneOffProcedure.executeProcedure($_dependencies);
+				}
+			}
+		}
+
+		@Override
 		public void tick(BlockState state, ServerWorld world, BlockPos pos, Random random) {
 			super.tick(state, world, pos, random);
 			int x = pos.getX();
@@ -187,7 +216,7 @@ public class CoalGeneratorBlock extends GratestInventionsModElements.ModElement 
 
 					@Override
 					public Container createMenu(int id, PlayerInventory inventory, PlayerEntity player) {
-						return new CoalGeneratorGui2Gui.GuiContainerMod(id, inventory,
+						return new CoalGenerator4Gui.GuiContainerMod(id, inventory,
 								new PacketBuffer(Unpooled.buffer()).writeBlockPos(new BlockPos(x, y, z)));
 					}
 				}, new BlockPos(x, y, z));
@@ -317,7 +346,7 @@ public class CoalGeneratorBlock extends GratestInventionsModElements.ModElement 
 
 		@Override
 		public Container createMenu(int id, PlayerInventory player) {
-			return new CoalGeneratorGui2Gui.GuiContainerMod(id, player, new PacketBuffer(Unpooled.buffer()).writeBlockPos(this.getPos()));
+			return new CoalGenerator4Gui.GuiContainerMod(id, player, new PacketBuffer(Unpooled.buffer()).writeBlockPos(this.getPos()));
 		}
 
 		@Override

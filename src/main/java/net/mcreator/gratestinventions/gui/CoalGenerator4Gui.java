@@ -35,7 +35,7 @@ import net.minecraft.client.gui.screen.inventory.ContainerScreen;
 import net.minecraft.client.gui.ScreenManager;
 import net.minecraft.client.Minecraft;
 
-import net.mcreator.gratestinventions.procedures.CoalGeneratorBlockAddedProcedure;
+import net.mcreator.gratestinventions.procedures.CoalGeneratorButtonPushedProcedure;
 import net.mcreator.gratestinventions.GratestInventionsModElements;
 import net.mcreator.gratestinventions.GratestInventionsMod;
 
@@ -44,11 +44,11 @@ import java.util.Map;
 import java.util.HashMap;
 
 @GratestInventionsModElements.ModElement.Tag
-public class CoalGeneratorGui2Gui extends GratestInventionsModElements.ModElement {
+public class CoalGenerator4Gui extends GratestInventionsModElements.ModElement {
 	public static HashMap guistate = new HashMap();
 	private static ContainerType<GuiContainerMod> containerType = null;
-	public CoalGeneratorGui2Gui(GratestInventionsModElements instance) {
-		super(instance, 72);
+	public CoalGenerator4Gui(GratestInventionsModElements instance) {
+		super(instance, 87);
 		elements.addNetworkMessage(ButtonPressedMessage.class, ButtonPressedMessage::buffer, ButtonPressedMessage::new,
 				ButtonPressedMessage::handler);
 		elements.addNetworkMessage(GUISlotChangedMessage.class, GUISlotChangedMessage::buffer, GUISlotChangedMessage::new,
@@ -64,7 +64,7 @@ public class CoalGeneratorGui2Gui extends GratestInventionsModElements.ModElemen
 
 	@SubscribeEvent
 	public void registerContainer(RegistryEvent.Register<ContainerType<?>> event) {
-		event.getRegistry().register(containerType.setRegistryName("coal_generator_gui_2"));
+		event.getRegistry().register(containerType.setRegistryName("coal_generator_4"));
 	}
 	public static class GuiContainerModFactory implements IContainerFactory {
 		public GuiContainerMod create(int id, PlayerInventory inv, PacketBuffer extraData) {
@@ -299,7 +299,7 @@ public class CoalGeneratorGui2Gui extends GratestInventionsModElements.ModElemen
 			this.xSize = 176;
 			this.ySize = 166;
 		}
-		private static final ResourceLocation texture = new ResourceLocation("gratest_inventions:textures/coal_generator_gui_2.png");
+		private static final ResourceLocation texture = new ResourceLocation("gratest_inventions:textures/coal_generator_4.png");
 		@Override
 		public void render(int mouseX, int mouseY, float partialTicks) {
 			this.renderBackground();
@@ -333,6 +333,14 @@ public class CoalGeneratorGui2Gui extends GratestInventionsModElements.ModElemen
 					return 0;
 				}
 			}.getValue(new BlockPos((int) x, (int) y, (int) z), "fuel"));
+			int redstone = (int)(new Object() {
+				public double getValue(BlockPos pos, String tag) {
+					TileEntity tileEntity = world.getTileEntity(pos);
+					if (tileEntity != null)
+						return tileEntity.getTileData().getDouble(tag);
+					return 0;
+				}
+			}.getValue(new BlockPos((int) x, (int) y, (int) z), "redstone"));
 			GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
 			Minecraft.getInstance().getTextureManager().bindTexture(texture);
 			int k = (this.width - this.xSize) / 2;
@@ -347,6 +355,8 @@ public class CoalGeneratorGui2Gui extends GratestInventionsModElements.ModElemen
 			this.blit(this.guiLeft + 133, this.guiTop + 20, 0, 0, 256, 256);
 			Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation(burn(fuel)));
 			this.blit(this.guiLeft + 79, this.guiTop + 47, 0, 0, 256, 256);
+			Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation(redstoneSetting(redstone)));
+			this.blit(this.guiLeft + 29, this.guiTop + 59, 0, 0, 256, 256);
 		}
 
 		@Override
@@ -420,6 +430,10 @@ public class CoalGeneratorGui2Gui extends GratestInventionsModElements.ModElemen
 		public void init(Minecraft minecraft, int width, int height) {
 			super.init(minecraft, width, height);
 			minecraft.keyboardListener.enableRepeatEvents(true);
+			this.addButton(new Button(this.guiLeft + 7, this.guiTop + 56, 20, 20, "  ", e -> {
+				GratestInventionsMod.PACKET_HANDLER.sendToServer(new ButtonPressedMessage(0, x, y, z));
+				handleButtonAction(entity, 0, x, y, z);
+			}));
 		}
 	}
 
@@ -516,18 +530,28 @@ public class CoalGeneratorGui2Gui extends GratestInventionsModElements.ModElemen
 				$_dependencies.put("y", y);
 				$_dependencies.put("z", z);
 				$_dependencies.put("world", world);
-				CoalGeneratorBlockAddedProcedure.executeProcedure($_dependencies);
+				CoalGeneratorButtonPushedProcedure.executeProcedure($_dependencies);
 			}
 		}
 	}
 
+	private static String redstoneSetting(int s)
+	{
+		return "gratest_inventions:textures/redstone_settings" + s + ".png";
+	}
+
 	private static String burn(double f)
 	{
-		f = (int)((26*f)/100);
-		if (f == 0)
+		int g = (int)((26*f)/100);
+		if (g == 0)
 			{
 				return "gratest_inventions:textures/fire_off.png";
 			}
+			else if (g > 0 && g < 26)
+			{
+				return "gratest_inventions:textures/fire_on" + g + ".png";
+			}
+			/*
 			else if (f == 1)
 			{
 				return "gratest_inventions:textures/fire_on1.png";
@@ -628,6 +652,7 @@ public class CoalGeneratorGui2Gui extends GratestInventionsModElements.ModElemen
 			{
 				return "gratest_inventions:textures/fire_on25.png";
 			}
+			*/
 			else
 			{
 				return "gratest_inventions:textures/fire_on.png";
@@ -637,11 +662,16 @@ public class CoalGeneratorGui2Gui extends GratestInventionsModElements.ModElemen
 
 	private static String energyBar(double p,double c)
 	{
-		p = (int)((p*10)/c);
-		if (p == 0)
+		int q = (int)((p*10)/c);
+		if (q == 0)
 			{
 				return null;
 			}
+			else
+			{
+				return "gratest_inventions:textures/battery" + q + ".png";
+			}
+			/*
 			else if (p == 1)
 			{
 				return "gratest_inventions:textures/battery1.png";
@@ -682,8 +712,9 @@ public class CoalGeneratorGui2Gui extends GratestInventionsModElements.ModElemen
 			{
 				return "gratest_inventions:textures/battery10.png";
 			}
+			*/
 	}
-	
+
 	private static void handleSlotAction(PlayerEntity entity, int slotID, int changeType, int meta, int x, int y, int z) {
 		World world = entity.world;
 		// security measure to prevent arbitrary chunk generation

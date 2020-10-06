@@ -1,0 +1,131 @@
+{
+  "_fv": 10,
+  "_type": "gui",
+  "definition": {
+    "type": 1,
+    "width": 352,
+    "height": 332,
+    "renderBgLayer": true,
+    "doesPauseGame": false,
+    "components": [
+      {
+        "type": "inputslot",
+        "data": {
+          "inputLimit": {
+            "value": ""
+          },
+          "id": 0,
+          "disableStackInteraction": false,
+          "dropItemsWhenNotBound": true,
+          "name": "Slot #0",
+          "x": 408,
+          "y": 96
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "battery.png",
+          "name": "battery.png",
+          "x": 516,
+          "y": 114
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "<BNBT:number:Energy>",
+          "color": {
+            "value": -39424,
+            "falpha": 0.0
+          },
+          "name": "<BNBT:number:Energy>",
+          "x": 516,
+          "y": 86
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "<BNBT:number:fuel>",
+          "color": {
+            "value": -11776948,
+            "falpha": 0.0
+          },
+          "name": "<BNBT:number:fuel>",
+          "x": 264,
+          "y": 150
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "Basic Grinder",
+          "color": {
+            "value": -11776948,
+            "falpha": 0.0
+          },
+          "name": "Basic Grinder",
+          "x": 264,
+          "y": 85
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "Use: 0.5IE/T",
+          "color": {
+            "value": -11776948,
+            "falpha": 0.0
+          },
+          "name": "Use: 0.5IE/T",
+          "x": 264,
+          "y": 114
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "  ",
+          "onClick": {
+            "name": "CoalGeneratorButtonPushed"
+          },
+          "width": 40,
+          "height": 40,
+          "name": "  ",
+          "x": 264,
+          "y": 186
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "gear1.png",
+          "name": "gear1.png",
+          "x": 363,
+          "y": 126
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "gear1.png",
+          "name": "gear1.png",
+          "x": 426,
+          "y": 132
+        }
+      },
+      {
+        "type": "outputslot",
+        "data": {
+          "id": 1,
+          "disableStackInteraction": false,
+          "dropItemsWhenNotBound": true,
+          "name": "Slot #1",
+          "x": 408,
+          "y": 186
+        }
+      }
+    ]
+  }
+}

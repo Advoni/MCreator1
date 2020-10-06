@@ -43,6 +43,29 @@
           "x": 342,
           "y": 83
         }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "  ",
+          "onClick": {
+            "name": "CoalGeneratorBlockAdded"
+          },
+          "width": 40,
+          "height": 40,
+          "name": "  ",
+          "x": 264,
+          "y": 186
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "white.png",
+          "name": "white.png",
+          "x": 308,
+          "y": 191
+        }
       }
     ]
   }

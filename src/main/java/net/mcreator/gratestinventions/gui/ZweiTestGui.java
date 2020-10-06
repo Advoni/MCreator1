@@ -30,10 +30,12 @@ import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.Entity;
+import net.minecraft.client.gui.widget.button.Button;
 import net.minecraft.client.gui.screen.inventory.ContainerScreen;
 import net.minecraft.client.gui.ScreenManager;
 import net.minecraft.client.Minecraft;
 
+import net.mcreator.gratestinventions.procedures.CoalGeneratorBlockAddedProcedure;
 import net.mcreator.gratestinventions.GratestInventionsModElements;
 import net.mcreator.gratestinventions.GratestInventionsMod;
 
@@ -314,6 +316,8 @@ public class ZweiTestGui extends GratestInventionsModElements.ModElement {
 			this.blit(k, l, 0, 0, this.xSize, this.ySize);
 			Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation("gratest_inventions:textures/battery.png"));
 			this.blit(this.guiLeft + 133, this.guiTop + 20, 0, 0, 256, 256);
+			Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation("gratest_inventions:textures/white.png"));
+			this.blit(this.guiLeft + 29, this.guiTop + 59, 0, 0, 256, 256);
 		}
 
 		@Override
@@ -352,6 +356,10 @@ public class ZweiTestGui extends GratestInventionsModElements.ModElement {
 		public void init(Minecraft minecraft, int width, int height) {
 			super.init(minecraft, width, height);
 			minecraft.keyboardListener.enableRepeatEvents(true);
+			this.addButton(new Button(this.guiLeft + 7, this.guiTop + 56, 20, 20, "  ", e -> {
+				GratestInventionsMod.PACKET_HANDLER.sendToServer(new ButtonPressedMessage(0, x, y, z));
+				handleButtonAction(entity, 0, x, y, z);
+			}));
 		}
 	}
 
@@ -441,6 +449,16 @@ public class ZweiTestGui extends GratestInventionsModElements.ModElement {
 		// security measure to prevent arbitrary chunk generation
 		if (!world.isBlockLoaded(new BlockPos(x, y, z)))
 			return;
+		if (buttonID == 0) {
+			{
+				Map<String, Object> $_dependencies = new HashMap<>();
+				$_dependencies.put("x", x);
+				$_dependencies.put("y", y);
+				$_dependencies.put("z", z);
+				$_dependencies.put("world", world);
+				CoalGeneratorBlockAddedProcedure.executeProcedure($_dependencies);
+			}
+		}
 	}
 
 	private static void handleSlotAction(PlayerEntity entity, int slotID, int changeType, int meta, int x, int y, int z) {
