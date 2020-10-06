@@ -1058,6 +1058,36 @@
       "ids": {},
       "registry_name": "coal_generator_on_block_right_clicked",
       "metadata": {
+        "dependencies": []
+      }
+    },
+    {
+      "name": "ZweiTest",
+      "type": "gui",
+      "sortid": 71,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "zwei_test"
+    },
+    {
+      "name": "CoalGeneratorGui2",
+      "type": "gui",
+      "sortid": 72,
+      "compiles": true,
+      "locked_code": true,
+      "ids": {},
+      "registry_name": "coal_generator_gui_2"
+    },
+    {
+      "name": "CoalGeneratorTick",
+      "type": "procedure",
+      "sortid": 73,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "coal_generator_tick",
+      "metadata": {
         "dependencies": [
           {
             "name": "x",
@@ -1079,22 +1109,33 @@
       }
     },
     {
-      "name": "ZweiTest",
-      "type": "gui",
-      "sortid": 71,
+      "name": "CoalGeneratorBlockAdded",
+      "type": "procedure",
+      "sortid": 74,
       "compiles": true,
       "locked_code": false,
       "ids": {},
-      "registry_name": "zwei_test"
-    },
-    {
-      "name": "CoalGeneratorGui2",
-      "type": "gui",
-      "sortid": 72,
-      "compiles": true,
-      "locked_code": true,
-      "ids": {},
-      "registry_name": "coal_generator_gui_2"
+      "registry_name": "coal_generator_block_added",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
     }
   ],
   "variable_elements": [

@@ -57,7 +57,9 @@ import net.minecraft.block.HorizontalBlock;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Block;
 
+import net.mcreator.gratestinventions.procedures.CoalGeneratorTickProcedure;
 import net.mcreator.gratestinventions.procedures.CoalGeneratorOnBlockRightClickedProcedure;
+import net.mcreator.gratestinventions.procedures.CoalGeneratorBlockAddedProcedure;
 import net.mcreator.gratestinventions.itemgroup.GratestInventionsItemGroup;
 import net.mcreator.gratestinventions.gui.CoalGeneratorGui2Gui;
 import net.mcreator.gratestinventions.GratestInventionsModElements;
@@ -142,6 +144,14 @@ public class CoalGeneratorBlock extends GratestInventionsModElements.ModElement 
 			int y = pos.getY();
 			int z = pos.getZ();
 			world.getPendingBlockTicks().scheduleTick(new BlockPos(x, y, z), this, this.tickRate(world));
+			{
+				Map<String, Object> $_dependencies = new HashMap<>();
+				$_dependencies.put("x", x);
+				$_dependencies.put("y", y);
+				$_dependencies.put("z", z);
+				$_dependencies.put("world", world);
+				CoalGeneratorBlockAddedProcedure.executeProcedure($_dependencies);
+			}
 		}
 
 		@Override
@@ -156,7 +166,7 @@ public class CoalGeneratorBlock extends GratestInventionsModElements.ModElement 
 				$_dependencies.put("y", y);
 				$_dependencies.put("z", z);
 				$_dependencies.put("world", world);
-				CoalGeneratorOnBlockRightClickedProcedure.executeProcedure($_dependencies);
+				CoalGeneratorTickProcedure.executeProcedure($_dependencies);
 			}
 			world.getPendingBlockTicks().scheduleTick(new BlockPos(x, y, z), this, this.tickRate(world));
 		}
@@ -181,6 +191,11 @@ public class CoalGeneratorBlock extends GratestInventionsModElements.ModElement 
 								new PacketBuffer(Unpooled.buffer()).writeBlockPos(new BlockPos(x, y, z)));
 					}
 				}, new BlockPos(x, y, z));
+			}
+			Direction direction = hit.getFace();
+			{
+				Map<String, Object> $_dependencies = new HashMap<>();
+				CoalGeneratorOnBlockRightClickedProcedure.executeProcedure($_dependencies);
 			}
 			return ActionResultType.SUCCESS;
 		}
@@ -342,7 +357,7 @@ public class CoalGeneratorBlock extends GratestInventionsModElements.ModElement 
 			return true;
 		}
 		private final LazyOptional<? extends IItemHandler>[] handlers = SidedInvWrapper.create(this, Direction.values());
-		private final EnergyStorage energyStorage = new EnergyStorage(1000000, 200, 1, 0) {
+		private final EnergyStorage energyStorage = new EnergyStorage(1000, 1, 10, 0) {
 			@Override
 			public int receiveEnergy(int maxReceive, boolean simulate) {
 				int retval = super.receiveEnergy(maxReceive, simulate);

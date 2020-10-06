@@ -84,14 +84,20 @@
     ],
     "hasEnergyStorage": true,
     "energyInitial": 0,
-    "energyCapacity": 1000000,
-    "energyMaxReceive": 200,
-    "energyMaxExtract": 1,
+    "energyCapacity": 1000,
+    "energyMaxReceive": 1,
+    "energyMaxExtract": 10,
     "isFluidTank": false,
     "fluidCapacity": 8000,
     "fluidRestrictions": [],
-    "onTickUpdate": {
+    "onRightClicked": {
       "name": "CoalGeneratorOnBlockRightClicked"
+    },
+    "onBlockAdded": {
+      "name": "CoalGeneratorBlockAdded"
+    },
+    "onTickUpdate": {
+      "name": "CoalGeneratorTick"
     },
     "spawnWorldTypes": [],
     "restrictionBiomes": [],

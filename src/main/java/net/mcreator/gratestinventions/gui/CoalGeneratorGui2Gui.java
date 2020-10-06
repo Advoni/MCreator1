@@ -307,72 +307,43 @@ public class CoalGeneratorGui2Gui extends GratestInventionsModElements.ModElemen
 
 		@Override
 		protected void drawGuiContainerBackgroundLayer(float par1, int par2, int par3) {
-			double percent = (new Object() {
+			double currento = (new Object() {
 				public double getValue(BlockPos pos, String tag) {
 					TileEntity tileEntity = world.getTileEntity(pos);
 					if (tileEntity != null)
 						return tileEntity.getTileData().getDouble(tag);
 					return 0;
 				}
-			}.getValue(new BlockPos((int) x, (int) y, (int) z), "test"));
+			}.getValue(new BlockPos((int) x, (int) y, (int) z), "energy"));
+			double maxCurrent = (new Object() {
+				public double getValue(BlockPos pos, String tag) {
+					TileEntity tileEntity = world.getTileEntity(pos);
+					if (tileEntity != null)
+						return tileEntity.getTileData().getDouble(tag);
+					return 0;
+				}
+			}.getValue(new BlockPos((int) x, (int) y, (int) z), "capacity"));
+			double fuel = (new Object() {
+				public double getValue(BlockPos pos, String tag) {
+					TileEntity tileEntity = world.getTileEntity(pos);
+					if (tileEntity != null)
+						return tileEntity.getTileData().getDouble(tag);
+					return 0;
+				}
+			}.getValue(new BlockPos((int) x, (int) y, (int) z), "fuel"));
 			GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
 			Minecraft.getInstance().getTextureManager().bindTexture(texture);
-			String myOverlayVariable;
-			if (percent == 0)
-			{
-				myOverlayVariable = null;
-			}
-			else if (percent == 1)
-			{
-				myOverlayVariable = "gratest_inventions:textures/battery1.png";
-			}
-			else if (percent == 2)
-			{
-				myOverlayVariable = "gratest_inventions:textures/battery2.png";
-			}
-			else if (percent == 3)
-			{
-				myOverlayVariable = "gratest_inventions:textures/battery3.png";
-			}
-			else if (percent == 4)
-			{
-				myOverlayVariable = "gratest_inventions:textures/battery4.png";
-			}
-			else if (percent == 5)
-			{
-				myOverlayVariable = "gratest_inventions:textures/battery5.png";
-			}
-			else if (percent == 6)
-			{
-				myOverlayVariable = "gratest_inventions:textures/battery6.png";
-			}
-			else if (percent == 7)
-			{
-				myOverlayVariable = "gratest_inventions:textures/battery7.png";
-			}
-			else if (percent == 8)
-			{
-				myOverlayVariable = "gratest_inventions:textures/battery8.png";
-			}
-			else if (percent == 9)
-			{
-				myOverlayVariable = "gratest_inventions:textures/battery9.png";
-			}
-			else
-			{
-				myOverlayVariable = "gratest_inventions:textures/battery10.png";
-			}
 			int k = (this.width - this.xSize) / 2;
 			int l = (this.height - this.ySize) / 2;
 			this.blit(k, l, 0, 0, this.xSize, this.ySize);
 			Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation("gratest_inventions:textures/battery.png"));
 			this.blit(this.guiLeft + 133, this.guiTop + 20, 0, 0, 256, 256);
-			if (myOverlayVariable != null)
+			if (energyBar(currento,maxCurrent) != null)
 			{
-				Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation(myOverlayVariable));
+				Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation(energyBar(currento,maxCurrent)));
 			}
 			this.blit(this.guiLeft + 133, this.guiTop + 20, 0, 0, 256, 256);
-			Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation("gratest_inventions:textures/fire_off.png"));
+			Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation(burn(fuel)));
 			this.blit(this.guiLeft + 79, this.guiTop + 47, 0, 0, 256, 256);
 		}
 
@@ -392,22 +363,46 @@ public class CoalGeneratorGui2Gui extends GratestInventionsModElements.ModElemen
 
 		@Override
 		protected void drawGuiContainerForegroundLayer(int mouseX, int mouseY) {
-			this.font.drawString("" + (new Object() {
+			int fuelo = ((int)((new Object() {
 				public double getValue(BlockPos pos, String tag) {
 					TileEntity tileEntity = world.getTileEntity(pos);
 					if (tileEntity != null)
 						return tileEntity.getTileData().getDouble(tag);
 					return 0;
 				}
-			}.getValue(new BlockPos((int) x, (int) y, (int) z), "Energy")) + "", 133, 6, -39424);
-			this.font.drawString("" + (new Object() {
+			}.getValue(new BlockPos((int) x, (int) y, (int) z), "fuel"))*10));
+			int energy = ((int)((new Object() {
 				public double getValue(BlockPos pos, String tag) {
 					TileEntity tileEntity = world.getTileEntity(pos);
 					if (tileEntity != null)
 						return tileEntity.getTileData().getDouble(tag);
 					return 0;
 				}
-			}.getValue(new BlockPos((int) x, (int) y, (int) z), "fuel")) + "", 79, 65, -11776948);
+			}.getValue(new BlockPos((int) x, (int) y, (int) z), "energy"))*10));
+			if (energy<100)
+			{
+				this.font.drawString( (energy/10) + "," + (energy%10) + "IE", 139, 6, -39424);
+			}
+			else if (energy<1000)
+			{
+				this.font.drawString( (energy/10) + "," + (energy%10) + "IE", 133, 6, -39424);
+			}
+			else if (energy<10000)
+			{
+				this.font.drawString( (energy/10) + "," + (energy%10) + "IE", 127, 6, -39424);
+			}
+			else
+			{
+				this.font.drawString( (energy/10) + "," + (energy%10) + "IE", 121, 6, -39424);
+			}
+			if (fuelo<100)
+			{
+				this.font.drawString( (fuelo/10) + "," + (fuelo%10) + "%", 85, 65, -11776948);
+			}
+			else
+			{
+				this.font.drawString( (fuelo/10) + "," + (fuelo%10) + "%", 79, 65, -11776948);
+			}
 			this.font.drawString("Coal Generator", 7, 6, -11776948);
 			this.font.drawString("Gen.: 1IE/T", 7, 29, -11776948);
 			this.font.drawString("Out: 10IE/T", 7, 38, -11776948);
@@ -514,6 +509,169 @@ public class CoalGeneratorGui2Gui extends GratestInventionsModElements.ModElemen
 			return;
 	}
 
+	private static String burn(double f)
+	{
+		f = (int)((26*f)/100);
+		if (f == 0)
+			{
+				return "gratest_inventions:textures/fire_off.png";
+			}
+			else if (f == 1)
+			{
+				return "gratest_inventions:textures/fire_on1.png";
+			}
+			else if (f == 2)
+			{
+				return "gratest_inventions:textures/fire_on2.png";
+			}
+			else if (f == 3)
+			{
+				return "gratest_inventions:textures/fire_on3.png";
+			}
+			else if (f == 4)
+			{
+				return "gratest_inventions:textures/fire_on4.png";
+			}
+			else if (f == 5)
+			{
+				return "gratest_inventions:textures/fire_on5.png";
+			}
+			else if (f == 6)
+			{
+				return "gratest_inventions:textures/fire_on6.png";
+			}
+			else if (f == 7)
+			{
+				return "gratest_inventions:textures/fire_on7.png";
+			}
+			else if (f == 8)
+			{
+				return "gratest_inventions:textures/fire_on8.png";
+			}
+			else if (f == 9)
+			{
+				return "gratest_inventions:textures/fire_on9.png";
+			}
+			else if (f == 10)
+			{
+				return "gratest_inventions:textures/fire_on10.png";
+			}
+			else if (f == 11)
+			{
+				return "gratest_inventions:textures/fire_on11.png";
+			}
+			else if (f == 12)
+			{
+				return "gratest_inventions:textures/fire_on12.png";
+			}
+			else if (f == 13)
+			{
+				return "gratest_inventions:textures/fire_on13.png";
+			}
+			else if (f == 14)
+			{
+				return "gratest_inventions:textures/fire_on14.png";
+			}
+			else if (f == 15)
+			{
+				return "gratest_inventions:textures/fire_on15.png";
+			}
+			else if (f == 16)
+			{
+				return "gratest_inventions:textures/fire_on16.png";
+			}
+			else if (f == 17)
+			{
+				return "gratest_inventions:textures/fire_on17.png";
+			}
+			else if (f == 18)
+			{
+				return "gratest_inventions:textures/fire_on18.png";
+			}
+			else if (f == 19)
+			{
+				return "gratest_inventions:textures/fire_on19.png";
+			}
+			else if (f == 20)
+			{
+				return "gratest_inventions:textures/fire_on20.png";
+			}
+			else if (f == 21)
+			{
+				return "gratest_inventions:textures/fire_on21.png";
+			}
+			else if (f == 22)
+			{
+				return "gratest_inventions:textures/fire_on22.png";
+			}
+			else if (f == 23)
+			{
+				return "gratest_inventions:textures/fire_on23.png";
+			}
+			else if (f == 24)
+			{
+				return "gratest_inventions:textures/fire_on24.png";
+			}
+			else if (f == 25)
+			{
+				return "gratest_inventions:textures/fire_on25.png";
+			}
+			else
+			{
+				return "gratest_inventions:textures/fire_on.png";
+			}
+	}
+
+
+	private static String energyBar(double p,double c)
+	{
+		p = (int)((p*10)/c);
+		if (p == 0)
+			{
+				return null;
+			}
+			else if (p == 1)
+			{
+				return "gratest_inventions:textures/battery1.png";
+			}
+			else if (p == 2)
+			{
+				return "gratest_inventions:textures/battery2.png";
+			}
+			else if (p == 3)
+			{
+				return "gratest_inventions:textures/battery3.png";
+			}
+			else if (p == 4)
+			{
+				return "gratest_inventions:textures/battery4.png";
+			}
+			else if (p == 5)
+			{
+				return "gratest_inventions:textures/battery5.png";
+			}
+			else if (p == 6)
+			{
+				return "gratest_inventions:textures/battery6.png";
+			}
+			else if (p == 7)
+			{
+				return "gratest_inventions:textures/battery7.png";
+			}
+			else if (p == 8)
+			{
+				return "gratest_inventions:textures/battery8.png";
+			}
+			else if (p == 9)
+			{
+				return "gratest_inventions:textures/battery9.png";
+			}
+			else
+			{
+				return "gratest_inventions:textures/battery10.png";
+			}
+	}
+	
 	private static void handleSlotAction(PlayerEntity entity, int slotID, int changeType, int meta, int x, int y, int z) {
 		World world = entity.world;
 		// security measure to prevent arbitrary chunk generation
