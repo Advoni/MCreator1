@@ -1231,9 +1231,9 @@
   "language_map": {
     "en_us": {
       "block.gratest_inventions.coal_generator": "Coal Generator",
-      "item.gratest_inventions.obsidian_armor_leggings": "Obsidian Leggings",
-      "item.gratest_inventions.obsidian_pickaxe": "Obsidian Pickaxe",
       "block.gratest_inventions.platinum_ore": "Platinum Ore",
+      "item.gratest_inventions.obsidian_pickaxe": "Obsidian Pickaxe",
+      "item.gratest_inventions.obsidian_armor_leggings": "Obsidian Leggings",
       "item.gratest_inventions.dimension_breaker": "Dimension Breaker",
       "item.gratest_inventions.obsidian_sword": "Obsidian Sword",
       "block.gratest_inventions.basic_grinder": "Basic Grinder",
