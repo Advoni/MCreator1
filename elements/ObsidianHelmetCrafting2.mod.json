@@ -22,7 +22,7 @@
         "value": "CUSTOM:ObsidianShard"
       },
       {
-        "value": ""
+        "value": "CUSTOM:ObsidianShard"
       },
       {
         "value": "CUSTOM:ObsidianShard"
@@ -38,9 +38,9 @@
       }
     ],
     "recipeReturnStack": {
-      "value": "CUSTOM:ObsidianArmor.boots"
+      "value": "CUSTOM:ObsidianArmor.helmet"
     },
-    "name": "obsidian_boots_crafting",
+    "name": "obsidian_helmet_crafting_2",
     "namespace": "mod"
   }
 }

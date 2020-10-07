@@ -10,37 +10,37 @@
     "recipeShapeless": false,
     "recipeSlots": [
       {
-        "value": ""
+        "value": "CUSTOM:SilverNugget"
       },
       {
-        "value": ""
+        "value": "CUSTOM:SilverNugget"
       },
       {
-        "value": ""
+        "value": "CUSTOM:SilverNugget"
       },
       {
-        "value": "CUSTOM:ObsidianShard"
+        "value": "CUSTOM:SilverNugget"
       },
       {
-        "value": ""
+        "value": "CUSTOM:SilverNugget"
       },
       {
-        "value": "CUSTOM:ObsidianShard"
+        "value": "CUSTOM:SilverNugget"
       },
       {
-        "value": "CUSTOM:ObsidianShard"
+        "value": "CUSTOM:SilverNugget"
       },
       {
-        "value": ""
+        "value": "CUSTOM:SilverNugget"
       },
       {
-        "value": "CUSTOM:ObsidianShard"
+        "value": "CUSTOM:SilverNugget"
       }
     ],
     "recipeReturnStack": {
-      "value": "CUSTOM:ObsidianArmor.boots"
+      "value": "CUSTOM:SilverIngot"
     },
-    "name": "obsidian_boots_crafting",
+    "name": "silver_nugget_crafting",
     "namespace": "mod"
   }
 }

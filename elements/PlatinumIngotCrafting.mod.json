@@ -10,37 +10,37 @@
     "recipeShapeless": false,
     "recipeSlots": [
       {
-        "value": ""
+        "value": "CUSTOM:PlatinumNugget"
       },
       {
-        "value": ""
+        "value": "CUSTOM:PlatinumNugget"
       },
       {
-        "value": ""
+        "value": "CUSTOM:PlatinumNugget"
       },
       {
-        "value": "CUSTOM:ObsidianShard"
+        "value": "CUSTOM:PlatinumNugget"
       },
       {
-        "value": ""
+        "value": "CUSTOM:PlatinumNugget"
       },
       {
-        "value": "CUSTOM:ObsidianShard"
+        "value": "CUSTOM:PlatinumNugget"
       },
       {
-        "value": "CUSTOM:ObsidianShard"
+        "value": "CUSTOM:PlatinumNugget"
       },
       {
-        "value": ""
+        "value": "CUSTOM:PlatinumNugget"
       },
       {
-        "value": "CUSTOM:ObsidianShard"
+        "value": "CUSTOM:PlatinumNugget"
       }
     ],
     "recipeReturnStack": {
-      "value": "CUSTOM:ObsidianArmor.boots"
+      "value": "CUSTOM:PlatinumIngot"
     },
-    "name": "obsidian_boots_crafting",
+    "name": "platinum_ingot_crafting",
     "namespace": "mod"
   }
 }

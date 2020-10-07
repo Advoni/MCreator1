@@ -1433,6 +1433,114 @@
           }
         ]
       }
+    },
+    {
+      "name": "LeadIngotCrafting",
+      "type": "recipe",
+      "sortid": 102,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "lead_ingot_crafting"
+    },
+    {
+      "name": "ObsidianBootsCrafting2",
+      "type": "recipe",
+      "sortid": 95,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "obsidian_boots_crafting_2"
+    },
+    {
+      "name": "SilverNuggetCrafting",
+      "type": "recipe",
+      "sortid": 104,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "silver_nugget_crafting"
+    },
+    {
+      "name": "ObsidianSwordCrafting3",
+      "type": "recipe",
+      "sortid": 97,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "obsidian_sword_crafting_3"
+    },
+    {
+      "name": "SilverNugget",
+      "type": "item",
+      "sortid": 99,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "silver_nugget"
+    },
+    {
+      "name": "PlatinumIngotCrafting",
+      "type": "recipe",
+      "sortid": 105,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "platinum_ingot_crafting"
+    },
+    {
+      "name": "ObsidianSwordCrafting2",
+      "type": "recipe",
+      "sortid": 96,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "obsidian_sword_crafting_2"
+    },
+    {
+      "name": "PlatinumNugget",
+      "type": "item",
+      "sortid": 100,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "platinum_nugget"
+    },
+    {
+      "name": "LeadNugget",
+      "type": "item",
+      "sortid": 101,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "lead_nugget"
+    },
+    {
+      "name": "ObsidianHelmetCrafting2",
+      "type": "recipe",
+      "sortid": 94,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "obsidian_helmet_crafting_2"
+    },
+    {
+      "name": "CopperNugget",
+      "type": "item",
+      "sortid": 98,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "copper_nugget"
+    },
+    {
+      "name": "CopperIngotCrafting",
+      "type": "recipe",
+      "sortid": 103,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "copper_ingot_crafting"
     }
   ],
   "variable_elements": [

@@ -16,6 +16,12 @@
         "value": ""
       },
       {
+        "value": "CUSTOM:ObsidianShard"
+      },
+      {
+        "value": ""
+      },
+      {
         "value": ""
       },
       {
@@ -25,22 +31,16 @@
         "value": ""
       },
       {
-        "value": "CUSTOM:ObsidianShard"
-      },
-      {
-        "value": "CUSTOM:ObsidianShard"
-      },
-      {
         "value": ""
       },
       {
-        "value": "CUSTOM:ObsidianShard"
+        "value": "Items.STICK"
       }
     ],
     "recipeReturnStack": {
-      "value": "CUSTOM:ObsidianArmor.boots"
+      "value": "CUSTOM:ObsidianSword"
     },
-    "name": "obsidian_boots_crafting",
+    "name": "obsidian_sword_crafting_2",
     "namespace": "mod"
   }
 }
