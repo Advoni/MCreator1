@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "gratest_inventions:blocks/solid_cloud_block",
+    "up": "gratest_inventions:blocks/solid_cloud_block",
+    "north": "gratest_inventions:blocks/solid_cloud_block",
+    "east": "gratest_inventions:blocks/solid_cloud_block",
+    "south": "gratest_inventions:blocks/solid_cloud_block",
+    "west": "gratest_inventions:blocks/solid_cloud_block",
+    "particle": "gratest_inventions:blocks/solid_cloud_block"
+  }
+}

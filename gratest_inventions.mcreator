@@ -1369,6 +1369,24 @@
           }
         ]
       }
+    },
+    {
+      "name": "CloudBlock",
+      "type": "block",
+      "sortid": 92,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "cloud_block"
+    },
+    {
+      "name": "LightCloudBlock",
+      "type": "block",
+      "sortid": 93,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "light_cloud_block"
     }
   ],
   "variable_elements": [
@@ -1383,13 +1401,14 @@
   "language_map": {
     "en_us": {
       "block.gratest_inventions.coal_generator": "Coal Generator",
-      "block.gratest_inventions.platinum_ore": "Platinum Ore",
-      "item.gratest_inventions.obsidian_pickaxe": "Obsidian Pickaxe",
       "item.gratest_inventions.obsidian_armor_leggings": "Obsidian Leggings",
+      "item.gratest_inventions.obsidian_pickaxe": "Obsidian Pickaxe",
+      "block.gratest_inventions.platinum_ore": "Platinum Ore",
       "item.gratest_inventions.dimension_breaker": "Dimension Breaker",
       "item.gratest_inventions.obsidian_sword": "Obsidian Sword",
       "block.gratest_inventions.basic_grinder": "Basic Grinder",
       "item.gratest_inventions.gold_gear": "Gold Gear",
+      "block.gratest_inventions.cloud_block": "Cloud Block",
       "item.gratest_inventions.obsidian_armor_helmet": "Obsidian Helmet",
       "item.gratest_inventions.gold_stick": "Gold Stick",
       "item.gratest_inventions.silver_ingot": "Silver Ingot",
@@ -1416,6 +1435,7 @@
       "block.gratest_inventions.zahnstange_sn": "Zahnstange",
       "item.gratest_inventions.copper_ingot": "Copper Ingot",
       "block.gratest_inventions.silver_ore": "Silver Ore",
+      "block.gratest_inventions.light_cloud_block": "Light Cloud Block",
       "block.gratest_inventions.support_beam_1b": "Support Beam",
       "item.gratest_inventions.milk_bucket": "Milk Bucket",
       "item.gratest_inventions.platinum_ingot": "Platinum Ingot",
