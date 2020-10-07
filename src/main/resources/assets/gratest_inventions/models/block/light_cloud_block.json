@@ -1,12 +1,7 @@
 {
-  "parent": "block/cube",
+  "parent": "block/cube_all",
   "textures": {
-    "down": "gratest_inventions:blocks/light_cloud_block",
-    "up": "gratest_inventions:blocks/light_cloud_block",
-    "north": "gratest_inventions:blocks/light_cloud_block",
-    "east": "gratest_inventions:blocks/light_cloud_block",
-    "south": "gratest_inventions:blocks/light_cloud_block",
-    "west": "gratest_inventions:blocks/light_cloud_block",
+    "all": "gratest_inventions:blocks/light_cloud_block",
     "particle": "gratest_inventions:blocks/light_cloud_block"
   }
 }

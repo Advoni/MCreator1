@@ -9,6 +9,7 @@ import net.minecraftforge.api.distmarker.Dist;
 import net.minecraft.world.storage.loot.LootContext;
 import net.minecraft.world.World;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.Direction;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Item;
 import net.minecraft.item.BlockItem;
@@ -54,6 +55,11 @@ public class LightCloudBlockBlock extends GratestInventionsModElements.ModElemen
 			super(Block.Properties.create(Material.WOOL).sound(SoundType.CLOTH).hardnessAndResistance(0.2f, 0f).lightValue(0).doesNotBlockMovement()
 					.slipperiness(0.7f));
 			setRegistryName("light_cloud_block");
+		}
+
+		@OnlyIn(Dist.CLIENT)
+		public boolean isSideInvisible(BlockState state, BlockState adjacentBlockState, Direction side) {
+			return adjacentBlockState.getBlock() == this ? true : super.isSideInvisible(state, adjacentBlockState, side);
 		}
 
 		@Override
