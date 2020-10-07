@@ -1387,6 +1387,52 @@
       "locked_code": false,
       "ids": {},
       "registry_name": "light_cloud_block"
+    },
+    {
+      "name": "LightCloudBlockEntityCollidesInTheBlock",
+      "type": "procedure",
+      "sortid": 94,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "light_cloud_block_entity_collides_in_the_block",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "BasicGrinderBlockAdded",
+      "type": "procedure",
+      "sortid": 95,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "basic_grinder_block_added",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
     }
   ],
   "variable_elements": [
@@ -1401,9 +1447,9 @@
   "language_map": {
     "en_us": {
       "block.gratest_inventions.coal_generator": "Coal Generator",
-      "item.gratest_inventions.obsidian_armor_leggings": "Obsidian Leggings",
-      "item.gratest_inventions.obsidian_pickaxe": "Obsidian Pickaxe",
       "block.gratest_inventions.platinum_ore": "Platinum Ore",
+      "item.gratest_inventions.obsidian_pickaxe": "Obsidian Pickaxe",
+      "item.gratest_inventions.obsidian_armor_leggings": "Obsidian Leggings",
       "item.gratest_inventions.dimension_breaker": "Dimension Breaker",
       "item.gratest_inventions.obsidian_sword": "Obsidian Sword",
       "block.gratest_inventions.basic_grinder": "Basic Grinder",

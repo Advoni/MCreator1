@@ -323,6 +323,14 @@ public class BasicGrinderGuiGui extends GratestInventionsModElements.ModElement 
 					return 0;
 				}
 			}.getValue(new BlockPos((int) x, (int) y, (int) z), "energy"));
+			double maxCurrent = (new Object() {
+				public double getValue(BlockPos pos, String tag) {
+					TileEntity tileEntity = world.getTileEntity(pos);
+					if (tileEntity != null)
+						return tileEntity.getTileData().getDouble(tag);
+					return 0;
+				}
+			}.getValue(new BlockPos((int) x, (int) y, (int) z), "capacity"));
 			double gear = (new Object() {
 				public double getValue(BlockPos pos, String tag) {
 					TileEntity tileEntity = world.getTileEntity(pos);
@@ -339,6 +347,14 @@ public class BasicGrinderGuiGui extends GratestInventionsModElements.ModElement 
 					return 0;
 				}
 			}.getValue(new BlockPos((int) x, (int) y, (int) z), "tick"));
+			int redstone = (int)(new Object() {
+				public double getValue(BlockPos pos, String tag) {
+					TileEntity tileEntity = world.getTileEntity(pos);
+					if (tileEntity != null)
+						return tileEntity.getTileData().getDouble(tag);
+					return 0;
+				}
+			}.getValue(new BlockPos((int) x, (int) y, (int) z), "redstone"));
 			GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
 			Minecraft.getInstance().getTextureManager().bindTexture(texture);
 			int k = (this.width - this.xSize) / 2;
@@ -346,10 +362,17 @@ public class BasicGrinderGuiGui extends GratestInventionsModElements.ModElement 
 			this.blit(k, l, 0, 0, this.xSize, this.ySize);
 			Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation("gratest_inventions:textures/battery.png"));
 			this.blit(this.guiLeft + 133, this.guiTop + 20, 0, 0, 256, 256);
+			if (energyBar(energy,maxCurrent) != null)
+			{
+				Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation(energyBar(energy,maxCurrent)));
+			}
+			this.blit(this.guiLeft + 133, this.guiTop + 20, 0, 0, 256, 256);
 			Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation(turnRight(gear,tick)));
 			this.blit(this.guiLeft + 56, this.guiTop + 26, 0, 0, 256, 256);
 			Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation(turnLeft(gear,tick)));
 			this.blit(this.guiLeft + 88, this.guiTop + 26, 0, 0, 256, 256);
+			Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation(redstoneSetting(redstone)));
+			this.blit(this.guiLeft + 29, this.guiTop + 59, 0, 0, 256, 256);
 		}
 
 		@Override
@@ -368,22 +391,46 @@ public class BasicGrinderGuiGui extends GratestInventionsModElements.ModElement 
 
 		@Override
 		protected void drawGuiContainerForegroundLayer(int mouseX, int mouseY) {
-			this.font.drawString("" + (new Object() {
+			int gear = ((int)((new Object() {
 				public double getValue(BlockPos pos, String tag) {
 					TileEntity tileEntity = world.getTileEntity(pos);
 					if (tileEntity != null)
 						return tileEntity.getTileData().getDouble(tag);
 					return 0;
 				}
-			}.getValue(new BlockPos((int) x, (int) y, (int) z), "energy")) + "", 133, 6, -39424);
-			this.font.drawString("" + (new Object() {
+			}.getValue(new BlockPos((int) x, (int) y, (int) z), "gear"))*10));
+			int energy = ((int)((new Object() {
 				public double getValue(BlockPos pos, String tag) {
 					TileEntity tileEntity = world.getTileEntity(pos);
 					if (tileEntity != null)
 						return tileEntity.getTileData().getDouble(tag);
 					return 0;
 				}
-			}.getValue(new BlockPos((int) x, (int) y, (int) z), "fuel")) + "", 7, 38, -11776948);
+			}.getValue(new BlockPos((int) x, (int) y, (int) z), "energy"))*10));
+			if (energy<100)
+			{
+				this.font.drawString( (energy/10) + "," + (energy%10) + "IE", 139, 6, -39424);
+			}
+			else if (energy<1000)
+			{
+				this.font.drawString( (energy/10) + "," + (energy%10) + "IE", 133, 6, -39424);
+			}
+			else if (energy<10000)
+			{
+				this.font.drawString( (energy/10) + "," + (energy%10) + "IE", 127, 6, -39424);
+			}
+			else
+			{
+				this.font.drawString( (energy/10) + "," + (energy%10) + "IE", 121, 6, -39424);
+			}
+			if (gear<100)
+			{
+				this.font.drawString( (gear/10) + "," + (gear%10) + "%", 13, 38, -11776948);
+			}
+			else
+			{
+				this.font.drawString( (gear/10) + "," + (gear%10) + "%", 7, 38, -11776948);
+			}
 			this.font.drawString("Basic Grinder", 7, 6, -11776948);
 			this.font.drawString("Use: 0.5IE/T", 7, 20, -11776948);
 		}
@@ -513,6 +560,19 @@ public class BasicGrinderGuiGui extends GratestInventionsModElements.ModElement 
 		return "gratest_inventions:textures/gear1.png";
 	}
 
+	private static String energyBar(double p,double c)
+	{
+		int q = (int)((p*10)/c);
+		if (q == 0)
+			{
+				return null;
+			}
+			else
+			{
+				return "gratest_inventions:textures/battery" + q + ".png";
+			}
+	}
+
 	private static String turnLeft(double count, double tick)
 	{
 		if (count != 0)
@@ -528,6 +588,11 @@ public class BasicGrinderGuiGui extends GratestInventionsModElements.ModElement 
 			}
 		}
 		return "gratest_inventions:textures/gear1.png";
+	}
+
+	private static String redstoneSetting(int s)
+	{
+		return "gratest_inventions:textures/redstone_settings" + s + ".png";
 	}
 
 	private static void handleSlotAction(PlayerEntity entity, int slotID, int changeType, int meta, int x, int y, int z) {

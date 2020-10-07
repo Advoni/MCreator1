@@ -59,8 +59,8 @@ import net.minecraft.block.Block;
 
 import net.mcreator.gratestinventions.procedures.CoalGeneratorRedstoneOnProcedure;
 import net.mcreator.gratestinventions.procedures.CoalGeneratorRedstoneOffProcedure;
-import net.mcreator.gratestinventions.procedures.CoalGeneratorBlockAddedProcedure;
 import net.mcreator.gratestinventions.procedures.BasicGrinderUpdateTickProcedure;
+import net.mcreator.gratestinventions.procedures.BasicGrinderBlockAddedProcedure;
 import net.mcreator.gratestinventions.itemgroup.GratestInventionsItemGroup;
 import net.mcreator.gratestinventions.gui.BasicGrinderGuiGui;
 import net.mcreator.gratestinventions.GratestInventionsModElements;
@@ -151,7 +151,7 @@ public class BasicGrinderBlock extends GratestInventionsModElements.ModElement {
 				$_dependencies.put("y", y);
 				$_dependencies.put("z", z);
 				$_dependencies.put("world", world);
-				CoalGeneratorBlockAddedProcedure.executeProcedure($_dependencies);
+				BasicGrinderBlockAddedProcedure.executeProcedure($_dependencies);
 			}
 		}
 
