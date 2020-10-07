@@ -1541,6 +1541,42 @@
       "locked_code": false,
       "ids": {},
       "registry_name": "copper_ingot_crafting"
+    },
+    {
+      "name": "AetherWasteLand",
+      "type": "biome",
+      "sortid": 107,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "aether_waste_land"
+    },
+    {
+      "name": "Aether",
+      "type": "dimension",
+      "sortid": 107,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "aether"
+    },
+    {
+      "name": "AetherFallLand",
+      "type": "biome",
+      "sortid": 108,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "aether_fall_land"
+    },
+    {
+      "name": "Grinding",
+      "type": "tag",
+      "sortid": 106,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "grinding"
     }
   ],
   "variable_elements": [
@@ -1554,6 +1590,7 @@
   "sound_elements": [],
   "language_map": {
     "en_us": {
+      "item.gratest_inventions.aether": "Aether Portal Igniter",
       "block.gratest_inventions.coal_generator": "Coal Generator",
       "item.gratest_inventions.obsidian_armor_leggings": "Obsidian Leggings",
       "item.gratest_inventions.obsidian_pickaxe": "Obsidian Pickaxe",
@@ -1589,8 +1626,8 @@
       "item.gratest_inventions.platinum_nugget": "Platinum Nugget",
       "block.gratest_inventions.support_beam_2": "Support Beam",
       "block.gratest_inventions.zahnstange_sn": "Zahnstange",
-      "item.gratest_inventions.copper_nugget": "Copper Nugget",
       "item.gratest_inventions.silver_nugget": "Silver Nugget",
+      "item.gratest_inventions.copper_nugget": "Copper Nugget",
       "item.gratest_inventions.copper_ingot": "Copper Ingot",
       "block.gratest_inventions.silver_ore": "Silver Ore",
       "block.gratest_inventions.light_cloud_block": "Light Cloud Block",
