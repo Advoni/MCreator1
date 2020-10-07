@@ -10,37 +10,37 @@
     "recipeShapeless": false,
     "recipeSlots": [
       {
-        "value": ""
+        "value": "CUSTOM:CopperNugget"
       },
       {
-        "value": ""
+        "value": "CUSTOM:CopperNugget"
       },
       {
-        "value": ""
+        "value": "CUSTOM:CopperNugget"
       },
       {
-        "value": "CUSTOM:ObsidianShard"
+        "value": "CUSTOM:CopperNugget"
       },
       {
-        "value": ""
+        "value": "CUSTOM:CopperNugget"
       },
       {
-        "value": "CUSTOM:ObsidianShard"
+        "value": "CUSTOM:CopperNugget"
       },
       {
-        "value": "CUSTOM:ObsidianShard"
+        "value": "CUSTOM:CopperNugget"
       },
       {
-        "value": ""
+        "value": "CUSTOM:CopperNugget"
       },
       {
-        "value": "CUSTOM:ObsidianShard"
+        "value": "CUSTOM:CopperNugget"
       }
     ],
     "recipeReturnStack": {
-      "value": "CUSTOM:ObsidianArmor.boots"
+      "value": "CUSTOM:CopperIngot"
     },
-    "name": "obsidian_boots_crafting",
+    "name": "copper_ingot_crafting",
     "namespace": "mod"
   }
 }

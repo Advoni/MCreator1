@@ -10,37 +10,37 @@
     "recipeShapeless": false,
     "recipeSlots": [
       {
-        "value": ""
+        "value": "CUSTOM:LeadNugget"
       },
       {
-        "value": ""
+        "value": "CUSTOM:LeadNugget"
       },
       {
-        "value": ""
+        "value": "CUSTOM:LeadNugget"
       },
       {
-        "value": "CUSTOM:ObsidianShard"
+        "value": "CUSTOM:LeadNugget"
       },
       {
-        "value": ""
+        "value": "CUSTOM:LeadNugget"
       },
       {
-        "value": "CUSTOM:ObsidianShard"
+        "value": "CUSTOM:LeadNugget"
       },
       {
-        "value": "CUSTOM:ObsidianShard"
+        "value": "CUSTOM:LeadNugget"
       },
       {
-        "value": ""
+        "value": "CUSTOM:LeadNugget"
       },
       {
-        "value": "CUSTOM:ObsidianShard"
+        "value": "CUSTOM:LeadNugget"
       }
     ],
     "recipeReturnStack": {
-      "value": "CUSTOM:ObsidianArmor.boots"
+      "value": "CUSTOM:LeadIngot"
     },
-    "name": "obsidian_boots_crafting",
+    "name": "lead_ingot_crafting",
     "namespace": "mod"
   }
 }

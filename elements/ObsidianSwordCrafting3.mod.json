@@ -10,7 +10,7 @@
     "recipeShapeless": false,
     "recipeSlots": [
       {
-        "value": ""
+        "value": "CUSTOM:ObsidianShard"
       },
       {
         "value": ""
@@ -25,22 +25,22 @@
         "value": ""
       },
       {
-        "value": "CUSTOM:ObsidianShard"
+        "value": ""
       },
       {
-        "value": "CUSTOM:ObsidianShard"
+        "value": "Items.STICK"
       },
       {
         "value": ""
       },
       {
-        "value": "CUSTOM:ObsidianShard"
+        "value": ""
       }
     ],
     "recipeReturnStack": {
-      "value": "CUSTOM:ObsidianArmor.boots"
+      "value": "CUSTOM:ObsidianSword"
     },
-    "name": "obsidian_boots_crafting",
+    "name": "obsidian_sword_crafting_3",
     "namespace": "mod"
   }
 }

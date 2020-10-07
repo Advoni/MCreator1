@@ -1387,6 +1387,114 @@
       "locked_code": false,
       "ids": {},
       "registry_name": "light_cloud_block"
+    },
+    {
+      "name": "ObsidianHelmetCrafting2",
+      "type": "recipe",
+      "sortid": 94,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "obsidian_helmet_crafting_2"
+    },
+    {
+      "name": "ObsidianBootsCrafting2",
+      "type": "recipe",
+      "sortid": 95,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "obsidian_boots_crafting_2"
+    },
+    {
+      "name": "ObsidianSwordCrafting2",
+      "type": "recipe",
+      "sortid": 96,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "obsidian_sword_crafting_2"
+    },
+    {
+      "name": "ObsidianSwordCrafting3",
+      "type": "recipe",
+      "sortid": 97,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "obsidian_sword_crafting_3"
+    },
+    {
+      "name": "CopperNugget",
+      "type": "item",
+      "sortid": 98,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "copper_nugget"
+    },
+    {
+      "name": "SilverNugget",
+      "type": "item",
+      "sortid": 99,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "silver_nugget"
+    },
+    {
+      "name": "PlatinumNugget",
+      "type": "item",
+      "sortid": 100,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "platinum_nugget"
+    },
+    {
+      "name": "LeadNugget",
+      "type": "item",
+      "sortid": 101,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "lead_nugget"
+    },
+    {
+      "name": "LeadIngotCrafting",
+      "type": "recipe",
+      "sortid": 102,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "lead_ingot_crafting"
+    },
+    {
+      "name": "CopperIngotCrafting",
+      "type": "recipe",
+      "sortid": 103,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "copper_ingot_crafting"
+    },
+    {
+      "name": "SilverNuggetCrafting",
+      "type": "recipe",
+      "sortid": 104,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "silver_nugget_crafting"
+    },
+    {
+      "name": "PlatinumIngotCrafting",
+      "type": "recipe",
+      "sortid": 105,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "platinum_ingot_crafting"
     }
   ],
   "variable_elements": [
@@ -1401,9 +1509,9 @@
   "language_map": {
     "en_us": {
       "block.gratest_inventions.coal_generator": "Coal Generator",
-      "item.gratest_inventions.obsidian_armor_leggings": "Obsidian Leggings",
-      "item.gratest_inventions.obsidian_pickaxe": "Obsidian Pickaxe",
       "block.gratest_inventions.platinum_ore": "Platinum Ore",
+      "item.gratest_inventions.obsidian_pickaxe": "Obsidian Pickaxe",
+      "item.gratest_inventions.obsidian_armor_leggings": "Obsidian Leggings",
       "item.gratest_inventions.dimension_breaker": "Dimension Breaker",
       "item.gratest_inventions.obsidian_sword": "Obsidian Sword",
       "block.gratest_inventions.basic_grinder": "Basic Grinder",
@@ -1424,6 +1532,7 @@
       "itemGroup.tabgratest_inventions": "Gratest Inventions",
       "item.gratest_inventions.obsidian_shard": "Obsidian Shard",
       "item.gratest_inventions.lead_ingot": "Lead Ingot",
+      "item.gratest_inventions.lead_nugget": "Lead Nugget",
       "item.gratest_inventions.iron_gear": "Iron Gear",
       "fluid.milk": "Milk",
       "block.gratest_inventions.support_beam_quatruple": "Support Beam",
@@ -1431,8 +1540,11 @@
       "block.gratest_inventions.support_beam_4": "Support Beam",
       "block.gratest_inventions.nether_builder": "Nether Builder",
       "item.gratest_inventions.iron_stick": "Iron Stick",
+      "item.gratest_inventions.platinum_nugget": "Platinum Nugget",
       "block.gratest_inventions.support_beam_2": "Support Beam",
       "block.gratest_inventions.zahnstange_sn": "Zahnstange",
+      "item.gratest_inventions.copper_nugget": "Copper Nugget",
+      "item.gratest_inventions.silver_nugget": "Silver Nugget",
       "item.gratest_inventions.copper_ingot": "Copper Ingot",
       "block.gratest_inventions.silver_ore": "Silver Ore",
       "block.gratest_inventions.light_cloud_block": "Light Cloud Block",
