@@ -247,14 +247,7 @@ public class BasicGrinderUpdateTickProcedure extends GratestInventionsModElement
 					return -1;
 				}
 			}.getValue(new BlockPos((int) x, (int) y, (int) z), "gear")) <= 0)) {
-				providetItem = (new Object() {
-					public String getValue(BlockPos pos, String tag) {
-						TileEntity tileEntity = world.getTileEntity(pos);
-						if (tileEntity != null)
-							return tileEntity.getTileData().getString(tag);
-						return "";
-					}
-				}.getValue(new BlockPos((int) x, (int) y, (int) z), "itemStack"));
+				providetItem = new ItemStack(Blocks.GRAVEL, (int) (1));
 				if (!world.getWorld().isRemote) {
 					BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
 					TileEntity _tileEntity = world.getTileEntity(_bp);
@@ -275,14 +268,7 @@ public class BasicGrinderUpdateTickProcedure extends GratestInventionsModElement
 					TileEntity _ent = world.getTileEntity(new BlockPos((int) x, (int) y, (int) z));
 					if (_ent != null) {
 						final int _sltid = (int) (1);
-						final ItemStack _setstack = new ItemStack(Blocks.("(new Object() {
-					public String getValue(BlockPos pos, String tag) {
-						TileEntity tileEntity = world.getTileEntity(pos);
-						if (tileEntity != null)
-							return tileEntity.getTileData().getString(tag);
-						return "";
-					}
-				}.getValue(new BlockPos((int) x, (int) y, (int) z), "itemStack"))"), (int) (1));
+						final ItemStack _setstack = new ItemStack(Blocks.GRAVEL, (int) (1));
 						_setstack.setCount((int) ((new Object() {
 							public int getAmount(BlockPos pos, int sltid) {
 								AtomicInteger _retval = new AtomicInteger(0);
