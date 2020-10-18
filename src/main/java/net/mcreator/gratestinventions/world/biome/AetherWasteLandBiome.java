@@ -60,7 +60,7 @@ public class AetherWasteLandBiome extends GratestInventionsModElements.ModElemen
 		@OnlyIn(Dist.CLIENT)
 		@Override
 		public int getSkyColor() {
-			return -10027060;
+			return -52;
 		}
 	}
 }
