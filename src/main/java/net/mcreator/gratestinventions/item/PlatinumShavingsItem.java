@@ -1,12 +1,19 @@
 
 package net.mcreator.gratestinventions.item;
 
+import net.minecraftforge.registries.ObjectHolder;
+
+import net.minecraft.item.ItemStack;
+import net.minecraft.item.Item;
+import net.minecraft.block.BlockState;
+
+import net.mcreator.gratestinventions.itemgroup.GratestInventionsItemGroup;
+import net.mcreator.gratestinventions.GratestInventionsModElements;
+
 @GratestInventionsModElements.ModElement.Tag
 public class PlatinumShavingsItem extends GratestInventionsModElements.ModElement {
-
 	@ObjectHolder("gratest_inventions:platinum_shavings")
 	public static final Item block = null;
-
 	public PlatinumShavingsItem(GratestInventionsModElements instance) {
 		super(instance, 113);
 	}
@@ -15,9 +22,7 @@ public class PlatinumShavingsItem extends GratestInventionsModElements.ModElemen
 	public void initElements() {
 		elements.items.add(() -> new ItemCustom());
 	}
-
 	public static class ItemCustom extends Item {
-
 		public ItemCustom() {
 			super(new Item.Properties().group(GratestInventionsItemGroup.tab).maxStackSize(64));
 			setRegistryName("platinum_shavings");
@@ -37,7 +42,5 @@ public class PlatinumShavingsItem extends GratestInventionsModElements.ModElemen
 		public float getDestroySpeed(ItemStack par1ItemStack, BlockState par2Block) {
 			return 1F;
 		}
-
 	}
-
 }
