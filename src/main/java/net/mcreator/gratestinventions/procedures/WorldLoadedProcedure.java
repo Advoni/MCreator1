@@ -28,7 +28,8 @@ public class WorldLoadedProcedure extends GratestInventionsModElements.ModElemen
 
 	public static void executeProcedure(Map<String, Object> dependencies) {
 		if (dependencies.get("world") == null) {
-			System.err.println("Failed to load dependency world for procedure WorldLoaded!");
+			if (!dependencies.containsKey("world"))
+				System.err.println("Failed to load dependency world for procedure WorldLoaded!");
 			return;
 		}
 		IWorld world = (IWorld) dependencies.get("world");

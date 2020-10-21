@@ -37,23 +37,28 @@ public class NetherPorterProcedure extends GratestInventionsModElements.ModEleme
 
 	public static void executeProcedure(Map<String, Object> dependencies) {
 		if (dependencies.get("entity") == null) {
-			System.err.println("Failed to load dependency entity for procedure NetherPorter!");
+			if (!dependencies.containsKey("entity"))
+				System.err.println("Failed to load dependency entity for procedure NetherPorter!");
 			return;
 		}
 		if (dependencies.get("x") == null) {
-			System.err.println("Failed to load dependency x for procedure NetherPorter!");
+			if (!dependencies.containsKey("x"))
+				System.err.println("Failed to load dependency x for procedure NetherPorter!");
 			return;
 		}
 		if (dependencies.get("y") == null) {
-			System.err.println("Failed to load dependency y for procedure NetherPorter!");
+			if (!dependencies.containsKey("y"))
+				System.err.println("Failed to load dependency y for procedure NetherPorter!");
 			return;
 		}
 		if (dependencies.get("z") == null) {
-			System.err.println("Failed to load dependency z for procedure NetherPorter!");
+			if (!dependencies.containsKey("z"))
+				System.err.println("Failed to load dependency z for procedure NetherPorter!");
 			return;
 		}
 		if (dependencies.get("world") == null) {
-			System.err.println("Failed to load dependency world for procedure NetherPorter!");
+			if (!dependencies.containsKey("world"))
+				System.err.println("Failed to load dependency world for procedure NetherPorter!");
 			return;
 		}
 		Entity entity = (Entity) dependencies.get("entity");

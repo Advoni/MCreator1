@@ -17,6 +17,9 @@
  */
 package net.mcreator.gratestinventions;
 
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+
 import net.minecraftforge.fml.network.simple.SimpleChannel;
 import net.minecraftforge.fml.network.NetworkRegistry;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
@@ -41,6 +44,7 @@ import java.util.function.Supplier;
 
 @Mod("gratest_inventions")
 public class GratestInventionsMod {
+	public static final Logger LOGGER = LogManager.getLogger(GratestInventionsMod.class);
 	private static final String PROTOCOL_VERSION = "1";
 	public static final SimpleChannel PACKET_HANDLER = NetworkRegistry.newSimpleChannel(
 			new ResourceLocation("gratest_inventions", "gratest_inventions"), () -> PROTOCOL_VERSION, PROTOCOL_VERSION::equals,

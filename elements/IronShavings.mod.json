@@ -1,11 +1,12 @@
 {
-  "_fv": 10,
+  "_fv": 12,
   "_type": "item",
   "definition": {
     "renderType": 0,
     "texture": "iron_shavings",
     "customModelName": "Normal",
     "name": "Iron Shavings",
+    "rarity": "COMMON",
     "creativeTab": {
       "value": "CUSTOM:GratestInventions"
     },

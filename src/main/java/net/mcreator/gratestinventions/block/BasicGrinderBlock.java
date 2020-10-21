@@ -127,6 +127,7 @@ public class BasicGrinderBlock extends GratestInventionsModElements.ModElement {
 
 		@Override
 		public BlockState getStateForPlacement(BlockItemUseContext context) {
+			;
 			return this.getDefaultState().with(FACING, context.getPlacementHorizontalFacing().getOpposite());
 		}
 
@@ -274,7 +275,7 @@ public class BasicGrinderBlock extends GratestInventionsModElements.ModElement {
 	}
 
 	public static class CustomTileEntity extends LockableLootTileEntity implements ISidedInventory {
-		private NonNullList<ItemStack> stacks = NonNullList.<ItemStack>withSize(2, ItemStack.EMPTY);
+		private NonNullList<ItemStack> stacks = NonNullList.<ItemStack>withSize(3, ItemStack.EMPTY);
 		protected CustomTileEntity() {
 			super(tileEntityType);
 		}
@@ -362,6 +363,8 @@ public class BasicGrinderBlock extends GratestInventionsModElements.ModElement {
 		public boolean isItemValidForSlot(int index, ItemStack stack) {
 			if (index == 1)
 				return false;
+			if (index == 2)
+				return false;
 			return true;
 		}
 
@@ -379,10 +382,12 @@ public class BasicGrinderBlock extends GratestInventionsModElements.ModElement {
 		public boolean canExtractItem(int index, ItemStack stack, Direction direction) {
 			if (index == 0)
 				return false;
+			if (index == 2)
+				return false;
 			return true;
 		}
 		private final LazyOptional<? extends IItemHandler>[] handlers = SidedInvWrapper.create(this, Direction.values());
-		private final EnergyStorage energyStorage = new EnergyStorage(2000, 200, 20, 0) {
+		private final EnergyStorage energyStorage = new EnergyStorage(20000, 200, 20, 0) {
 			@Override
 			public int receiveEnergy(int maxReceive, boolean simulate) {
 				int retval = super.receiveEnergy(maxReceive, simulate);

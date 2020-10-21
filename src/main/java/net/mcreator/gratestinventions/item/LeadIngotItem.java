@@ -3,6 +3,7 @@ package net.mcreator.gratestinventions.item;
 
 import net.minecraftforge.registries.ObjectHolder;
 
+import net.minecraft.item.Rarity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Item;
 import net.minecraft.block.BlockState;
@@ -24,7 +25,7 @@ public class LeadIngotItem extends GratestInventionsModElements.ModElement {
 	}
 	public static class ItemCustom extends Item {
 		public ItemCustom() {
-			super(new Item.Properties().group(GratestInventionsItemGroup.tab).maxStackSize(64));
+			super(new Item.Properties().group(GratestInventionsItemGroup.tab).maxStackSize(64).rarity(Rarity.COMMON));
 			setRegistryName("lead_ingot");
 		}
 

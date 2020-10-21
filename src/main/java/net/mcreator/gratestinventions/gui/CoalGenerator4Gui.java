@@ -347,14 +347,14 @@ public class CoalGenerator4Gui extends GratestInventionsModElements.ModElement {
 			int l = (this.height - this.ySize) / 2;
 			this.blit(k, l, 0, 0, this.xSize, this.ySize);
 			Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation("gratest_inventions:textures/battery.png"));
-			this.blit(this.guiLeft + 133, this.guiTop + 20, 0, 0, 256, 256);
+			this.blit(this.guiLeft + 133, this.guiTop + 20, 0, 0, 128, 128, 128, 128);
 			if (energyBar(currento,maxCurrent) != null)
 			{
 				Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation(energyBar(currento,maxCurrent)));
 			}
-			this.blit(this.guiLeft + 133, this.guiTop + 20, 0, 0, 256, 256);
+			this.blit(this.guiLeft + 133, this.guiTop + 20, 0, 0, 128, 128, 128, 128);
 			Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation(burn(fuel)));
-			this.blit(this.guiLeft + 79, this.guiTop + 47, 0, 0, 256, 256);
+			this.blit(this.guiLeft + 79, this.guiTop + 47, 0, 0, 128, 128, 128, 128);
 			Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation(redstoneSetting(redstone)));
 			this.blit(this.guiLeft + 29, this.guiTop + 59, 0, 0, 256, 256);
 		}
@@ -383,29 +383,29 @@ public class CoalGenerator4Gui extends GratestInventionsModElements.ModElement {
 					return 0;
 				}
 			}.getValue(new BlockPos((int) x, (int) y, (int) z), "fuel"))*10));
-			int energy = ((int)((new Object() {
+			int energy = ((int)(new Object() {
 				public double getValue(BlockPos pos, String tag) {
 					TileEntity tileEntity = world.getTileEntity(pos);
 					if (tileEntity != null)
 						return tileEntity.getTileData().getDouble(tag);
 					return 0;
 				}
-			}.getValue(new BlockPos((int) x, (int) y, (int) z), "energy"))*10));
+			}.getValue(new BlockPos((int) x, (int) y, (int) z), "energy")));
 			if (energy<100)
 			{
-				this.font.drawString( (energy/10) + "," + (energy%10) + "IE", 139, 6, -39424);
+				this.font.drawString( ((int)Math.floor(energy/10)) + "," + (energy%10) + "IE", 139, 6, -39424);
 			}
 			else if (energy<1000)
 			{
-				this.font.drawString( (energy/10) + "," + (energy%10) + "IE", 133, 6, -39424);
+				this.font.drawString( ((int)Math.floor(energy/10)) + "," + (energy%10) + "IE", 133, 6, -39424);
 			}
 			else if (energy<10000)
 			{
-				this.font.drawString( (energy/10) + "," + (energy%10) + "IE", 127, 6, -39424);
+				this.font.drawString( ((int)Math.floor(energy/10)) + "," + (energy%10) + "IE", 127, 6, -39424);
 			}
 			else
 			{
-				this.font.drawString( (energy/10) + "," + (energy%10) + "IE", 121, 6, -39424);
+				this.font.drawString( ((int)Math.floor(energy/10)) + "," + (energy%10) + "IE", 121, 6, -39424);
 			}
 			if (fuelo<100)
 			{
@@ -669,7 +669,7 @@ public class CoalGenerator4Gui extends GratestInventionsModElements.ModElement {
 			}
 			else
 			{
-				return "gratest_inventions:textures/battery" + q + ".png";
+				return "gratest_inventions:textures/battery_" + q + ".png";
 			}
 			/*
 			else if (p == 1)

@@ -17,19 +17,23 @@ public class BasicGrinderBlockAddedProcedure extends GratestInventionsModElement
 
 	public static void executeProcedure(Map<String, Object> dependencies) {
 		if (dependencies.get("x") == null) {
-			System.err.println("Failed to load dependency x for procedure BasicGrinderBlockAdded!");
+			if (!dependencies.containsKey("x"))
+				System.err.println("Failed to load dependency x for procedure BasicGrinderBlockAdded!");
 			return;
 		}
 		if (dependencies.get("y") == null) {
-			System.err.println("Failed to load dependency y for procedure BasicGrinderBlockAdded!");
+			if (!dependencies.containsKey("y"))
+				System.err.println("Failed to load dependency y for procedure BasicGrinderBlockAdded!");
 			return;
 		}
 		if (dependencies.get("z") == null) {
-			System.err.println("Failed to load dependency z for procedure BasicGrinderBlockAdded!");
+			if (!dependencies.containsKey("z"))
+				System.err.println("Failed to load dependency z for procedure BasicGrinderBlockAdded!");
 			return;
 		}
 		if (dependencies.get("world") == null) {
-			System.err.println("Failed to load dependency world for procedure BasicGrinderBlockAdded!");
+			if (!dependencies.containsKey("world"))
+				System.err.println("Failed to load dependency world for procedure BasicGrinderBlockAdded!");
 			return;
 		}
 		double x = dependencies.get("x") instanceof Integer ? (int) dependencies.get("x") : (double) dependencies.get("x");
@@ -41,7 +45,7 @@ public class BasicGrinderBlockAddedProcedure extends GratestInventionsModElement
 			TileEntity _tileEntity = world.getTileEntity(_bp);
 			BlockState _bs = world.getBlockState(_bp);
 			if (_tileEntity != null)
-				_tileEntity.getTileData().putDouble("capacity", 2000);
+				_tileEntity.getTileData().putDouble("capacity", 20000);
 			world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
 		}
 		if (!world.getWorld().isRemote) {
@@ -50,6 +54,22 @@ public class BasicGrinderBlockAddedProcedure extends GratestInventionsModElement
 			BlockState _bs = world.getBlockState(_bp);
 			if (_tileEntity != null)
 				_tileEntity.getTileData().putDouble("redstone", 0);
+			world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
+		}
+		if (!world.getWorld().isRemote) {
+			BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
+			TileEntity _tileEntity = world.getTileEntity(_bp);
+			BlockState _bs = world.getBlockState(_bp);
+			if (_tileEntity != null)
+				_tileEntity.getTileData().putDouble("consumbtion", 8);
+			world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
+		}
+		if (!world.getWorld().isRemote) {
+			BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
+			TileEntity _tileEntity = world.getTileEntity(_bp);
+			BlockState _bs = world.getBlockState(_bp);
+			if (_tileEntity != null)
+				_tileEntity.getTileData().putDouble("charging", 20);
 			world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
 		}
 	}

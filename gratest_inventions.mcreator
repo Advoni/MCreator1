@@ -1631,6 +1631,53 @@
       "locked_code": false,
       "ids": {},
       "registry_name": "gold_shavings"
+    },
+    {
+      "name": "CoalGenerator5",
+      "type": "gui",
+      "sortid": 115,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "coal_generator_5"
+    },
+    {
+      "name": "EnergyExtraction",
+      "type": "procedure",
+      "sortid": 116,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "energy_extraction",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Generator",
+      "type": "tag",
+      "sortid": 117,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "generator"
     }
   ],
   "variable_elements": [
@@ -1660,13 +1707,14 @@
       "item.gratest_inventions.obsidian_shard": "Obsidian Shard",
       "item.gratest_inventions.iron_gear": "Iron Gear",
       "block.gratest_inventions.support_beam_3": "Support Beam",
-      "item.gratest_inventions.platinum_nugget": "Platinum Nugget",
-      "item.gratest_inventions.iron_stick": "Iron Stick",
       "block.gratest_inventions.support_beam_4": "Support Beam",
+      "item.gratest_inventions.iron_stick": "Iron Stick",
+      "item.gratest_inventions.platinum_nugget": "Platinum Nugget",
       "block.gratest_inventions.support_beam_2": "Support Beam",
       "item.gratest_inventions.lead_shavings": "Lead Shavings",
       "item.gratest_inventions.copper_nugget": "Copper Nugget",
       "block.gratest_inventions.silver_ore": "Silver Ore",
+      "biome.gratest_inventions.aether_fall_land": "Aether Fall Land",
       "block.gratest_inventions.support_beam_1b": "Support Beam",
       "block.gratest_inventions.dimensional_fabric": "Dimensional Fabric",
       "item.gratest_inventions.aether": "Aether Portal Igniter",
@@ -1683,6 +1731,7 @@
       "block.gratest_inventions.support_beam_triple": "Support Beam",
       "block.gratest_inventions.lead_ore": "Lead Ore",
       "itemGroup.tabgratest_inventions": "Gratest Inventions",
+      "biome.gratest_inventions.aether_waste_land": "Aether Waste Land",
       "item.gratest_inventions.lead_ingot": "Lead Ingot",
       "item.gratest_inventions.lead_nugget": "Lead Nugget",
       "fluid.milk": "Milk",
@@ -1716,5 +1765,5 @@
     "modElementsPackage": "net.mcreator.gratestinventions",
     "lockBaseModFiles": false
   },
-  "mcreatorVersion": 202000432115
+  "mcreatorVersion": 202000539514
 }

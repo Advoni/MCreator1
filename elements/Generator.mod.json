@@ -1,0 +1,16 @@
+{
+  "_fv": 12,
+  "_type": "tag",
+  "definition": {
+    "type": "Blocks",
+    "items": [],
+    "blocks": [
+      {
+        "value": "CUSTOM:CoalGenerator"
+      }
+    ],
+    "functions": [],
+    "name": "generator",
+    "namespace": "mod"
+  }
+}

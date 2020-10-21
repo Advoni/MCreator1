@@ -1,10 +1,12 @@
 {
-  "_fv": 10,
+  "_fv": 12,
   "_type": "gui",
   "definition": {
     "type": 1,
-    "width": 352,
-    "height": 332,
+    "width": 176,
+    "height": 166,
+    "inventoryOffsetX": 0,
+    "inventoryOffsetY": 0,
     "renderBgLayer": true,
     "doesPauseGame": false,
     "components": [
@@ -18,17 +20,18 @@
           "disableStackInteraction": false,
           "dropItemsWhenNotBound": true,
           "name": "Slot #0",
-          "x": 408,
-          "y": 96
+          "x": 204,
+          "y": 48
         }
       },
       {
         "type": "image",
         "data": {
           "image": "battery.png",
+          "use1Xscale": false,
           "name": "battery.png",
-          "x": 516,
-          "y": 114
+          "x": 258,
+          "y": 57
         }
       },
       {
@@ -40,8 +43,8 @@
             "falpha": 0.0
           },
           "name": "<BNBT:number:Energy>",
-          "x": 516,
-          "y": 86
+          "x": 258,
+          "y": 43
         }
       },
       {
@@ -53,8 +56,8 @@
             "falpha": 0.0
           },
           "name": "<BNBT:number:fuel>",
-          "x": 264,
-          "y": 150
+          "x": 132,
+          "y": 75
         }
       },
       {
@@ -66,8 +69,8 @@
             "falpha": 0.0
           },
           "name": "Basic Grinder",
-          "x": 264,
-          "y": 85
+          "x": 132,
+          "y": 43
         }
       },
       {
@@ -79,8 +82,8 @@
             "falpha": 0.0
           },
           "name": "Use: 0.5IE/T",
-          "x": 264,
-          "y": 114
+          "x": 132,
+          "y": 57
         }
       },
       {
@@ -90,29 +93,31 @@
           "onClick": {
             "name": "CoalGeneratorButtonPushed"
           },
-          "width": 40,
-          "height": 40,
+          "width": 20,
+          "height": 20,
           "name": "  ",
-          "x": 264,
-          "y": 186
+          "x": 132,
+          "y": 93
         }
       },
       {
         "type": "image",
         "data": {
           "image": "gear1.png",
+          "use1Xscale": false,
           "name": "gear1.png",
-          "x": 363,
-          "y": 126
+          "x": 182,
+          "y": 63
         }
       },
       {
         "type": "image",
         "data": {
           "image": "gear1.png",
+          "use1Xscale": false,
           "name": "gear1.png",
-          "x": 426,
-          "y": 132
+          "x": 213,
+          "y": 66
         }
       },
       {
@@ -122,8 +127,8 @@
           "disableStackInteraction": false,
           "dropItemsWhenNotBound": true,
           "name": "Slot #1",
-          "x": 408,
-          "y": 186
+          "x": 204,
+          "y": 93
         }
       }
     ]

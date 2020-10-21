@@ -23,7 +23,8 @@ public class TickManagerProcedure extends GratestInventionsModElements.ModElemen
 
 	public static void executeProcedure(Map<String, Object> dependencies) {
 		if (dependencies.get("world") == null) {
-			System.err.println("Failed to load dependency world for procedure TickManager!");
+			if (!dependencies.containsKey("world"))
+				System.err.println("Failed to load dependency world for procedure TickManager!");
 			return;
 		}
 		IWorld world = (IWorld) dependencies.get("world");

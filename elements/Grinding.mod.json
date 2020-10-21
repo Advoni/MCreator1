@@ -1,5 +1,5 @@
 {
-  "_fv": 10,
+  "_fv": 12,
   "_type": "tag",
   "definition": {
     "type": "Items",
@@ -8,13 +8,43 @@
         "value": "Blocks.COBBLESTONE"
       },
       {
-        "value": "Blocks.STONE#0"
-      },
-      {
         "value": "Blocks.GRAVEL"
       },
       {
-        "value": "Blocks.ENDER_CHEST"
+        "value": "CUSTOM:CopperOre"
+      },
+      {
+        "value": "CUSTOM:SilverOre"
+      },
+      {
+        "value": "CUSTOM:PlatinumOre"
+      },
+      {
+        "value": "CUSTOM:LeadOre"
+      },
+      {
+        "value": "Blocks.IRON_ORE"
+      },
+      {
+        "value": "Blocks.GOLD_ORE"
+      },
+      {
+        "value": "CUSTOM:CopperIngot"
+      },
+      {
+        "value": "CUSTOM:PlatinumIngot"
+      },
+      {
+        "value": "CUSTOM:SilverIngot"
+      },
+      {
+        "value": "CUSTOM:LeadIngot"
+      },
+      {
+        "value": "Items.IRON_INGOT"
+      },
+      {
+        "value": "Items.GOLD_INGOT"
       }
     ],
     "blocks": [],

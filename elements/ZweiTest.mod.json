@@ -1,10 +1,12 @@
 {
-  "_fv": 10,
+  "_fv": 12,
   "_type": "gui",
   "definition": {
     "type": 1,
-    "width": 352,
-    "height": 332,
+    "width": 176,
+    "height": 166,
+    "inventoryOffsetX": 0,
+    "inventoryOffsetY": 0,
     "renderBgLayer": true,
     "doesPauseGame": false,
     "components": [
@@ -18,17 +20,18 @@
           "disableStackInteraction": false,
           "dropItemsWhenNotBound": true,
           "name": "Slot #0",
-          "x": 408,
-          "y": 114
+          "x": 204,
+          "y": 57
         }
       },
       {
         "type": "image",
         "data": {
           "image": "battery.png",
+          "use1Xscale": false,
           "name": "battery.png",
-          "x": 516,
-          "y": 114
+          "x": 258,
+          "y": 57
         }
       },
       {
@@ -40,8 +43,8 @@
             "falpha": 0.0
           },
           "name": "<BNBT:number:test>",
-          "x": 342,
-          "y": 83
+          "x": 171,
+          "y": 42
         }
       },
       {
@@ -51,20 +54,21 @@
           "onClick": {
             "name": "CoalGeneratorBlockAdded"
           },
-          "width": 40,
-          "height": 40,
+          "width": 20,
+          "height": 20,
           "name": "  ",
-          "x": 264,
-          "y": 186
+          "x": 132,
+          "y": 93
         }
       },
       {
         "type": "image",
         "data": {
           "image": "white.png",
+          "use1Xscale": false,
           "name": "white.png",
-          "x": 308,
-          "y": 191
+          "x": 154,
+          "y": 96
         }
       }
     ]

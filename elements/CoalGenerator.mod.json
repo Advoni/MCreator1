@@ -1,5 +1,5 @@
 {
-  "_fv": 10,
+  "_fv": 12,
   "_type": "block",
   "definition": {
     "texture": "basicmachinebottom",
@@ -27,6 +27,7 @@
     "hardness": 3.5,
     "resistance": 3.5,
     "hasGravity": false,
+    "isWaterloggable": false,
     "creativeTab": {
       "value": "CUSTOM:GratestInventions"
     },
@@ -35,6 +36,7 @@
       "value": ""
     },
     "dropAmount": 1,
+    "useLootTableForDrops": false,
     "isBeaconBase": false,
     "enchantPowerBonus": 0.0,
     "plantsGrowOn": false,
@@ -84,8 +86,8 @@
     ],
     "hasEnergyStorage": true,
     "energyInitial": 0,
-    "energyCapacity": 5000,
-    "energyMaxReceive": 1,
+    "energyCapacity": 50000,
+    "energyMaxReceive": 10,
     "energyMaxExtract": 10,
     "isFluidTank": false,
     "fluidCapacity": 8000,

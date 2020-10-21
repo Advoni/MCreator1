@@ -1,5 +1,5 @@
 {
-  "_fv": 10,
+  "_fv": 12,
   "_type": "block",
   "definition": {
     "texture": "basicmachinebottom",
@@ -27,6 +27,7 @@
     "hardness": 3.5,
     "resistance": 3.5,
     "hasGravity": false,
+    "isWaterloggable": false,
     "creativeTab": {
       "value": "CUSTOM:GratestInventions"
     },
@@ -35,6 +36,7 @@
       "value": ""
     },
     "dropAmount": 1,
+    "useLootTableForDrops": false,
     "isBeaconBase": false,
     "enchantPowerBonus": 0.0,
     "plantsGrowOn": false,
@@ -74,19 +76,21 @@
     "hasInventory": true,
     "guiBoundTo": "BasicGrinderGui",
     "openGUIOnRightClick": true,
-    "inventorySize": 2,
+    "inventorySize": 3,
     "inventoryStackSize": 64,
     "inventoryDropWhenDestroyed": true,
     "inventoryComparatorPower": true,
     "inventoryOutSlotIDs": [
-      1
+      1,
+      2
     ],
     "inventoryInSlotIDs": [
-      0
+      0,
+      2
     ],
     "hasEnergyStorage": true,
     "energyInitial": 0,
-    "energyCapacity": 2000,
+    "energyCapacity": 20000,
     "energyMaxReceive": 200,
     "energyMaxExtract": 20,
     "isFluidTank": false,

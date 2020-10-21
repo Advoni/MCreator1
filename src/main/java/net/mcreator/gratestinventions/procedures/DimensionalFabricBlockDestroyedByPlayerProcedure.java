@@ -25,23 +25,28 @@ public class DimensionalFabricBlockDestroyedByPlayerProcedure extends GratestInv
 
 	public static void executeProcedure(Map<String, Object> dependencies) {
 		if (dependencies.get("entity") == null) {
-			System.err.println("Failed to load dependency entity for procedure DimensionalFabricBlockDestroyedByPlayer!");
+			if (!dependencies.containsKey("entity"))
+				System.err.println("Failed to load dependency entity for procedure DimensionalFabricBlockDestroyedByPlayer!");
 			return;
 		}
 		if (dependencies.get("x") == null) {
-			System.err.println("Failed to load dependency x for procedure DimensionalFabricBlockDestroyedByPlayer!");
+			if (!dependencies.containsKey("x"))
+				System.err.println("Failed to load dependency x for procedure DimensionalFabricBlockDestroyedByPlayer!");
 			return;
 		}
 		if (dependencies.get("y") == null) {
-			System.err.println("Failed to load dependency y for procedure DimensionalFabricBlockDestroyedByPlayer!");
+			if (!dependencies.containsKey("y"))
+				System.err.println("Failed to load dependency y for procedure DimensionalFabricBlockDestroyedByPlayer!");
 			return;
 		}
 		if (dependencies.get("z") == null) {
-			System.err.println("Failed to load dependency z for procedure DimensionalFabricBlockDestroyedByPlayer!");
+			if (!dependencies.containsKey("z"))
+				System.err.println("Failed to load dependency z for procedure DimensionalFabricBlockDestroyedByPlayer!");
 			return;
 		}
 		if (dependencies.get("world") == null) {
-			System.err.println("Failed to load dependency world for procedure DimensionalFabricBlockDestroyedByPlayer!");
+			if (!dependencies.containsKey("world"))
+				System.err.println("Failed to load dependency world for procedure DimensionalFabricBlockDestroyedByPlayer!");
 			return;
 		}
 		Entity entity = (Entity) dependencies.get("entity");

@@ -309,15 +309,15 @@ public class ZweiTestGui extends GratestInventionsModElements.ModElement {
 
 		@Override
 		protected void drawGuiContainerBackgroundLayer(float par1, int par2, int par3) {
-			GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
+			GL11.glColor4f(1, 1, 1, 1);
 			Minecraft.getInstance().getTextureManager().bindTexture(texture);
 			int k = (this.width - this.xSize) / 2;
 			int l = (this.height - this.ySize) / 2;
-			this.blit(k, l, 0, 0, this.xSize, this.ySize);
+			this.blit(k, l, 0, 0, this.xSize, this.ySize, this.xSize, this.ySize);
 			Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation("gratest_inventions:textures/battery.png"));
-			this.blit(this.guiLeft + 133, this.guiTop + 20, 0, 0, 256, 256);
+			this.blit(this.guiLeft + 132, this.guiTop + 20, 0, 0, 256, 256, 256, 256);
 			Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation("gratest_inventions:textures/white.png"));
-			this.blit(this.guiLeft + 29, this.guiTop + 59, 0, 0, 256, 256);
+			this.blit(this.guiLeft + 28, this.guiTop + 59, 0, 0, 256, 256, 256, 256);
 		}
 
 		@Override
@@ -343,7 +343,7 @@ public class ZweiTestGui extends GratestInventionsModElements.ModElement {
 						return tileEntity.getTileData().getDouble(tag);
 					return 0;
 				}
-			}.getValue(new BlockPos((int) x, (int) y, (int) z), "test")) + "", 46, 5, -6724096);
+			}.getValue(new BlockPos((int) x, (int) y, (int) z), "test")) + "", 45, 5, -6724096);
 		}
 
 		@Override
@@ -356,7 +356,7 @@ public class ZweiTestGui extends GratestInventionsModElements.ModElement {
 		public void init(Minecraft minecraft, int width, int height) {
 			super.init(minecraft, width, height);
 			minecraft.keyboardListener.enableRepeatEvents(true);
-			this.addButton(new Button(this.guiLeft + 7, this.guiTop + 56, 20, 20, "  ", e -> {
+			this.addButton(new Button(this.guiLeft + 6, this.guiTop + 56, 20, 20, "  ", e -> {
 				GratestInventionsMod.PACKET_HANDLER.sendToServer(new ButtonPressedMessage(0, x, y, z));
 				handleButtonAction(entity, 0, x, y, z);
 			}));

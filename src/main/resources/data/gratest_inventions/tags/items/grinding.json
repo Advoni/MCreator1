@@ -2,8 +2,18 @@
   "replace": false,
   "values": [
     "minecraft:cobblestone",
-    "minecraft:stone",
     "minecraft:gravel",
-    "minecraft:ender_chest"
+    "gratest_inventions:copper_ore",
+    "gratest_inventions:silver_ore",
+    "gratest_inventions:platinum_ore",
+    "gratest_inventions:lead_ore",
+    "minecraft:iron_ore",
+    "minecraft:gold_ore",
+    "gratest_inventions:copper_ingot",
+    "gratest_inventions:platinum_ingot",
+    "gratest_inventions:silver_ingot",
+    "gratest_inventions:lead_ingot",
+    "minecraft:iron_ingot",
+    "minecraft:gold_ingot"
   ]
 }

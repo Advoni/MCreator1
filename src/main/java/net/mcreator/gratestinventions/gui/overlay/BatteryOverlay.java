@@ -51,7 +51,7 @@ public class BatteryOverlay extends GratestInventionsModElements.ModElement {
 				RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
 				RenderSystem.disableAlphaTest();
 				Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation("gratest_inventions:textures/battery1.png"));
-				Minecraft.getInstance().ingameGUI.blit(posX + 45, posY + -63, 0, 0, 256, 256);
+				Minecraft.getInstance().ingameGUI.blit(posX + 45, posY + -63, 0, 0, 256, 256, 256, 256);
 				RenderSystem.depthMask(true);
 				RenderSystem.enableDepthTest();
 				RenderSystem.enableAlphaTest();

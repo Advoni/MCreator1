@@ -1,5 +1,5 @@
 {
-  "_fv": 10,
+  "_fv": 12,
   "_type": "overlay",
   "definition": {
     "priority": "HIGHEST",
@@ -8,9 +8,10 @@
         "type": "image",
         "data": {
           "image": "battery1.png",
+          "use1Xscale": false,
           "name": "battery1.png",
-          "x": 516,
-          "y": 114
+          "x": 258,
+          "y": 57
         }
       }
     ],

@@ -26,19 +26,23 @@ public class CoalGeneratorTickProcedure extends GratestInventionsModElements.Mod
 
 	public static void executeProcedure(Map<String, Object> dependencies) {
 		if (dependencies.get("x") == null) {
-			System.err.println("Failed to load dependency x for procedure CoalGeneratorTick!");
+			if (!dependencies.containsKey("x"))
+				System.err.println("Failed to load dependency x for procedure CoalGeneratorTick!");
 			return;
 		}
 		if (dependencies.get("y") == null) {
-			System.err.println("Failed to load dependency y for procedure CoalGeneratorTick!");
+			if (!dependencies.containsKey("y"))
+				System.err.println("Failed to load dependency y for procedure CoalGeneratorTick!");
 			return;
 		}
 		if (dependencies.get("z") == null) {
-			System.err.println("Failed to load dependency z for procedure CoalGeneratorTick!");
+			if (!dependencies.containsKey("z"))
+				System.err.println("Failed to load dependency z for procedure CoalGeneratorTick!");
 			return;
 		}
 		if (dependencies.get("world") == null) {
-			System.err.println("Failed to load dependency world for procedure CoalGeneratorTick!");
+			if (!dependencies.containsKey("world"))
+				System.err.println("Failed to load dependency world for procedure CoalGeneratorTick!");
 			return;
 		}
 		double x = dependencies.get("x") instanceof Integer ? (int) dependencies.get("x") : (double) dependencies.get("x");
@@ -116,7 +120,7 @@ public class CoalGeneratorTickProcedure extends GratestInventionsModElements.Mod
 					_ent.getCapability(CapabilityEnergy.ENERGY, null).ifPresent(capability -> _retval.set(capability.receiveEnergy(_amount, true)));
 				return _retval.get();
 			}
-		}.receiveEnergySimulate(new BlockPos((int) x, (int) y, (int) z), (int) 1)) == 1)) && ((on) == (true)))) {
+		}.receiveEnergySimulate(new BlockPos((int) x, (int) y, (int) z), (int) 10)) == 10)) && ((on) == (true)))) {
 			if (!world.getWorld().isRemote) {
 				BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
 				TileEntity _tileEntity = world.getTileEntity(_bp);
@@ -224,10 +228,10 @@ public class CoalGeneratorTickProcedure extends GratestInventionsModElements.Mod
 								.ifPresent(capability -> _retval.set(capability.receiveEnergy(_amount, true)));
 					return _retval.get();
 				}
-			}.receiveEnergySimulate(new BlockPos((int) x, (int) y, (int) z), (int) 1)) == 1)) {
+			}.receiveEnergySimulate(new BlockPos((int) x, (int) y, (int) z), (int) 10)) == 10)) {
 				{
 					TileEntity _ent = world.getTileEntity(new BlockPos((int) x, (int) y, (int) z));
-					int _amount = (int) 1;
+					int _amount = (int) 10;
 					if (_ent != null)
 						_ent.getCapability(CapabilityEnergy.ENERGY, null).ifPresent(capability -> capability.receiveEnergy(_amount, false));
 				}
