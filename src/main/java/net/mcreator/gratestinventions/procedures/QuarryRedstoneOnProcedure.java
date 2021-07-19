@@ -8,6 +8,7 @@ import net.minecraft.block.BlockState;
 import net.minecraft.block.Block;
 
 import net.mcreator.gratestinventions.GratestInventionsModElements;
+import net.mcreator.gratestinventions.GratestInventionsMod;
 
 import java.util.Map;
 
@@ -20,22 +21,22 @@ public class QuarryRedstoneOnProcedure extends GratestInventionsModElements.ModE
 	public static void executeProcedure(Map<String, Object> dependencies) {
 		if (dependencies.get("x") == null) {
 			if (!dependencies.containsKey("x"))
-				System.err.println("Failed to load dependency x for procedure QuarryRedstoneOn!");
+				GratestInventionsMod.LOGGER.warn("Failed to load dependency x for procedure QuarryRedstoneOn!");
 			return;
 		}
 		if (dependencies.get("y") == null) {
 			if (!dependencies.containsKey("y"))
-				System.err.println("Failed to load dependency y for procedure QuarryRedstoneOn!");
+				GratestInventionsMod.LOGGER.warn("Failed to load dependency y for procedure QuarryRedstoneOn!");
 			return;
 		}
 		if (dependencies.get("z") == null) {
 			if (!dependencies.containsKey("z"))
-				System.err.println("Failed to load dependency z for procedure QuarryRedstoneOn!");
+				GratestInventionsMod.LOGGER.warn("Failed to load dependency z for procedure QuarryRedstoneOn!");
 			return;
 		}
 		if (dependencies.get("world") == null) {
 			if (!dependencies.containsKey("world"))
-				System.err.println("Failed to load dependency world for procedure QuarryRedstoneOn!");
+				GratestInventionsMod.LOGGER.warn("Failed to load dependency world for procedure QuarryRedstoneOn!");
 			return;
 		}
 		double x = dependencies.get("x") instanceof Integer ? (int) dependencies.get("x") : (double) dependencies.get("x");
@@ -47,37 +48,37 @@ public class QuarryRedstoneOnProcedure extends GratestInventionsModElements.ModE
 		double Z = 0;
 		double scan = 0;
 		X = (double) (x + ((new Object() {
-			public double getValue(BlockPos pos, String tag) {
+			public double getValue(IWorld world, BlockPos pos, String tag) {
 				TileEntity tileEntity = world.getTileEntity(pos);
 				if (tileEntity != null)
 					return tileEntity.getTileData().getDouble(tag);
 				return -1;
 			}
-		}.getValue(new BlockPos((int) x, (int) y, (int) z), "dX")) + 1));
+		}.getValue(world, new BlockPos((int) x, (int) y, (int) z), "dX")) + 1));
 		Y = (double) (new Object() {
-			public double getValue(BlockPos pos, String tag) {
+			public double getValue(IWorld world, BlockPos pos, String tag) {
 				TileEntity tileEntity = world.getTileEntity(pos);
 				if (tileEntity != null)
 					return tileEntity.getTileData().getDouble(tag);
 				return -1;
 			}
-		}.getValue(new BlockPos((int) x, (int) y, (int) z), "dY"));
+		}.getValue(world, new BlockPos((int) x, (int) y, (int) z), "dY"));
 		Z = (double) (z + ((new Object() {
-			public double getValue(BlockPos pos, String tag) {
+			public double getValue(IWorld world, BlockPos pos, String tag) {
 				TileEntity tileEntity = world.getTileEntity(pos);
 				if (tileEntity != null)
 					return tileEntity.getTileData().getDouble(tag);
 				return -1;
 			}
-		}.getValue(new BlockPos((int) x, (int) y, (int) z), "dZ")) + 1));
+		}.getValue(world, new BlockPos((int) x, (int) y, (int) z), "dZ")) + 1));
 		if (((new Object() {
-			public double getValue(BlockPos pos, String tag) {
+			public double getValue(IWorld world, BlockPos pos, String tag) {
 				TileEntity tileEntity = world.getTileEntity(pos);
 				if (tileEntity != null)
 					return tileEntity.getTileData().getDouble(tag);
 				return -1;
 			}
-		}.getValue(new BlockPos((int) x, (int) y, (int) z), "dX")) > 9)) {
+		}.getValue(world, new BlockPos((int) x, (int) y, (int) z), "dX")) > 9)) {
 			X = (double) (x + 1);
 			if (!world.getWorld().isRemote) {
 				BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
@@ -88,13 +89,13 @@ public class QuarryRedstoneOnProcedure extends GratestInventionsModElements.ModE
 				world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
 			}
 			if (((new Object() {
-				public double getValue(BlockPos pos, String tag) {
+				public double getValue(IWorld world, BlockPos pos, String tag) {
 					TileEntity tileEntity = world.getTileEntity(pos);
 					if (tileEntity != null)
 						return tileEntity.getTileData().getDouble(tag);
 					return -1;
 				}
-			}.getValue(new BlockPos((int) x, (int) y, (int) z), "dZ")) > 8)) {
+			}.getValue(world, new BlockPos((int) x, (int) y, (int) z), "dZ")) > 8)) {
 				Z = (double) (z + 1);
 				if (!world.getWorld().isRemote) {
 					BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
@@ -105,13 +106,13 @@ public class QuarryRedstoneOnProcedure extends GratestInventionsModElements.ModE
 					world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
 				}
 				if (((new Object() {
-					public double getValue(BlockPos pos, String tag) {
+					public double getValue(IWorld world, BlockPos pos, String tag) {
 						TileEntity tileEntity = world.getTileEntity(pos);
 						if (tileEntity != null)
 							return tileEntity.getTileData().getDouble(tag);
 						return -1;
 					}
-				}.getValue(new BlockPos((int) x, (int) y, (int) z), "dY")) == 0)) {
+				}.getValue(world, new BlockPos((int) x, (int) y, (int) z), "dY")) == 0)) {
 					world.setBlockState(new BlockPos((int) x, (int) y, (int) z), Blocks.AIR.getDefaultState(), 3);
 				} else {
 					Y = (double) ((Y) - 1);
@@ -121,13 +122,13 @@ public class QuarryRedstoneOnProcedure extends GratestInventionsModElements.ModE
 						BlockState _bs = world.getBlockState(_bp);
 						if (_tileEntity != null)
 							_tileEntity.getTileData().putDouble("dY", ((new Object() {
-								public double getValue(BlockPos pos, String tag) {
+								public double getValue(IWorld world, BlockPos pos, String tag) {
 									TileEntity tileEntity = world.getTileEntity(pos);
 									if (tileEntity != null)
 										return tileEntity.getTileData().getDouble(tag);
 									return -1;
 								}
-							}.getValue(new BlockPos((int) x, (int) y, (int) z), "dY")) - 1));
+							}.getValue(world, new BlockPos((int) x, (int) y, (int) z), "dY")) - 1));
 						world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
 					}
 				}
@@ -139,13 +140,13 @@ public class QuarryRedstoneOnProcedure extends GratestInventionsModElements.ModE
 					BlockState _bs = world.getBlockState(_bp);
 					if (_tileEntity != null)
 						_tileEntity.getTileData().putDouble("dZ", ((new Object() {
-							public double getValue(BlockPos pos, String tag) {
+							public double getValue(IWorld world, BlockPos pos, String tag) {
 								TileEntity tileEntity = world.getTileEntity(pos);
 								if (tileEntity != null)
 									return tileEntity.getTileData().getDouble(tag);
 								return -1;
 							}
-						}.getValue(new BlockPos((int) x, (int) y, (int) z), "dZ")) + 1));
+						}.getValue(world, new BlockPos((int) x, (int) y, (int) z), "dZ")) + 1));
 					world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
 				}
 			}
@@ -159,13 +160,13 @@ public class QuarryRedstoneOnProcedure extends GratestInventionsModElements.ModE
 					BlockState _bs = world.getBlockState(_bp);
 					if (_tileEntity != null)
 						_tileEntity.getTileData().putDouble("dX", ((new Object() {
-							public double getValue(BlockPos pos, String tag) {
+							public double getValue(IWorld world, BlockPos pos, String tag) {
 								TileEntity tileEntity = world.getTileEntity(pos);
 								if (tileEntity != null)
 									return tileEntity.getTileData().getDouble(tag);
 								return -1;
 							}
-						}.getValue(new BlockPos((int) x, (int) y, (int) z), "dX")) + 1));
+						}.getValue(world, new BlockPos((int) x, (int) y, (int) z), "dX")) + 1));
 					world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
 				}
 			}

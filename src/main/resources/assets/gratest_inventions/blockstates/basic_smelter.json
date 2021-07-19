@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "gratest_inventions:block/basic_smelter"
+    },
+    "facing=east": {
+      "model": "gratest_inventions:block/basic_smelter",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "gratest_inventions:block/basic_smelter",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "gratest_inventions:block/basic_smelter",
+      "y": 270
+    }
+  }
+}

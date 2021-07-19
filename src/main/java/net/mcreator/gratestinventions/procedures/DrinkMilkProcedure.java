@@ -22,6 +22,7 @@ import net.minecraft.command.ICommandSource;
 import net.minecraft.command.CommandSource;
 
 import net.mcreator.gratestinventions.GratestInventionsModElements;
+import net.mcreator.gratestinventions.GratestInventionsMod;
 
 import java.util.Map;
 import java.util.HashMap;
@@ -36,12 +37,12 @@ public class DrinkMilkProcedure extends GratestInventionsModElements.ModElement 
 	public static void executeProcedure(Map<String, Object> dependencies) {
 		if (dependencies.get("entity") == null) {
 			if (!dependencies.containsKey("entity"))
-				System.err.println("Failed to load dependency entity for procedure DrinkMilk!");
+				GratestInventionsMod.LOGGER.warn("Failed to load dependency entity for procedure DrinkMilk!");
 			return;
 		}
 		if (dependencies.get("world") == null) {
 			if (!dependencies.containsKey("world"))
-				System.err.println("Failed to load dependency world for procedure DrinkMilk!");
+				GratestInventionsMod.LOGGER.warn("Failed to load dependency world for procedure DrinkMilk!");
 			return;
 		}
 		Entity entity = (Entity) dependencies.get("entity");
@@ -71,9 +72,10 @@ public class DrinkMilkProcedure extends GratestInventionsModElements.ModElement 
 				return 0;
 			}
 		}.getScore("milk")) == 1)) {
-			if (entity instanceof PlayerEntity)
-				((PlayerEntity) entity).inventory.clearMatchingItems(p -> new ItemStack(Items.MILK_BUCKET, (int) (1)).getItem() == p.getItem(),
-						(int) 1);
+			if (entity instanceof PlayerEntity) {
+				ItemStack _stktoremove = new ItemStack(Items.MILK_BUCKET, (int) (1));
+				((PlayerEntity) entity).inventory.clearMatchingItems(p -> _stktoremove.getItem() == p.getItem(), (int) 1);
+			}
 			if (!world.getWorld().isRemote && world.getWorld().getServer() != null) {
 				world.getWorld().getServer().getCommandManager().handleCommand(
 						new CommandSource(ICommandSource.DUMMY, new Vec3d(0, 0, 0), Vec2f.ZERO, (ServerWorld) world, 4, "",

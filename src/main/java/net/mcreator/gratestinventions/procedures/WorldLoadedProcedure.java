@@ -15,6 +15,7 @@ import net.minecraft.command.ICommandSource;
 import net.minecraft.command.CommandSource;
 
 import net.mcreator.gratestinventions.GratestInventionsModElements;
+import net.mcreator.gratestinventions.GratestInventionsMod;
 
 import java.util.Map;
 import java.util.HashMap;
@@ -29,7 +30,7 @@ public class WorldLoadedProcedure extends GratestInventionsModElements.ModElemen
 	public static void executeProcedure(Map<String, Object> dependencies) {
 		if (dependencies.get("world") == null) {
 			if (!dependencies.containsKey("world"))
-				System.err.println("Failed to load dependency world for procedure WorldLoaded!");
+				GratestInventionsMod.LOGGER.warn("Failed to load dependency world for procedure WorldLoaded!");
 			return;
 		}
 		IWorld world = (IWorld) dependencies.get("world");

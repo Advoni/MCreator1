@@ -76,7 +76,7 @@ public class SupportBeam4Block extends GratestInventionsModElements.ModElement {
 		@Override
 		public VoxelShape getShape(BlockState state, IBlockReader world, BlockPos pos, ISelectionContext context) {
 			Vec3d offset = state.getOffset(world, pos);
-			return VoxelShapes.create(0.062D, 0D, 0.062D, 0.938D, 1D, 0.938D).withOffset(offset.x, offset.y, offset.z);
+			return VoxelShapes.or(makeCuboidShape(0.992, 0, 0.992, 15.008, 16, 15.008)).withOffset(offset.x, offset.y, offset.z);
 		}
 
 		@Override

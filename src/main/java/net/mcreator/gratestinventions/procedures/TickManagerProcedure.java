@@ -10,6 +10,7 @@ import net.minecraft.entity.player.PlayerEntity;
 
 import net.mcreator.gratestinventions.GratestInventionsModVariables;
 import net.mcreator.gratestinventions.GratestInventionsModElements;
+import net.mcreator.gratestinventions.GratestInventionsMod;
 
 import java.util.Map;
 import java.util.HashMap;
@@ -24,7 +25,7 @@ public class TickManagerProcedure extends GratestInventionsModElements.ModElemen
 	public static void executeProcedure(Map<String, Object> dependencies) {
 		if (dependencies.get("world") == null) {
 			if (!dependencies.containsKey("world"))
-				System.err.println("Failed to load dependency world for procedure TickManager!");
+				GratestInventionsMod.LOGGER.warn("Failed to load dependency world for procedure TickManager!");
 			return;
 		}
 		IWorld world = (IWorld) dependencies.get("world");

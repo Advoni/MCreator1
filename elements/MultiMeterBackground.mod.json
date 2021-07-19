@@ -1,0 +1,23 @@
+{
+  "_fv": 18,
+  "_type": "overlay",
+  "definition": {
+    "priority": "HIGH",
+    "components": [
+      {
+        "type": "image",
+        "data": {
+          "image": "info_box_4.png",
+          "use1Xscale": true,
+          "name": "info_box_4.png",
+          "x": 307,
+          "y": 174
+        }
+      }
+    ],
+    "baseTexture": "",
+    "displayCondition": {
+      "name": "MultimeterScreenDisplayOverlayIngame"
+    }
+  }
+}

@@ -104,7 +104,7 @@ public class ZahnstangeEWBlock extends GratestInventionsModElements.ModElement {
 		@Override
 		public VoxelShape getShape(BlockState state, IBlockReader world, BlockPos pos, ISelectionContext context) {
 			Vec3d offset = state.getOffset(world, pos);
-			return VoxelShapes.create(0D, 0D, 0.312D, 1D, 0.138D, 0.688D).withOffset(offset.x, offset.y, offset.z);
+			return VoxelShapes.or(makeCuboidShape(0, 0, 4.992, 16, 2.208, 11.008)).withOffset(offset.x, offset.y, offset.z);
 		}
 
 		@Override

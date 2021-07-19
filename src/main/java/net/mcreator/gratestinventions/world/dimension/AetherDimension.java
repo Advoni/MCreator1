@@ -117,7 +117,7 @@ public class AetherDimension extends GratestInventionsModElements.ModElement {
 
 		@Override
 		@OnlyIn(Dist.CLIENT)
-		public Vec3d getFogColor(float cangle, float ticks) {
+		public Vec3d getFogColor(float celestialAngle, float partialTicks) {
 			return new Vec3d(1, 1, 0.8);
 		}
 

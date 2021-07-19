@@ -15,6 +15,7 @@ import net.minecraft.command.ICommandSource;
 import net.minecraft.command.CommandSource;
 
 import net.mcreator.gratestinventions.GratestInventionsModElements;
+import net.mcreator.gratestinventions.GratestInventionsMod;
 
 import java.util.Map;
 
@@ -27,22 +28,22 @@ public class NetherBuilderUpdateTickProcedure extends GratestInventionsModElemen
 	public static void executeProcedure(Map<String, Object> dependencies) {
 		if (dependencies.get("x") == null) {
 			if (!dependencies.containsKey("x"))
-				System.err.println("Failed to load dependency x for procedure NetherBuilderUpdateTick!");
+				GratestInventionsMod.LOGGER.warn("Failed to load dependency x for procedure NetherBuilderUpdateTick!");
 			return;
 		}
 		if (dependencies.get("y") == null) {
 			if (!dependencies.containsKey("y"))
-				System.err.println("Failed to load dependency y for procedure NetherBuilderUpdateTick!");
+				GratestInventionsMod.LOGGER.warn("Failed to load dependency y for procedure NetherBuilderUpdateTick!");
 			return;
 		}
 		if (dependencies.get("z") == null) {
 			if (!dependencies.containsKey("z"))
-				System.err.println("Failed to load dependency z for procedure NetherBuilderUpdateTick!");
+				GratestInventionsMod.LOGGER.warn("Failed to load dependency z for procedure NetherBuilderUpdateTick!");
 			return;
 		}
 		if (dependencies.get("world") == null) {
 			if (!dependencies.containsKey("world"))
-				System.err.println("Failed to load dependency world for procedure NetherBuilderUpdateTick!");
+				GratestInventionsMod.LOGGER.warn("Failed to load dependency world for procedure NetherBuilderUpdateTick!");
 			return;
 		}
 		double x = dependencies.get("x") instanceof Integer ? (int) dependencies.get("x") : (double) dependencies.get("x");

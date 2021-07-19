@@ -1,0 +1,7 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "gratest_inventions:blocks/silver_cable",
+    "particle": "gratest_inventions:blocks/silver_cable"
+  }
+}

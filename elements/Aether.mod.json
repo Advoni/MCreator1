@@ -1,24 +1,7 @@
 {
-  "_fv": 12,
+  "_fv": 18,
   "_type": "dimension",
   "definition": {
-    "portalFrame": {
-      "value": ""
-    },
-    "portalParticles": {
-      "value": "PORTAL"
-    },
-    "portalLuminance": 0.0,
-    "portalSound": {
-      "value": "block.portal.ambient"
-    },
-    "igniterName": "Aether Portal Igniter",
-    "igniterTab": {
-      "value": "TOOLS"
-    },
-    "texture": "",
-    "portalTexture": "",
-    "enablePortal": false,
     "biomesInDimension": [
       {
         "value": "CUSTOM:AetherWasteLand"
@@ -40,11 +23,27 @@
     },
     "canRespawnHere": false,
     "hasFog": false,
-    "hasWeather": false,
     "isDark": false,
     "doesWaterVaporize": false,
     "sleepResult": "ALLOW",
     "hasSkyLight": true,
-    "imitateOverworldBehaviour": false
+    "imitateOverworldBehaviour": false,
+    "portalFrame": {
+      "value": ""
+    },
+    "portalParticles": {
+      "value": "PORTAL"
+    },
+    "portalLuminance": 0,
+    "portalSound": {
+      "value": "block.portal.ambient"
+    },
+    "igniterName": "Aether Portal Igniter",
+    "igniterTab": {
+      "value": "TOOLS"
+    },
+    "texture": "",
+    "portalTexture": "",
+    "enablePortal": false
   }
 }

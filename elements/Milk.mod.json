@@ -1,5 +1,5 @@
 {
-  "_fv": 12,
+  "_fv": 18,
   "_type": "fluid",
   "definition": {
     "name": "Milk",
@@ -14,6 +14,8 @@
     "creativeTab": {
       "value": "No creative tab entry"
     },
-    "spawnWorldTypes": []
+    "frequencyOnChunks": 5,
+    "spawnWorldTypes": [],
+    "restrictionBiomes": []
   }
 }

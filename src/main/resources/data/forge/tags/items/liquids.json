@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:water_bucket",
+    "minecraft:lava_bucket",
+    "minecraft:milk_bucket",
+    "gratest_inventions:milk_bucket",
+    "gratest_inventions:ethanol_bucket"
+  ]
+}

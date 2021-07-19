@@ -3,6 +3,7 @@ package net.mcreator.gratestinventions.procedures;
 import net.minecraft.entity.Entity;
 
 import net.mcreator.gratestinventions.GratestInventionsModElements;
+import net.mcreator.gratestinventions.GratestInventionsMod;
 
 import java.util.Map;
 
@@ -15,7 +16,7 @@ public class LightCloudBlockEntityCollidesInTheBlockProcedure extends GratestInv
 	public static void executeProcedure(Map<String, Object> dependencies) {
 		if (dependencies.get("entity") == null) {
 			if (!dependencies.containsKey("entity"))
-				System.err.println("Failed to load dependency entity for procedure LightCloudBlockEntityCollidesInTheBlock!");
+				GratestInventionsMod.LOGGER.warn("Failed to load dependency entity for procedure LightCloudBlockEntityCollidesInTheBlock!");
 			return;
 		}
 		Entity entity = (Entity) dependencies.get("entity");

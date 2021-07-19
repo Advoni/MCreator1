@@ -1,0 +1,8 @@
+{
+  "parent": "gratest_inventions:custom/drum",
+  "textures": {
+    "all": "gratest_inventions:blocks/drum",
+    "particle": "gratest_inventions:blocks/drum",
+    "drum": "gratest_inventions:blocks/drum"
+  }
+}

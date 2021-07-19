@@ -1,5 +1,5 @@
 {
-  "_fv": 12,
+  "_fv": 18,
   "_type": "structure",
   "definition": {
     "structure": "nether",
@@ -10,6 +10,8 @@
     "maxCountPerChunk": 1,
     "spawnLocation": "Ground",
     "spawnHeightOffset": 0,
+    "spawnXOffset": 0,
+    "spawnZOffset": 0,
     "spawnWorldTypes": [
       "Nether"
     ],

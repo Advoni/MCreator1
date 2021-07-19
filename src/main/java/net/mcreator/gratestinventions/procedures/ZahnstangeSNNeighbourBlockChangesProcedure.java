@@ -8,6 +8,7 @@ import net.minecraft.block.BlockState;
 import net.mcreator.gratestinventions.block.ZahnstangeSNBlock;
 import net.mcreator.gratestinventions.block.ZahnstangeEWBlock;
 import net.mcreator.gratestinventions.GratestInventionsModElements;
+import net.mcreator.gratestinventions.GratestInventionsMod;
 
 import java.util.Map;
 
@@ -20,22 +21,22 @@ public class ZahnstangeSNNeighbourBlockChangesProcedure extends GratestInvention
 	public static void executeProcedure(Map<String, Object> dependencies) {
 		if (dependencies.get("x") == null) {
 			if (!dependencies.containsKey("x"))
-				System.err.println("Failed to load dependency x for procedure ZahnstangeSNNeighbourBlockChanges!");
+				GratestInventionsMod.LOGGER.warn("Failed to load dependency x for procedure ZahnstangeSNNeighbourBlockChanges!");
 			return;
 		}
 		if (dependencies.get("y") == null) {
 			if (!dependencies.containsKey("y"))
-				System.err.println("Failed to load dependency y for procedure ZahnstangeSNNeighbourBlockChanges!");
+				GratestInventionsMod.LOGGER.warn("Failed to load dependency y for procedure ZahnstangeSNNeighbourBlockChanges!");
 			return;
 		}
 		if (dependencies.get("z") == null) {
 			if (!dependencies.containsKey("z"))
-				System.err.println("Failed to load dependency z for procedure ZahnstangeSNNeighbourBlockChanges!");
+				GratestInventionsMod.LOGGER.warn("Failed to load dependency z for procedure ZahnstangeSNNeighbourBlockChanges!");
 			return;
 		}
 		if (dependencies.get("world") == null) {
 			if (!dependencies.containsKey("world"))
-				System.err.println("Failed to load dependency world for procedure ZahnstangeSNNeighbourBlockChanges!");
+				GratestInventionsMod.LOGGER.warn("Failed to load dependency world for procedure ZahnstangeSNNeighbourBlockChanges!");
 			return;
 		}
 		double x = dependencies.get("x") instanceof Integer ? (int) dependencies.get("x") : (double) dependencies.get("x");
@@ -59,20 +60,20 @@ public class ZahnstangeSNNeighbourBlockChangesProcedure extends GratestInvention
 							|| ((world.getBlockState(new BlockPos((int) (x - 1), (int) y, (int) z))).getBlock() == ZahnstangeEWBlock.block
 									.getDefaultState().getBlock())))
 					&& (((new Object() {
-						public boolean getValue(BlockPos pos, String tag) {
+						public boolean getValue(IWorld world, BlockPos pos, String tag) {
 							TileEntity tileEntity = world.getTileEntity(pos);
 							if (tileEntity != null)
 								return tileEntity.getTileData().getBoolean(tag);
 							return false;
 						}
-					}.getValue(new BlockPos((int) (x + 1), (int) y, (int) z), "Single")) == (true)) || ((new Object() {
-						public boolean getValue(BlockPos pos, String tag) {
+					}.getValue(world, new BlockPos((int) (x + 1), (int) y, (int) z), "Single")) == (true)) || ((new Object() {
+						public boolean getValue(IWorld world, BlockPos pos, String tag) {
 							TileEntity tileEntity = world.getTileEntity(pos);
 							if (tileEntity != null)
 								return tileEntity.getTileData().getBoolean(tag);
 							return false;
 						}
-					}.getValue(new BlockPos((int) (x - 1), (int) y, (int) z), "Single")) == (true))))) {
+					}.getValue(world, new BlockPos((int) (x - 1), (int) y, (int) z), "Single")) == (true))))) {
 				world.setBlockState(new BlockPos((int) x, (int) y, (int) z), ZahnstangeEWBlock.block.getDefaultState(), 3);
 			} else {
 				if (!world.getWorld().isRemote) {

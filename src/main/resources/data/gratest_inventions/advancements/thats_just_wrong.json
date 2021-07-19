@@ -1,0 +1,26 @@
+{
+  "display": {
+    "icon": {
+      "item": "gratest_inventions:blood"
+    },
+    "title": {
+      "translate": "advancements.thats_just_wrong.title"
+    },
+    "description": {
+      "translate": "advancements.thats_just_wrong.descr"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "thats_just_wrong": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "rewards": {
+    "experience": 1
+  },
+  "parent": "minecraft:adventure/root"
+}

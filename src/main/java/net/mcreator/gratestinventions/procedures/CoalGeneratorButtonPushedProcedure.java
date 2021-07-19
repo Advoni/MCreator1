@@ -6,6 +6,7 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.block.BlockState;
 
 import net.mcreator.gratestinventions.GratestInventionsModElements;
+import net.mcreator.gratestinventions.GratestInventionsMod;
 
 import java.util.Map;
 
@@ -18,22 +19,22 @@ public class CoalGeneratorButtonPushedProcedure extends GratestInventionsModElem
 	public static void executeProcedure(Map<String, Object> dependencies) {
 		if (dependencies.get("x") == null) {
 			if (!dependencies.containsKey("x"))
-				System.err.println("Failed to load dependency x for procedure CoalGeneratorButtonPushed!");
+				GratestInventionsMod.LOGGER.warn("Failed to load dependency x for procedure CoalGeneratorButtonPushed!");
 			return;
 		}
 		if (dependencies.get("y") == null) {
 			if (!dependencies.containsKey("y"))
-				System.err.println("Failed to load dependency y for procedure CoalGeneratorButtonPushed!");
+				GratestInventionsMod.LOGGER.warn("Failed to load dependency y for procedure CoalGeneratorButtonPushed!");
 			return;
 		}
 		if (dependencies.get("z") == null) {
 			if (!dependencies.containsKey("z"))
-				System.err.println("Failed to load dependency z for procedure CoalGeneratorButtonPushed!");
+				GratestInventionsMod.LOGGER.warn("Failed to load dependency z for procedure CoalGeneratorButtonPushed!");
 			return;
 		}
 		if (dependencies.get("world") == null) {
 			if (!dependencies.containsKey("world"))
-				System.err.println("Failed to load dependency world for procedure CoalGeneratorButtonPushed!");
+				GratestInventionsMod.LOGGER.warn("Failed to load dependency world for procedure CoalGeneratorButtonPushed!");
 			return;
 		}
 		double x = dependencies.get("x") instanceof Integer ? (int) dependencies.get("x") : (double) dependencies.get("x");
@@ -46,23 +47,23 @@ public class CoalGeneratorButtonPushedProcedure extends GratestInventionsModElem
 			BlockState _bs = world.getBlockState(_bp);
 			if (_tileEntity != null)
 				_tileEntity.getTileData().putDouble("redstone", ((new Object() {
-					public double getValue(BlockPos pos, String tag) {
+					public double getValue(IWorld world, BlockPos pos, String tag) {
 						TileEntity tileEntity = world.getTileEntity(pos);
 						if (tileEntity != null)
 							return tileEntity.getTileData().getDouble(tag);
 						return -1;
 					}
-				}.getValue(new BlockPos((int) x, (int) y, (int) z), "redstone")) + 1));
+				}.getValue(world, new BlockPos((int) x, (int) y, (int) z), "redstone")) + 1));
 			world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
 		}
 		if (((new Object() {
-			public double getValue(BlockPos pos, String tag) {
+			public double getValue(IWorld world, BlockPos pos, String tag) {
 				TileEntity tileEntity = world.getTileEntity(pos);
 				if (tileEntity != null)
 					return tileEntity.getTileData().getDouble(tag);
 				return -1;
 			}
-		}.getValue(new BlockPos((int) x, (int) y, (int) z), "redstone")) > 3)) {
+		}.getValue(world, new BlockPos((int) x, (int) y, (int) z), "redstone")) > 3)) {
 			if (!world.getWorld().isRemote) {
 				BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
 				TileEntity _tileEntity = world.getTileEntity(_bp);

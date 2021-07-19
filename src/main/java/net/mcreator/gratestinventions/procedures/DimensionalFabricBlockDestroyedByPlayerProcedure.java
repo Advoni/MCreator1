@@ -9,11 +9,12 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.client.network.play.NetworkPlayerInfo;
-import net.minecraft.client.entity.player.ClientPlayerEntity;
+import net.minecraft.client.entity.player.AbstractClientPlayerEntity;
 import net.minecraft.client.Minecraft;
 
 import net.mcreator.gratestinventions.block.DimensionalFabricBlock;
 import net.mcreator.gratestinventions.GratestInventionsModElements;
+import net.mcreator.gratestinventions.GratestInventionsMod;
 
 import java.util.Map;
 
@@ -26,27 +27,27 @@ public class DimensionalFabricBlockDestroyedByPlayerProcedure extends GratestInv
 	public static void executeProcedure(Map<String, Object> dependencies) {
 		if (dependencies.get("entity") == null) {
 			if (!dependencies.containsKey("entity"))
-				System.err.println("Failed to load dependency entity for procedure DimensionalFabricBlockDestroyedByPlayer!");
+				GratestInventionsMod.LOGGER.warn("Failed to load dependency entity for procedure DimensionalFabricBlockDestroyedByPlayer!");
 			return;
 		}
 		if (dependencies.get("x") == null) {
 			if (!dependencies.containsKey("x"))
-				System.err.println("Failed to load dependency x for procedure DimensionalFabricBlockDestroyedByPlayer!");
+				GratestInventionsMod.LOGGER.warn("Failed to load dependency x for procedure DimensionalFabricBlockDestroyedByPlayer!");
 			return;
 		}
 		if (dependencies.get("y") == null) {
 			if (!dependencies.containsKey("y"))
-				System.err.println("Failed to load dependency y for procedure DimensionalFabricBlockDestroyedByPlayer!");
+				GratestInventionsMod.LOGGER.warn("Failed to load dependency y for procedure DimensionalFabricBlockDestroyedByPlayer!");
 			return;
 		}
 		if (dependencies.get("z") == null) {
 			if (!dependencies.containsKey("z"))
-				System.err.println("Failed to load dependency z for procedure DimensionalFabricBlockDestroyedByPlayer!");
+				GratestInventionsMod.LOGGER.warn("Failed to load dependency z for procedure DimensionalFabricBlockDestroyedByPlayer!");
 			return;
 		}
 		if (dependencies.get("world") == null) {
 			if (!dependencies.containsKey("world"))
-				System.err.println("Failed to load dependency world for procedure DimensionalFabricBlockDestroyedByPlayer!");
+				GratestInventionsMod.LOGGER.warn("Failed to load dependency world for procedure DimensionalFabricBlockDestroyedByPlayer!");
 			return;
 		}
 		Entity entity = (Entity) dependencies.get("entity");
@@ -61,7 +62,7 @@ public class DimensionalFabricBlockDestroyedByPlayerProcedure extends GratestInv
 							return ((ServerPlayerEntity) _ent).interactionManager.getGameType() == GameType.CREATIVE;
 						} else if (_ent instanceof PlayerEntity && _ent.world.isRemote) {
 							NetworkPlayerInfo _npi = Minecraft.getInstance().getConnection()
-									.getPlayerInfo(((ClientPlayerEntity) _ent).getGameProfile().getId());
+									.getPlayerInfo(((AbstractClientPlayerEntity) _ent).getGameProfile().getId());
 							return _npi != null && _npi.getGameType() == GameType.CREATIVE;
 						}
 						return false;

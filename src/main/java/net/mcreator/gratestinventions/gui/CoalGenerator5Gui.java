@@ -1,8 +1,6 @@
 
 package net.mcreator.gratestinventions.gui;
 
-import org.lwjgl.opengl.GL11;
-
 import net.minecraftforge.items.SlotItemHandler;
 import net.minecraftforge.items.ItemStackHandler;
 import net.minecraftforge.items.IItemHandler;
@@ -42,6 +40,8 @@ import net.mcreator.gratestinventions.GratestInventionsMod;
 import java.util.function.Supplier;
 import java.util.Map;
 import java.util.HashMap;
+
+import com.mojang.blaze3d.systems.RenderSystem;
 
 @GratestInventionsModElements.ModElement.Tag
 public class CoalGenerator5Gui extends GratestInventionsModElements.ModElement {
@@ -308,8 +308,10 @@ public class CoalGenerator5Gui extends GratestInventionsModElements.ModElement {
 		}
 
 		@Override
-		protected void drawGuiContainerBackgroundLayer(float par1, int par2, int par3) {
-			GL11.glColor4f(1, 1, 1, 1);
+		protected void drawGuiContainerBackgroundLayer(float partialTicks, int gx, int gy) {
+			RenderSystem.color4f(1, 1, 1, 1);
+			RenderSystem.enableBlend();
+			RenderSystem.defaultBlendFunc();
 			Minecraft.getInstance().getTextureManager().bindTexture(texture);
 			int k = (this.width - this.xSize) / 2;
 			int l = (this.height - this.ySize) / 2;
@@ -318,6 +320,7 @@ public class CoalGenerator5Gui extends GratestInventionsModElements.ModElement {
 			this.blit(this.guiLeft + 132, this.guiTop + 20, 0, 0, 128, 128, 128, 128);
 			Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation("gratest_inventions:textures/dimensionalfabric.png"));
 			this.blit(this.guiLeft + 78, this.guiTop + 47, 0, 0, 256, 256, 256, 256);
+			RenderSystem.disableBlend();
 		}
 
 		@Override
@@ -368,8 +371,10 @@ public class CoalGenerator5Gui extends GratestInventionsModElements.ModElement {
 			super.init(minecraft, width, height);
 			minecraft.keyboardListener.enableRepeatEvents(true);
 			this.addButton(new Button(this.guiLeft + 6, this.guiTop + 56, 20, 20, "  ", e -> {
-				GratestInventionsMod.PACKET_HANDLER.sendToServer(new ButtonPressedMessage(0, x, y, z));
-				handleButtonAction(entity, 0, x, y, z);
+				if (true) {
+					GratestInventionsMod.PACKET_HANDLER.sendToServer(new ButtonPressedMessage(0, x, y, z));
+					handleButtonAction(entity, 0, x, y, z);
+				}
 			}));
 		}
 	}

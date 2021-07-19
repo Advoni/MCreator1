@@ -30,6 +30,7 @@ import net.mcreator.gratestinventions.block.PlatinumOreBlock;
 import net.mcreator.gratestinventions.block.LeadOreBlock;
 import net.mcreator.gratestinventions.block.CopperOreBlock;
 import net.mcreator.gratestinventions.GratestInventionsModElements;
+import net.mcreator.gratestinventions.GratestInventionsMod;
 
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.concurrent.atomic.AtomicInteger;
@@ -44,22 +45,22 @@ public class BasicGrinderUpdateTickProcedure extends GratestInventionsModElement
 	public static void executeProcedure(Map<String, Object> dependencies) {
 		if (dependencies.get("x") == null) {
 			if (!dependencies.containsKey("x"))
-				System.err.println("Failed to load dependency x for procedure BasicGrinderUpdateTick!");
+				GratestInventionsMod.LOGGER.warn("Failed to load dependency x for procedure BasicGrinderUpdateTick!");
 			return;
 		}
 		if (dependencies.get("y") == null) {
 			if (!dependencies.containsKey("y"))
-				System.err.println("Failed to load dependency y for procedure BasicGrinderUpdateTick!");
+				GratestInventionsMod.LOGGER.warn("Failed to load dependency y for procedure BasicGrinderUpdateTick!");
 			return;
 		}
 		if (dependencies.get("z") == null) {
 			if (!dependencies.containsKey("z"))
-				System.err.println("Failed to load dependency z for procedure BasicGrinderUpdateTick!");
+				GratestInventionsMod.LOGGER.warn("Failed to load dependency z for procedure BasicGrinderUpdateTick!");
 			return;
 		}
 		if (dependencies.get("world") == null) {
 			if (!dependencies.containsKey("world"))
-				System.err.println("Failed to load dependency world for procedure BasicGrinderUpdateTick!");
+				GratestInventionsMod.LOGGER.warn("Failed to load dependency world for procedure BasicGrinderUpdateTick!");
 			return;
 		}
 		double x = dependencies.get("x") instanceof Integer ? (int) dependencies.get("x") : (double) dependencies.get("x");
@@ -89,65 +90,65 @@ public class BasicGrinderUpdateTickProcedure extends GratestInventionsModElement
 		double pos = 0;
 		double required = 0;
 		if (((new Object() {
-			public double getValue(BlockPos pos, String tag) {
+			public double getValue(IWorld world, BlockPos pos, String tag) {
 				TileEntity tileEntity = world.getTileEntity(pos);
 				if (tileEntity != null)
 					return tileEntity.getTileData().getDouble(tag);
 				return -1;
 			}
-		}.getValue(new BlockPos((int) x, (int) y, (int) z), "redstone")) == 0)) {
+		}.getValue(world, new BlockPos((int) x, (int) y, (int) z), "redstone")) == 0)) {
 			on = (boolean) (true);
 		} else if (((new Object() {
-			public double getValue(BlockPos pos, String tag) {
+			public double getValue(IWorld world, BlockPos pos, String tag) {
 				TileEntity tileEntity = world.getTileEntity(pos);
 				if (tileEntity != null)
 					return tileEntity.getTileData().getDouble(tag);
 				return -1;
 			}
-		}.getValue(new BlockPos((int) x, (int) y, (int) z), "redstone")) == 1)) {
+		}.getValue(world, new BlockPos((int) x, (int) y, (int) z), "redstone")) == 1)) {
 			on = (boolean) (new Object() {
-				public boolean getValue(BlockPos pos, String tag) {
+				public boolean getValue(IWorld world, BlockPos pos, String tag) {
 					TileEntity tileEntity = world.getTileEntity(pos);
 					if (tileEntity != null)
 						return tileEntity.getTileData().getBoolean(tag);
 					return false;
 				}
-			}.getValue(new BlockPos((int) x, (int) y, (int) z), "powered"));
+			}.getValue(world, new BlockPos((int) x, (int) y, (int) z), "powered"));
 		} else if (((new Object() {
-			public double getValue(BlockPos pos, String tag) {
+			public double getValue(IWorld world, BlockPos pos, String tag) {
 				TileEntity tileEntity = world.getTileEntity(pos);
 				if (tileEntity != null)
 					return tileEntity.getTileData().getDouble(tag);
 				return -1;
 			}
-		}.getValue(new BlockPos((int) x, (int) y, (int) z), "redstone")) == 2)) {
+		}.getValue(world, new BlockPos((int) x, (int) y, (int) z), "redstone")) == 2)) {
 			on = (boolean) (!(new Object() {
-				public boolean getValue(BlockPos pos, String tag) {
+				public boolean getValue(IWorld world, BlockPos pos, String tag) {
 					TileEntity tileEntity = world.getTileEntity(pos);
 					if (tileEntity != null)
 						return tileEntity.getTileData().getBoolean(tag);
 					return false;
 				}
-			}.getValue(new BlockPos((int) x, (int) y, (int) z), "powered")));
+			}.getValue(world, new BlockPos((int) x, (int) y, (int) z), "powered")));
 		} else {
 			on = (boolean) (false);
 		}
 		if (((new Object() {
-			public int getEnergyStored(BlockPos pos) {
+			public int getEnergyStored(IWorld world, BlockPos pos) {
 				AtomicInteger _retval = new AtomicInteger(0);
 				TileEntity _ent = world.getTileEntity(pos);
 				if (_ent != null)
 					_ent.getCapability(CapabilityEnergy.ENERGY, null).ifPresent(capability -> _retval.set(capability.getEnergyStored()));
 				return _retval.get();
 			}
-		}.getEnergyStored(new BlockPos((int) x, (int) y, (int) z))) < (new Object() {
-			public double getValue(BlockPos pos, String tag) {
+		}.getEnergyStored(world, new BlockPos((int) x, (int) y, (int) z))) < (new Object() {
+			public double getValue(IWorld world, BlockPos pos, String tag) {
 				TileEntity tileEntity = world.getTileEntity(pos);
 				if (tileEntity != null)
 					return tileEntity.getTileData().getDouble(tag);
 				return -1;
 			}
-		}.getValue(new BlockPos((int) x, (int) y, (int) z), "capacity")))) {
+		}.getValue(world, new BlockPos((int) x, (int) y, (int) z), "capacity")))) {
 			nb = (boolean) (false);
 			eb = (boolean) (false);
 			sb = (boolean) (false);
@@ -155,19 +156,19 @@ public class BasicGrinderUpdateTickProcedure extends GratestInventionsModElement
 			ub = (boolean) (false);
 			db = (boolean) (false);
 			charging = (double) (new Object() {
-				public double getValue(BlockPos pos, String tag) {
+				public double getValue(IWorld world, BlockPos pos, String tag) {
 					TileEntity tileEntity = world.getTileEntity(pos);
 					if (tileEntity != null)
 						return tileEntity.getTileData().getDouble(tag);
 					return -1;
 				}
-			}.getValue(new BlockPos((int) x, (int) y, (int) z), "charging"));
+			}.getValue(world, new BlockPos((int) x, (int) y, (int) z), "charging"));
 			extracted = (double) (charging);
 			repeater = (double) 6;
 			if ((BlockTags.getCollection().getOrCreate(new ResourceLocation(("gratest_inventions:generator").toLowerCase(java.util.Locale.ENGLISH)))
 					.contains((world.getBlockState(new BlockPos((int) (x + 1), (int) y, (int) z))).getBlock()))) {
 				n = (double) (new Object() {
-					public int extractEnergySimulate(BlockPos pos, int _amount) {
+					public int extractEnergySimulate(IWorld world, BlockPos pos, int _amount) {
 						AtomicInteger _retval = new AtomicInteger(0);
 						TileEntity _ent = world.getTileEntity(pos);
 						if (_ent != null)
@@ -175,12 +176,12 @@ public class BasicGrinderUpdateTickProcedure extends GratestInventionsModElement
 									.ifPresent(capability -> _retval.set(capability.extractEnergy(_amount, true)));
 						return _retval.get();
 					}
-				}.extractEnergySimulate(new BlockPos((int) (x + 1), (int) y, (int) z), (int) (charging)));
+				}.extractEnergySimulate(world, new BlockPos((int) (x + 1), (int) y, (int) z), (int) (charging)));
 			}
 			if ((BlockTags.getCollection().getOrCreate(new ResourceLocation(("gratest_inventions:generator").toLowerCase(java.util.Locale.ENGLISH)))
 					.contains((world.getBlockState(new BlockPos((int) x, (int) y, (int) (z + 1)))).getBlock()))) {
 				e = (double) (new Object() {
-					public int extractEnergySimulate(BlockPos pos, int _amount) {
+					public int extractEnergySimulate(IWorld world, BlockPos pos, int _amount) {
 						AtomicInteger _retval = new AtomicInteger(0);
 						TileEntity _ent = world.getTileEntity(pos);
 						if (_ent != null)
@@ -188,12 +189,12 @@ public class BasicGrinderUpdateTickProcedure extends GratestInventionsModElement
 									.ifPresent(capability -> _retval.set(capability.extractEnergy(_amount, true)));
 						return _retval.get();
 					}
-				}.extractEnergySimulate(new BlockPos((int) x, (int) y, (int) (z + 1)), (int) (charging)));
+				}.extractEnergySimulate(world, new BlockPos((int) x, (int) y, (int) (z + 1)), (int) (charging)));
 			}
 			if ((BlockTags.getCollection().getOrCreate(new ResourceLocation(("gratest_inventions:generator").toLowerCase(java.util.Locale.ENGLISH)))
 					.contains((world.getBlockState(new BlockPos((int) (x - 1), (int) y, (int) z))).getBlock()))) {
 				s = (double) (new Object() {
-					public int extractEnergySimulate(BlockPos pos, int _amount) {
+					public int extractEnergySimulate(IWorld world, BlockPos pos, int _amount) {
 						AtomicInteger _retval = new AtomicInteger(0);
 						TileEntity _ent = world.getTileEntity(pos);
 						if (_ent != null)
@@ -201,12 +202,12 @@ public class BasicGrinderUpdateTickProcedure extends GratestInventionsModElement
 									.ifPresent(capability -> _retval.set(capability.extractEnergy(_amount, true)));
 						return _retval.get();
 					}
-				}.extractEnergySimulate(new BlockPos((int) (x - 1), (int) y, (int) z), (int) (charging)));
+				}.extractEnergySimulate(world, new BlockPos((int) (x - 1), (int) y, (int) z), (int) (charging)));
 			}
 			if ((BlockTags.getCollection().getOrCreate(new ResourceLocation(("gratest_inventions:generator").toLowerCase(java.util.Locale.ENGLISH)))
 					.contains((world.getBlockState(new BlockPos((int) x, (int) y, (int) (z - 1)))).getBlock()))) {
 				w = (double) (new Object() {
-					public int extractEnergySimulate(BlockPos pos, int _amount) {
+					public int extractEnergySimulate(IWorld world, BlockPos pos, int _amount) {
 						AtomicInteger _retval = new AtomicInteger(0);
 						TileEntity _ent = world.getTileEntity(pos);
 						if (_ent != null)
@@ -214,12 +215,12 @@ public class BasicGrinderUpdateTickProcedure extends GratestInventionsModElement
 									.ifPresent(capability -> _retval.set(capability.extractEnergy(_amount, true)));
 						return _retval.get();
 					}
-				}.extractEnergySimulate(new BlockPos((int) x, (int) y, (int) (z - 1)), (int) (charging)));
+				}.extractEnergySimulate(world, new BlockPos((int) x, (int) y, (int) (z - 1)), (int) (charging)));
 			}
 			if ((BlockTags.getCollection().getOrCreate(new ResourceLocation(("gratest_inventions:generator").toLowerCase(java.util.Locale.ENGLISH)))
 					.contains((world.getBlockState(new BlockPos((int) x, (int) (y + 1), (int) z))).getBlock()))) {
 				u = (double) (new Object() {
-					public int extractEnergySimulate(BlockPos pos, int _amount) {
+					public int extractEnergySimulate(IWorld world, BlockPos pos, int _amount) {
 						AtomicInteger _retval = new AtomicInteger(0);
 						TileEntity _ent = world.getTileEntity(pos);
 						if (_ent != null)
@@ -227,12 +228,12 @@ public class BasicGrinderUpdateTickProcedure extends GratestInventionsModElement
 									.ifPresent(capability -> _retval.set(capability.extractEnergy(_amount, true)));
 						return _retval.get();
 					}
-				}.extractEnergySimulate(new BlockPos((int) x, (int) (y + 1), (int) z), (int) (charging)));
+				}.extractEnergySimulate(world, new BlockPos((int) x, (int) (y + 1), (int) z), (int) (charging)));
 			}
 			if ((BlockTags.getCollection().getOrCreate(new ResourceLocation(("gratest_inventions:generator").toLowerCase(java.util.Locale.ENGLISH)))
 					.contains((world.getBlockState(new BlockPos((int) x, (int) (y - 1), (int) z))).getBlock()))) {
 				d = (double) (new Object() {
-					public int extractEnergySimulate(BlockPos pos, int _amount) {
+					public int extractEnergySimulate(IWorld world, BlockPos pos, int _amount) {
 						AtomicInteger _retval = new AtomicInteger(0);
 						TileEntity _ent = world.getTileEntity(pos);
 						if (_ent != null)
@@ -240,7 +241,7 @@ public class BasicGrinderUpdateTickProcedure extends GratestInventionsModElement
 									.ifPresent(capability -> _retval.set(capability.extractEnergy(_amount, true)));
 						return _retval.get();
 					}
-				}.extractEnergySimulate(new BlockPos((int) x, (int) (y - 1), (int) z), (int) (charging)));
+				}.extractEnergySimulate(world, new BlockPos((int) x, (int) (y - 1), (int) z), (int) (charging)));
 			}
 			for (int index0 = 0; index0 < (int) (6); index0++) {
 				small = (double) Double.POSITIVE_INFINITY;
@@ -405,21 +406,21 @@ public class BasicGrinderUpdateTickProcedure extends GratestInventionsModElement
 			}
 		}
 		if (((new Object() {
-			public int getEnergyStored(BlockPos pos) {
+			public int getEnergyStored(IWorld world, BlockPos pos) {
 				AtomicInteger _retval = new AtomicInteger(0);
 				TileEntity _ent = world.getTileEntity(pos);
 				if (_ent != null)
 					_ent.getCapability(CapabilityEnergy.ENERGY, null).ifPresent(capability -> _retval.set(capability.getEnergyStored()));
 				return _retval.get();
 			}
-		}.getEnergyStored(new BlockPos((int) x, (int) y, (int) z))) > (new Object() {
-			public double getValue(BlockPos pos, String tag) {
+		}.getEnergyStored(world, new BlockPos((int) x, (int) y, (int) z))) > (new Object() {
+			public double getValue(IWorld world, BlockPos pos, String tag) {
 				TileEntity tileEntity = world.getTileEntity(pos);
 				if (tileEntity != null)
 					return tileEntity.getTileData().getDouble(tag);
 				return -1;
 			}
-		}.getValue(new BlockPos((int) x, (int) y, (int) z), "consumbtion")))) {
+		}.getValue(world, new BlockPos((int) x, (int) y, (int) z), "consumbtion")))) {
 			if ((((ItemTags.getCollection().getOrCreate(new ResourceLocation(("gratest_inventions:grinding").toLowerCase(java.util.Locale.ENGLISH)))
 					.contains((new Object() {
 						public ItemStack getItemStack(BlockPos pos, int sltid) {
@@ -433,13 +434,13 @@ public class BasicGrinderUpdateTickProcedure extends GratestInventionsModElement
 							return _retval.get();
 						}
 					}.getItemStack(new BlockPos((int) x, (int) y, (int) z), (int) (0))).getItem())) && ((new Object() {
-						public double getValue(BlockPos pos, String tag) {
+						public double getValue(IWorld world, BlockPos pos, String tag) {
 							TileEntity tileEntity = world.getTileEntity(pos);
 							if (tileEntity != null)
 								return tileEntity.getTileData().getDouble(tag);
 							return -1;
 						}
-					}.getValue(new BlockPos((int) x, (int) y, (int) z), "gear")) == 0)) && ((on) == (true)))) {
+					}.getValue(world, new BlockPos((int) x, (int) y, (int) z), "gear")) == 0)) && ((on) == (true)))) {
 				target = (new Object() {
 					public ItemStack getItemStack(BlockPos pos, int sltid) {
 						AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
@@ -507,7 +508,7 @@ public class BasicGrinderUpdateTickProcedure extends GratestInventionsModElement
 						return _retval.get();
 					}
 				}.getItemStack(new BlockPos((int) x, (int) y, (int) z), (int) (1))).getItem()) && ((new Object() {
-					public int getAmount(BlockPos pos, int sltid) {
+					public int getAmount(IWorld world, BlockPos pos, int sltid) {
 						AtomicInteger _retval = new AtomicInteger(0);
 						TileEntity _ent = world.getTileEntity(pos);
 						if (_ent != null) {
@@ -517,8 +518,8 @@ public class BasicGrinderUpdateTickProcedure extends GratestInventionsModElement
 						}
 						return _retval.get();
 					}
-				}.getAmount(new BlockPos((int) x, (int) y, (int) z), (int) (1))) < (required))) || ((new Object() {
-					public int getAmount(BlockPos pos, int sltid) {
+				}.getAmount(world, new BlockPos((int) x, (int) y, (int) z), (int) (1))) < (required))) || ((new Object() {
+					public int getAmount(IWorld world, BlockPos pos, int sltid) {
 						AtomicInteger _retval = new AtomicInteger(0);
 						TileEntity _ent = world.getTileEntity(pos);
 						if (_ent != null) {
@@ -528,8 +529,8 @@ public class BasicGrinderUpdateTickProcedure extends GratestInventionsModElement
 						}
 						return _retval.get();
 					}
-				}.getAmount(new BlockPos((int) x, (int) y, (int) z), (int) (1))) == 0)) && ((new Object() {
-					public int getAmount(BlockPos pos, int sltid) {
+				}.getAmount(world, new BlockPos((int) x, (int) y, (int) z), (int) (1))) == 0)) && ((new Object() {
+					public int getAmount(IWorld world, BlockPos pos, int sltid) {
 						AtomicInteger _retval = new AtomicInteger(0);
 						TileEntity _ent = world.getTileEntity(pos);
 						if (_ent != null) {
@@ -539,7 +540,7 @@ public class BasicGrinderUpdateTickProcedure extends GratestInventionsModElement
 						}
 						return _retval.get();
 					}
-				}.getAmount(new BlockPos((int) x, (int) y, (int) z), (int) (0))) != 0))) {
+				}.getAmount(world, new BlockPos((int) x, (int) y, (int) z), (int) (0))) != 0))) {
 					if (!world.getWorld().isRemote) {
 						BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
 						TileEntity _tileEntity = world.getTileEntity(_bp);
@@ -597,7 +598,7 @@ public class BasicGrinderUpdateTickProcedure extends GratestInventionsModElement
 								}
 							}.getItemStack(new BlockPos((int) x, (int) y, (int) z), (int) (0)));
 							_setstack.setCount((int) ((new Object() {
-								public int getAmount(BlockPos pos, int sltid) {
+								public int getAmount(IWorld world, BlockPos pos, int sltid) {
 									AtomicInteger _retval = new AtomicInteger(0);
 									TileEntity _ent = world.getTileEntity(pos);
 									if (_ent != null) {
@@ -607,7 +608,7 @@ public class BasicGrinderUpdateTickProcedure extends GratestInventionsModElement
 									}
 									return _retval.get();
 								}
-							}.getAmount(new BlockPos((int) x, (int) y, (int) z), (int) (0))) - 1));
+							}.getAmount(world, new BlockPos((int) x, (int) y, (int) z), (int) (0))) - 1));
 							_ent.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
 								if (capability instanceof IItemHandlerModifiable) {
 									((IItemHandlerModifiable) capability).setStackInSlot(_sltid, _setstack);
@@ -618,23 +619,23 @@ public class BasicGrinderUpdateTickProcedure extends GratestInventionsModElement
 				}
 			}
 			if (((new Object() {
-				public double getValue(BlockPos pos, String tag) {
+				public double getValue(IWorld world, BlockPos pos, String tag) {
 					TileEntity tileEntity = world.getTileEntity(pos);
 					if (tileEntity != null)
 						return tileEntity.getTileData().getDouble(tag);
 					return -1;
 				}
-			}.getValue(new BlockPos((int) x, (int) y, (int) z), "gear")) > 0)) {
+			}.getValue(world, new BlockPos((int) x, (int) y, (int) z), "gear")) > 0)) {
 				{
 					TileEntity _ent = world.getTileEntity(new BlockPos((int) x, (int) y, (int) z));
 					int _amount = (int) (new Object() {
-						public double getValue(BlockPos pos, String tag) {
+						public double getValue(IWorld world, BlockPos pos, String tag) {
 							TileEntity tileEntity = world.getTileEntity(pos);
 							if (tileEntity != null)
 								return tileEntity.getTileData().getDouble(tag);
 							return -1;
 						}
-					}.getValue(new BlockPos((int) x, (int) y, (int) z), "consumbtion"));
+					}.getValue(world, new BlockPos((int) x, (int) y, (int) z), "consumbtion"));
 					if (_ent != null)
 						_ent.getCapability(CapabilityEnergy.ENERGY, null).ifPresent(capability -> capability.extractEnergy(_amount, false));
 				}
@@ -644,30 +645,30 @@ public class BasicGrinderUpdateTickProcedure extends GratestInventionsModElement
 					BlockState _bs = world.getBlockState(_bp);
 					if (_tileEntity != null)
 						_tileEntity.getTileData().putDouble("gear", ((new Object() {
-							public double getValue(BlockPos pos, String tag) {
+							public double getValue(IWorld world, BlockPos pos, String tag) {
 								TileEntity tileEntity = world.getTileEntity(pos);
 								if (tileEntity != null)
 									return tileEntity.getTileData().getDouble(tag);
 								return -1;
 							}
-						}.getValue(new BlockPos((int) x, (int) y, (int) z), "gear")) - (100 / (new Object() {
-							public double getValue(BlockPos pos, String tag) {
+						}.getValue(world, new BlockPos((int) x, (int) y, (int) z), "gear")) - (100 / (new Object() {
+							public double getValue(IWorld world, BlockPos pos, String tag) {
 								TileEntity tileEntity = world.getTileEntity(pos);
 								if (tileEntity != null)
 									return tileEntity.getTileData().getDouble(tag);
 								return -1;
 							}
-						}.getValue(new BlockPos((int) x, (int) y, (int) z), "duration")))));
+						}.getValue(world, new BlockPos((int) x, (int) y, (int) z), "duration")))));
 					world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
 				}
 				if (((new Object() {
-					public double getValue(BlockPos pos, String tag) {
+					public double getValue(IWorld world, BlockPos pos, String tag) {
 						TileEntity tileEntity = world.getTileEntity(pos);
 						if (tileEntity != null)
 							return tileEntity.getTileData().getDouble(tag);
 						return -1;
 					}
-				}.getValue(new BlockPos((int) x, (int) y, (int) z), "gear")) <= 0)) {
+				}.getValue(world, new BlockPos((int) x, (int) y, (int) z), "gear")) <= 0)) {
 					if (!world.getWorld().isRemote) {
 						BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
 						TileEntity _tileEntity = world.getTileEntity(_bp);
@@ -703,7 +704,7 @@ public class BasicGrinderUpdateTickProcedure extends GratestInventionsModElement
 								final int _sltid = (int) (1);
 								final ItemStack _setstack = new ItemStack(Blocks.GRAVEL, (int) (1));
 								_setstack.setCount((int) ((new Object() {
-									public int getAmount(BlockPos pos, int sltid) {
+									public int getAmount(IWorld world, BlockPos pos, int sltid) {
 										AtomicInteger _retval = new AtomicInteger(0);
 										TileEntity _ent = world.getTileEntity(pos);
 										if (_ent != null) {
@@ -713,7 +714,7 @@ public class BasicGrinderUpdateTickProcedure extends GratestInventionsModElement
 										}
 										return _retval.get();
 									}
-								}.getAmount(new BlockPos((int) x, (int) y, (int) z), (int) (1))) + 1));
+								}.getAmount(world, new BlockPos((int) x, (int) y, (int) z), (int) (1))) + 1));
 								_ent.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
 									if (capability instanceof IItemHandlerModifiable) {
 										((IItemHandlerModifiable) capability).setStackInSlot(_sltid, _setstack);
@@ -728,7 +729,7 @@ public class BasicGrinderUpdateTickProcedure extends GratestInventionsModElement
 								final int _sltid = (int) (1);
 								final ItemStack _setstack = new ItemStack(Blocks.SAND, (int) (1));
 								_setstack.setCount((int) ((new Object() {
-									public int getAmount(BlockPos pos, int sltid) {
+									public int getAmount(IWorld world, BlockPos pos, int sltid) {
 										AtomicInteger _retval = new AtomicInteger(0);
 										TileEntity _ent = world.getTileEntity(pos);
 										if (_ent != null) {
@@ -738,7 +739,7 @@ public class BasicGrinderUpdateTickProcedure extends GratestInventionsModElement
 										}
 										return _retval.get();
 									}
-								}.getAmount(new BlockPos((int) x, (int) y, (int) z), (int) (1))) + 1));
+								}.getAmount(world, new BlockPos((int) x, (int) y, (int) z), (int) (1))) + 1));
 								_ent.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
 									if (capability instanceof IItemHandlerModifiable) {
 										((IItemHandlerModifiable) capability).setStackInSlot(_sltid, _setstack);
@@ -753,7 +754,7 @@ public class BasicGrinderUpdateTickProcedure extends GratestInventionsModElement
 								final int _sltid = (int) (1);
 								final ItemStack _setstack = new ItemStack(CopperShavingsItem.block, (int) (1));
 								_setstack.setCount((int) ((new Object() {
-									public int getAmount(BlockPos pos, int sltid) {
+									public int getAmount(IWorld world, BlockPos pos, int sltid) {
 										AtomicInteger _retval = new AtomicInteger(0);
 										TileEntity _ent = world.getTileEntity(pos);
 										if (_ent != null) {
@@ -763,7 +764,7 @@ public class BasicGrinderUpdateTickProcedure extends GratestInventionsModElement
 										}
 										return _retval.get();
 									}
-								}.getAmount(new BlockPos((int) x, (int) y, (int) z), (int) (1))) + 2));
+								}.getAmount(world, new BlockPos((int) x, (int) y, (int) z), (int) (1))) + 2));
 								_ent.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
 									if (capability instanceof IItemHandlerModifiable) {
 										((IItemHandlerModifiable) capability).setStackInSlot(_sltid, _setstack);
@@ -778,7 +779,7 @@ public class BasicGrinderUpdateTickProcedure extends GratestInventionsModElement
 								final int _sltid = (int) (1);
 								final ItemStack _setstack = new ItemStack(SilverShavingsItem.block, (int) (1));
 								_setstack.setCount((int) ((new Object() {
-									public int getAmount(BlockPos pos, int sltid) {
+									public int getAmount(IWorld world, BlockPos pos, int sltid) {
 										AtomicInteger _retval = new AtomicInteger(0);
 										TileEntity _ent = world.getTileEntity(pos);
 										if (_ent != null) {
@@ -788,7 +789,7 @@ public class BasicGrinderUpdateTickProcedure extends GratestInventionsModElement
 										}
 										return _retval.get();
 									}
-								}.getAmount(new BlockPos((int) x, (int) y, (int) z), (int) (1))) + 2));
+								}.getAmount(world, new BlockPos((int) x, (int) y, (int) z), (int) (1))) + 2));
 								_ent.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
 									if (capability instanceof IItemHandlerModifiable) {
 										((IItemHandlerModifiable) capability).setStackInSlot(_sltid, _setstack);
@@ -803,7 +804,7 @@ public class BasicGrinderUpdateTickProcedure extends GratestInventionsModElement
 								final int _sltid = (int) (1);
 								final ItemStack _setstack = new ItemStack(PlatinumShavingsItem.block, (int) (1));
 								_setstack.setCount((int) ((new Object() {
-									public int getAmount(BlockPos pos, int sltid) {
+									public int getAmount(IWorld world, BlockPos pos, int sltid) {
 										AtomicInteger _retval = new AtomicInteger(0);
 										TileEntity _ent = world.getTileEntity(pos);
 										if (_ent != null) {
@@ -813,7 +814,7 @@ public class BasicGrinderUpdateTickProcedure extends GratestInventionsModElement
 										}
 										return _retval.get();
 									}
-								}.getAmount(new BlockPos((int) x, (int) y, (int) z), (int) (1))) + 2));
+								}.getAmount(world, new BlockPos((int) x, (int) y, (int) z), (int) (1))) + 2));
 								_ent.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
 									if (capability instanceof IItemHandlerModifiable) {
 										((IItemHandlerModifiable) capability).setStackInSlot(_sltid, _setstack);
@@ -828,7 +829,7 @@ public class BasicGrinderUpdateTickProcedure extends GratestInventionsModElement
 								final int _sltid = (int) (1);
 								final ItemStack _setstack = new ItemStack(LeadShavingsItem.block, (int) (1));
 								_setstack.setCount((int) ((new Object() {
-									public int getAmount(BlockPos pos, int sltid) {
+									public int getAmount(IWorld world, BlockPos pos, int sltid) {
 										AtomicInteger _retval = new AtomicInteger(0);
 										TileEntity _ent = world.getTileEntity(pos);
 										if (_ent != null) {
@@ -838,7 +839,7 @@ public class BasicGrinderUpdateTickProcedure extends GratestInventionsModElement
 										}
 										return _retval.get();
 									}
-								}.getAmount(new BlockPos((int) x, (int) y, (int) z), (int) (1))) + 2));
+								}.getAmount(world, new BlockPos((int) x, (int) y, (int) z), (int) (1))) + 2));
 								_ent.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
 									if (capability instanceof IItemHandlerModifiable) {
 										((IItemHandlerModifiable) capability).setStackInSlot(_sltid, _setstack);
@@ -853,7 +854,7 @@ public class BasicGrinderUpdateTickProcedure extends GratestInventionsModElement
 								final int _sltid = (int) (1);
 								final ItemStack _setstack = new ItemStack(GoldShavingsItem.block, (int) (1));
 								_setstack.setCount((int) ((new Object() {
-									public int getAmount(BlockPos pos, int sltid) {
+									public int getAmount(IWorld world, BlockPos pos, int sltid) {
 										AtomicInteger _retval = new AtomicInteger(0);
 										TileEntity _ent = world.getTileEntity(pos);
 										if (_ent != null) {
@@ -863,7 +864,7 @@ public class BasicGrinderUpdateTickProcedure extends GratestInventionsModElement
 										}
 										return _retval.get();
 									}
-								}.getAmount(new BlockPos((int) x, (int) y, (int) z), (int) (1))) + 2));
+								}.getAmount(world, new BlockPos((int) x, (int) y, (int) z), (int) (1))) + 2));
 								_ent.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
 									if (capability instanceof IItemHandlerModifiable) {
 										((IItemHandlerModifiable) capability).setStackInSlot(_sltid, _setstack);
@@ -878,7 +879,7 @@ public class BasicGrinderUpdateTickProcedure extends GratestInventionsModElement
 								final int _sltid = (int) (1);
 								final ItemStack _setstack = new ItemStack(IronShavingsItem.block, (int) (1));
 								_setstack.setCount((int) ((new Object() {
-									public int getAmount(BlockPos pos, int sltid) {
+									public int getAmount(IWorld world, BlockPos pos, int sltid) {
 										AtomicInteger _retval = new AtomicInteger(0);
 										TileEntity _ent = world.getTileEntity(pos);
 										if (_ent != null) {
@@ -888,7 +889,7 @@ public class BasicGrinderUpdateTickProcedure extends GratestInventionsModElement
 										}
 										return _retval.get();
 									}
-								}.getAmount(new BlockPos((int) x, (int) y, (int) z), (int) (1))) + 2));
+								}.getAmount(world, new BlockPos((int) x, (int) y, (int) z), (int) (1))) + 2));
 								_ent.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
 									if (capability instanceof IItemHandlerModifiable) {
 										((IItemHandlerModifiable) capability).setStackInSlot(_sltid, _setstack);
@@ -903,7 +904,7 @@ public class BasicGrinderUpdateTickProcedure extends GratestInventionsModElement
 								final int _sltid = (int) (1);
 								final ItemStack _setstack = new ItemStack(CopperShavingsItem.block, (int) (1));
 								_setstack.setCount((int) ((new Object() {
-									public int getAmount(BlockPos pos, int sltid) {
+									public int getAmount(IWorld world, BlockPos pos, int sltid) {
 										AtomicInteger _retval = new AtomicInteger(0);
 										TileEntity _ent = world.getTileEntity(pos);
 										if (_ent != null) {
@@ -913,7 +914,7 @@ public class BasicGrinderUpdateTickProcedure extends GratestInventionsModElement
 										}
 										return _retval.get();
 									}
-								}.getAmount(new BlockPos((int) x, (int) y, (int) z), (int) (1))) + 1));
+								}.getAmount(world, new BlockPos((int) x, (int) y, (int) z), (int) (1))) + 1));
 								_ent.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
 									if (capability instanceof IItemHandlerModifiable) {
 										((IItemHandlerModifiable) capability).setStackInSlot(_sltid, _setstack);
@@ -928,7 +929,7 @@ public class BasicGrinderUpdateTickProcedure extends GratestInventionsModElement
 								final int _sltid = (int) (1);
 								final ItemStack _setstack = new ItemStack(PlatinumShavingsItem.block, (int) (1));
 								_setstack.setCount((int) ((new Object() {
-									public int getAmount(BlockPos pos, int sltid) {
+									public int getAmount(IWorld world, BlockPos pos, int sltid) {
 										AtomicInteger _retval = new AtomicInteger(0);
 										TileEntity _ent = world.getTileEntity(pos);
 										if (_ent != null) {
@@ -938,7 +939,7 @@ public class BasicGrinderUpdateTickProcedure extends GratestInventionsModElement
 										}
 										return _retval.get();
 									}
-								}.getAmount(new BlockPos((int) x, (int) y, (int) z), (int) (1))) + 1));
+								}.getAmount(world, new BlockPos((int) x, (int) y, (int) z), (int) (1))) + 1));
 								_ent.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
 									if (capability instanceof IItemHandlerModifiable) {
 										((IItemHandlerModifiable) capability).setStackInSlot(_sltid, _setstack);
@@ -953,7 +954,7 @@ public class BasicGrinderUpdateTickProcedure extends GratestInventionsModElement
 								final int _sltid = (int) (1);
 								final ItemStack _setstack = new ItemStack(SilverShavingsItem.block, (int) (1));
 								_setstack.setCount((int) ((new Object() {
-									public int getAmount(BlockPos pos, int sltid) {
+									public int getAmount(IWorld world, BlockPos pos, int sltid) {
 										AtomicInteger _retval = new AtomicInteger(0);
 										TileEntity _ent = world.getTileEntity(pos);
 										if (_ent != null) {
@@ -963,7 +964,7 @@ public class BasicGrinderUpdateTickProcedure extends GratestInventionsModElement
 										}
 										return _retval.get();
 									}
-								}.getAmount(new BlockPos((int) x, (int) y, (int) z), (int) (1))) + 1));
+								}.getAmount(world, new BlockPos((int) x, (int) y, (int) z), (int) (1))) + 1));
 								_ent.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
 									if (capability instanceof IItemHandlerModifiable) {
 										((IItemHandlerModifiable) capability).setStackInSlot(_sltid, _setstack);
@@ -978,7 +979,7 @@ public class BasicGrinderUpdateTickProcedure extends GratestInventionsModElement
 								final int _sltid = (int) (1);
 								final ItemStack _setstack = new ItemStack(LeadShavingsItem.block, (int) (1));
 								_setstack.setCount((int) ((new Object() {
-									public int getAmount(BlockPos pos, int sltid) {
+									public int getAmount(IWorld world, BlockPos pos, int sltid) {
 										AtomicInteger _retval = new AtomicInteger(0);
 										TileEntity _ent = world.getTileEntity(pos);
 										if (_ent != null) {
@@ -988,7 +989,7 @@ public class BasicGrinderUpdateTickProcedure extends GratestInventionsModElement
 										}
 										return _retval.get();
 									}
-								}.getAmount(new BlockPos((int) x, (int) y, (int) z), (int) (1))) + 1));
+								}.getAmount(world, new BlockPos((int) x, (int) y, (int) z), (int) (1))) + 1));
 								_ent.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
 									if (capability instanceof IItemHandlerModifiable) {
 										((IItemHandlerModifiable) capability).setStackInSlot(_sltid, _setstack);
@@ -1003,7 +1004,7 @@ public class BasicGrinderUpdateTickProcedure extends GratestInventionsModElement
 								final int _sltid = (int) (1);
 								final ItemStack _setstack = new ItemStack(IronShavingsItem.block, (int) (1));
 								_setstack.setCount((int) ((new Object() {
-									public int getAmount(BlockPos pos, int sltid) {
+									public int getAmount(IWorld world, BlockPos pos, int sltid) {
 										AtomicInteger _retval = new AtomicInteger(0);
 										TileEntity _ent = world.getTileEntity(pos);
 										if (_ent != null) {
@@ -1013,7 +1014,7 @@ public class BasicGrinderUpdateTickProcedure extends GratestInventionsModElement
 										}
 										return _retval.get();
 									}
-								}.getAmount(new BlockPos((int) x, (int) y, (int) z), (int) (1))) + 1));
+								}.getAmount(world, new BlockPos((int) x, (int) y, (int) z), (int) (1))) + 1));
 								_ent.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
 									if (capability instanceof IItemHandlerModifiable) {
 										((IItemHandlerModifiable) capability).setStackInSlot(_sltid, _setstack);
@@ -1028,7 +1029,7 @@ public class BasicGrinderUpdateTickProcedure extends GratestInventionsModElement
 								final int _sltid = (int) (1);
 								final ItemStack _setstack = new ItemStack(GoldShavingsItem.block, (int) (1));
 								_setstack.setCount((int) ((new Object() {
-									public int getAmount(BlockPos pos, int sltid) {
+									public int getAmount(IWorld world, BlockPos pos, int sltid) {
 										AtomicInteger _retval = new AtomicInteger(0);
 										TileEntity _ent = world.getTileEntity(pos);
 										if (_ent != null) {
@@ -1038,7 +1039,7 @@ public class BasicGrinderUpdateTickProcedure extends GratestInventionsModElement
 										}
 										return _retval.get();
 									}
-								}.getAmount(new BlockPos((int) x, (int) y, (int) z), (int) (1))) + 1));
+								}.getAmount(world, new BlockPos((int) x, (int) y, (int) z), (int) (1))) + 1));
 								_ent.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
 									if (capability instanceof IItemHandlerModifiable) {
 										((IItemHandlerModifiable) capability).setStackInSlot(_sltid, _setstack);
@@ -1065,23 +1066,23 @@ public class BasicGrinderUpdateTickProcedure extends GratestInventionsModElement
 					BlockState _bs = world.getBlockState(_bp);
 					if (_tileEntity != null)
 						_tileEntity.getTileData().putDouble("tick", ((new Object() {
-							public double getValue(BlockPos pos, String tag) {
+							public double getValue(IWorld world, BlockPos pos, String tag) {
 								TileEntity tileEntity = world.getTileEntity(pos);
 								if (tileEntity != null)
 									return tileEntity.getTileData().getDouble(tag);
 								return -1;
 							}
-						}.getValue(new BlockPos((int) x, (int) y, (int) z), "tick")) + 1));
+						}.getValue(world, new BlockPos((int) x, (int) y, (int) z), "tick")) + 1));
 					world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
 				}
 				if (((new Object() {
-					public double getValue(BlockPos pos, String tag) {
+					public double getValue(IWorld world, BlockPos pos, String tag) {
 						TileEntity tileEntity = world.getTileEntity(pos);
 						if (tileEntity != null)
 							return tileEntity.getTileData().getDouble(tag);
 						return -1;
 					}
-				}.getValue(new BlockPos((int) x, (int) y, (int) z), "tick")) > 23)) {
+				}.getValue(world, new BlockPos((int) x, (int) y, (int) z), "tick")) > 23)) {
 					if (!world.getWorld().isRemote) {
 						BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
 						TileEntity _tileEntity = world.getTileEntity(_bp);
@@ -1098,14 +1099,14 @@ public class BasicGrinderUpdateTickProcedure extends GratestInventionsModElement
 				BlockState _bs = world.getBlockState(_bp);
 				if (_tileEntity != null)
 					_tileEntity.getTileData().putDouble("energy", (new Object() {
-						public int getEnergyStored(BlockPos pos) {
+						public int getEnergyStored(IWorld world, BlockPos pos) {
 							AtomicInteger _retval = new AtomicInteger(0);
 							TileEntity _ent = world.getTileEntity(pos);
 							if (_ent != null)
 								_ent.getCapability(CapabilityEnergy.ENERGY, null).ifPresent(capability -> _retval.set(capability.getEnergyStored()));
 							return _retval.get();
 						}
-					}.getEnergyStored(new BlockPos((int) x, (int) y, (int) z))));
+					}.getEnergyStored(world, new BlockPos((int) x, (int) y, (int) z))));
 				world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
 			}
 		}

@@ -1567,7 +1567,10 @@
       "compiles": true,
       "locked_code": false,
       "ids": {},
-      "registry_name": "aether"
+      "registry_name": "aether",
+      "metadata": {
+        "ep": false
+      }
     },
     {
       "name": "AetherFallLand",
@@ -1678,6 +1681,871 @@
       "locked_code": false,
       "ids": {},
       "registry_name": "generator"
+    },
+    {
+      "name": "Multimeter",
+      "type": "tool",
+      "sortid": 118,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "multimeter"
+    },
+    {
+      "name": "MultimeterRightClickedOnBlock",
+      "type": "procedure",
+      "sortid": 119,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "multimeter_right_clicked_on_block",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "MultimeterScreenDisplayOverlayIngame",
+      "type": "procedure",
+      "sortid": 120,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "multimeter_screen_display_overlay_ingame",
+      "metadata": {
+        "return_type": "LOGIC",
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "MultimeterScreen",
+      "type": "overlay",
+      "sortid": 120,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "multimeter_screen"
+    },
+    {
+      "name": "OnPlayerTick",
+      "type": "procedure",
+      "sortid": 121,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "on_player_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Machine",
+      "type": "tag",
+      "sortid": 122,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "machine"
+    },
+    {
+      "name": "MultiMeterBackground",
+      "type": "overlay",
+      "sortid": 123,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "multi_meter_background"
+    },
+    {
+      "name": "BasicSmelter",
+      "type": "block",
+      "sortid": 124,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "basic_smelter"
+    },
+    {
+      "name": "BasicSmelterBlockAdded",
+      "type": "procedure",
+      "sortid": 125,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "basic_smelter_block_added",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "BasicSmelterUpdateTick",
+      "type": "procedure",
+      "sortid": 126,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "basic_smelter_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Ergh",
+      "type": "code",
+      "sortid": 127,
+      "compiles": true,
+      "locked_code": true,
+      "ids": {},
+      "registry_name": "ergh"
+    },
+    {
+      "name": "ShearedCow",
+      "type": "mob",
+      "sortid": 128,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "sheared_cow"
+    },
+    {
+      "name": "ShearOnCow",
+      "type": "procedure",
+      "sortid": 129,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "shear_on_cow",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "sourceentity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Blood",
+      "type": "item",
+      "sortid": 130,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "blood"
+    },
+    {
+      "name": "ThatsJustWrong",
+      "type": "achievement",
+      "sortid": 130,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "thats_just_wrong"
+    },
+    {
+      "name": "Ethanol",
+      "type": "fluid",
+      "sortid": 131,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "ethanol"
+    },
+    {
+      "name": "ShearedCowOnEntityTickUpdate",
+      "type": "procedure",
+      "sortid": 132,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "sheared_cow_on_entity_tick_update",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "ShearedCowParticleSpawningCondition",
+      "type": "procedure",
+      "sortid": 133,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "sheared_cow_particle_spawning_condition",
+      "metadata": {
+        "return_type": "LOGIC",
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "ShearedCowEntityDies",
+      "type": "procedure",
+      "sortid": 134,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "sheared_cow_entity_dies",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "sourceentity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "ShearedCowDiesAlone",
+      "type": "procedure",
+      "sortid": 135,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "sheared_cow_dies_alone",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "ShearedCowRightClickedOnEntity",
+      "type": "procedure",
+      "sortid": 136,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "sheared_cow_right_clicked_on_entity",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Drum",
+      "type": "block",
+      "sortid": 137,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "drum"
+    },
+    {
+      "name": "Liquids",
+      "type": "tag",
+      "sortid": 138,
+      "compiles": true,
+      "locked_code": true,
+      "ids": {},
+      "registry_name": "liquids"
+    },
+    {
+      "name": "DrumOnBlockRightClicked",
+      "type": "procedure",
+      "sortid": 139,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "drum_on_block_right_clicked",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "DrumBlockDestroyedByPlayer",
+      "type": "procedure",
+      "sortid": 140,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "drum_block_destroyed_by_player",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Tank",
+      "type": "tag",
+      "sortid": 141,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "tank"
+    },
+    {
+      "name": "DrumNeighbourBlockChanges",
+      "type": "procedure",
+      "sortid": 142,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "drum_neighbour_block_changes",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "DrumPlayerStartsToDestroy",
+      "type": "procedure",
+      "sortid": 143,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "drum_player_starts_to_destroy",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "ItemToName",
+      "type": "procedure",
+      "sortid": 144,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "item_to_name",
+      "metadata": {
+        "return_type": "STRING",
+        "dependencies": []
+      }
+    },
+    {
+      "name": "Jetpack",
+      "type": "armor",
+      "sortid": 145,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "jetpack",
+      "metadata": {
+        "eh": false,
+        "el": false,
+        "eb": false,
+        "ec": true
+      }
+    },
+    {
+      "name": "FlyOnKeyPressed",
+      "type": "procedure",
+      "sortid": 146,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "fly_on_key_pressed",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Fly",
+      "type": "keybind",
+      "sortid": 146,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "fly"
+    },
+    {
+      "name": "FlyOnKeyReleased",
+      "type": "procedure",
+      "sortid": 147,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "fly_on_key_released",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "JetpackFly",
+      "type": "procedure",
+      "sortid": 148,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "jetpack_fly",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "HoverModeOnKeyPressed",
+      "type": "procedure",
+      "sortid": 149,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "hover_mode_on_key_pressed",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "HoverMode",
+      "type": "keybind",
+      "sortid": 149,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "hover_mode"
+    },
+    {
+      "name": "FlyDownOnKeyPressed",
+      "type": "procedure",
+      "sortid": 150,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "fly_down_on_key_pressed",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "FlyDownOnKeyReleased",
+      "type": "procedure",
+      "sortid": 151,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "fly_down_on_key_released",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "FlyDown",
+      "type": "keybind",
+      "sortid": 150,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "fly_down"
+    },
+    {
+      "name": "TestGui",
+      "type": "gui",
+      "sortid": 152,
+      "compiles": true,
+      "locked_code": true,
+      "ids": {},
+      "registry_name": "test_gui"
+    },
+    {
+      "name": "TestBlock",
+      "type": "block",
+      "sortid": 153,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "test_block"
+    },
+    {
+      "name": "Njiojl",
+      "type": "gui",
+      "sortid": 154,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "njiojl"
+    },
+    {
+      "name": "Pocket",
+      "type": "item",
+      "sortid": 155,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "pocket"
+    },
+    {
+      "name": "PocketRightClickedInAir",
+      "type": "procedure",
+      "sortid": 156,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "pocket_right_clicked_in_air",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "OpenPocketOnKeyPressed",
+      "type": "procedure",
+      "sortid": 157,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "open_pocket_on_key_pressed",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "OpenPocket",
+      "type": "keybind",
+      "sortid": 157,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "open_pocket"
+    },
+    {
+      "name": "TestBlockBlockIsPlacedBy",
+      "type": "procedure",
+      "sortid": 158,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "test_block_block_is_placed_by",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "TestBlockOnBlockRightClicked",
+      "type": "procedure",
+      "sortid": 159,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "test_block_on_block_right_clicked",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "WorldLoader",
+      "type": "procedure",
+      "sortid": 161,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "world_loader",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
     }
   ],
   "variable_elements": [
@@ -1686,6 +2554,30 @@
       "type": "string",
       "scope": "world",
       "value": ""
+    },
+    {
+      "name": "pocket",
+      "type": "logic",
+      "scope": "player_persistent",
+      "value": "false"
+    },
+    {
+      "name": "slot1",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "0"
+    },
+    {
+      "name": "slot2",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "0"
+    },
+    {
+      "name": "slot3",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "0"
     }
   ],
   "sound_elements": [],
@@ -1693,60 +2585,84 @@
     "en_us": {
       "block.gratest_inventions.coal_generator": "Coal Generator",
       "block.gratest_inventions.platinum_ore": "Platinum Ore",
+      "item.gratest_inventions.ethanol_bucket": "Ethanol Bucket",
+      "block.gratest_inventions.drum": "Drum",
       "item.gratest_inventions.obsidian_sword": "Obsidian Sword",
       "block.gratest_inventions.basic_grinder": "Basic Grinder",
       "item.gratest_inventions.gold_gear": "Gold Gear",
       "block.gratest_inventions.cloud_block": "Cloud Block",
       "item.gratest_inventions.obsidian_armor_helmet": "Obsidian Helmet",
+      "entity.gratest_inventions.sheared_cow": "Sheared Cow",
       "item.gratest_inventions.platinum_shavings": "Platinum Shavings",
       "block.gratest_inventions.support_beam": "Support Beam",
+      "fluid.ethanol": "Ethanol",
+      "item.gratest_inventions.pocket": "Pocket",
       "item.gratest_inventions.obsidian_armor_chestplate": "Obsidian Body",
       "block.gratest_inventions.zahnstange_ew": "Zahnstange",
       "item.gratest_inventions.gold_shavings": "Gold Shavings",
       "block.gratest_inventions.support_beam_double_2": "Support Beam",
       "item.gratest_inventions.obsidian_shard": "Obsidian Shard",
+      "key.gratest_inventions.open_pocket": "Open Pocket",
       "item.gratest_inventions.iron_gear": "Iron Gear",
       "block.gratest_inventions.support_beam_3": "Support Beam",
-      "block.gratest_inventions.support_beam_4": "Support Beam",
-      "item.gratest_inventions.iron_stick": "Iron Stick",
       "item.gratest_inventions.platinum_nugget": "Platinum Nugget",
+      "item.gratest_inventions.iron_stick": "Iron Stick",
+      "block.gratest_inventions.support_beam_4": "Support Beam",
       "block.gratest_inventions.support_beam_2": "Support Beam",
+      "item.gratest_inventions.jetpack_chestplate": "Jetpack",
       "item.gratest_inventions.lead_shavings": "Lead Shavings",
       "item.gratest_inventions.copper_nugget": "Copper Nugget",
       "block.gratest_inventions.silver_ore": "Silver Ore",
       "biome.gratest_inventions.aether_fall_land": "Aether Fall Land",
       "block.gratest_inventions.support_beam_1b": "Support Beam",
+      "advancements.thats_just_wrong.descr": "Shear a cow",
       "block.gratest_inventions.dimensional_fabric": "Dimensional Fabric",
       "item.gratest_inventions.aether": "Aether Portal Igniter",
+      "block.gratest_inventions.test_block": "Test Block",
       "item.gratest_inventions.obsidian_pickaxe": "Obsidian Pickaxe",
       "item.gratest_inventions.obsidian_armor_leggings": "Obsidian Leggings",
+      "item.gratest_inventions.multimeter": "Multimeter",
+      "block.gratest_inventions.basic_smelter": "Basic Grinder",
+      "item.gratest_inventions.sheared_cow_spawn_egg": "Sheared Cow Spawn Egg",
       "item.gratest_inventions.dimension_breaker": "Dimension Breaker",
       "item.gratest_inventions.copper_shavings": "Copper Shavings",
       "item.gratest_inventions.gold_stick": "Gold Stick",
       "item.gratest_inventions.silver_ingot": "Silver Ingot",
       "block.gratest_inventions.copper_ore": "Copper Ore",
       "block.gratest_inventions.support_beam_single": "Support Beam",
+      "key.gratest_inventions.hover_mode": "Hover Mode",
       "item.gratest_inventions.iron_shavings": "Iron Shavings",
       "block.gratest_inventions.support_beam_double": "Support Beam",
       "block.gratest_inventions.support_beam_triple": "Support Beam",
       "block.gratest_inventions.lead_ore": "Lead Ore",
+      "item.gratest_inventions.jetpack_leggings": "Jetpack Leggings",
       "itemGroup.tabgratest_inventions": "Gratest Inventions",
       "biome.gratest_inventions.aether_waste_land": "Aether Waste Land",
       "item.gratest_inventions.lead_ingot": "Lead Ingot",
       "item.gratest_inventions.lead_nugget": "Lead Nugget",
       "fluid.milk": "Milk",
       "block.gratest_inventions.support_beam_quatruple": "Support Beam",
+      "item.gratest_inventions.jetpack_boots": "Jetpack Boots",
       "block.gratest_inventions.nether_builder": "Nether Builder",
       "block.gratest_inventions.zahnstange_sn": "Zahnstange",
+      "key.gratest_inventions.fly": "Fly up",
       "item.gratest_inventions.silver_shavings": "Silver Shavings",
       "item.gratest_inventions.silver_nugget": "Silver Nugget",
       "item.gratest_inventions.copper_ingot": "Copper Ingot",
+      "item.gratest_inventions.blood": "Blood",
+      "key.gratest_inventions.fly_down": "Fly Down",
+      "advancements.thats_just_wrong.title": "That\u0027s Just Wrong",
       "block.gratest_inventions.light_cloud_block": "Light Cloud Block",
+      "item.gratest_inventions.jetpack_helmet": "Jetpack Helmet",
       "item.gratest_inventions.milk_bucket": "Milk Bucket",
       "item.gratest_inventions.platinum_ingot": "Platinum Ingot",
       "item.gratest_inventions.obsidian_armor_boots": "Obsidian Boots",
       "block.gratest_inventions.quarry": "Quarry"
     }
+  },
+  "foldersRoot": {
+    "name": "~",
+    "children": []
   },
   "workspaceSettings": {
     "modid": "gratest_inventions",
@@ -1765,5 +2681,5 @@
     "modElementsPackage": "net.mcreator.gratestinventions",
     "lockBaseModFiles": false
   },
-  "mcreatorVersion": 202000539514
+  "mcreatorVersion": 202100116710
 }

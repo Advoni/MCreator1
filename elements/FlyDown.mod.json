@@ -1,0 +1,15 @@
+{
+  "_fv": 18,
+  "_type": "keybind",
+  "definition": {
+    "triggerKey": "LSHIFT",
+    "keyBindingName": "Fly Down",
+    "keyBindingCategoryKey": "movement",
+    "onKeyPressed": {
+      "name": "FlyDownOnKeyPressed"
+    },
+    "onKeyReleased": {
+      "name": "FlyDownOnKeyReleased"
+    }
+  }
+}

@@ -1,0 +1,101 @@
+{
+  "_fv": 18,
+  "_type": "overlay",
+  "definition": {
+    "priority": "LOW",
+    "components": [
+      {
+        "type": "label",
+        "data": {
+          "text": "<ENBT:text:capacity>",
+          "color": {
+            "value": -1,
+            "falpha": 0.0
+          },
+          "name": "<ENBT:text:capacity>",
+          "x": 312,
+          "y": 197
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "<ENBT:text:block>",
+          "color": {
+            "value": -1,
+            "falpha": 0.0
+          },
+          "name": "<ENBT:text:block>",
+          "x": 312,
+          "y": 179
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "<ENBT:text:type>",
+          "color": {
+            "value": -1,
+            "falpha": 0.0
+          },
+          "name": "<ENBT:text:type>",
+          "x": 312,
+          "y": 188
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "<ENBT:text:charging>",
+          "color": {
+            "value": -1,
+            "falpha": 0.0
+          },
+          "name": "<ENBT:text:charging>",
+          "x": 312,
+          "y": 224
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "<ENBT:text:level>",
+          "color": {
+            "value": -1,
+            "falpha": 0.0
+          },
+          "name": "<ENBT:text:level>",
+          "x": 312,
+          "y": 206
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "<ENBT:text:tickevent>",
+          "color": {
+            "value": -1,
+            "falpha": 0.0
+          },
+          "name": "<ENBT:text:tickevent>",
+          "x": 312,
+          "y": 215
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "pixelfail.png",
+          "use1Xscale": true,
+          "name": "pixelfail.png",
+          "x": 312,
+          "y": 170
+        }
+      }
+    ],
+    "baseTexture": "",
+    "displayCondition": {
+      "name": "MultimeterScreenDisplayOverlayIngame"
+    }
+  }
+}

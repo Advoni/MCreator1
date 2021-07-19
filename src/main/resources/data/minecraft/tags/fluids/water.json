@@ -2,6 +2,8 @@
   "replace": false,
   "values": [
     "gratest_inventions:milk",
-    "gratest_inventions:milk_flowing"
+    "gratest_inventions:milk_flowing",
+    "gratest_inventions:ethanol",
+    "gratest_inventions:ethanol_flowing"
   ]
 }

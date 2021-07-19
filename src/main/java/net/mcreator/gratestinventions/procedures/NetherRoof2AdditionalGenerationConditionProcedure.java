@@ -5,6 +5,7 @@ import net.minecraft.util.math.BlockPos;
 
 import net.mcreator.gratestinventions.block.NetherBuilderBlock;
 import net.mcreator.gratestinventions.GratestInventionsModElements;
+import net.mcreator.gratestinventions.GratestInventionsMod;
 
 import java.util.Map;
 
@@ -17,22 +18,22 @@ public class NetherRoof2AdditionalGenerationConditionProcedure extends GratestIn
 	public static boolean executeProcedure(Map<String, Object> dependencies) {
 		if (dependencies.get("x") == null) {
 			if (!dependencies.containsKey("x"))
-				System.err.println("Failed to load dependency x for procedure NetherRoof2AdditionalGenerationCondition!");
+				GratestInventionsMod.LOGGER.warn("Failed to load dependency x for procedure NetherRoof2AdditionalGenerationCondition!");
 			return false;
 		}
 		if (dependencies.get("y") == null) {
 			if (!dependencies.containsKey("y"))
-				System.err.println("Failed to load dependency y for procedure NetherRoof2AdditionalGenerationCondition!");
+				GratestInventionsMod.LOGGER.warn("Failed to load dependency y for procedure NetherRoof2AdditionalGenerationCondition!");
 			return false;
 		}
 		if (dependencies.get("z") == null) {
 			if (!dependencies.containsKey("z"))
-				System.err.println("Failed to load dependency z for procedure NetherRoof2AdditionalGenerationCondition!");
+				GratestInventionsMod.LOGGER.warn("Failed to load dependency z for procedure NetherRoof2AdditionalGenerationCondition!");
 			return false;
 		}
 		if (dependencies.get("world") == null) {
 			if (!dependencies.containsKey("world"))
-				System.err.println("Failed to load dependency world for procedure NetherRoof2AdditionalGenerationCondition!");
+				GratestInventionsMod.LOGGER.warn("Failed to load dependency world for procedure NetherRoof2AdditionalGenerationCondition!");
 			return false;
 		}
 		double x = dependencies.get("x") instanceof Integer ? (int) dependencies.get("x") : (double) dependencies.get("x");

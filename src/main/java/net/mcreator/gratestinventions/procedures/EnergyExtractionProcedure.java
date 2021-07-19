@@ -7,6 +7,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.tileentity.TileEntity;
 
 import net.mcreator.gratestinventions.GratestInventionsModElements;
+import net.mcreator.gratestinventions.GratestInventionsMod;
 
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.Map;
@@ -20,22 +21,22 @@ public class EnergyExtractionProcedure extends GratestInventionsModElements.ModE
 	public static void executeProcedure(Map<String, Object> dependencies) {
 		if (dependencies.get("x") == null) {
 			if (!dependencies.containsKey("x"))
-				System.err.println("Failed to load dependency x for procedure EnergyExtraction!");
+				GratestInventionsMod.LOGGER.warn("Failed to load dependency x for procedure EnergyExtraction!");
 			return;
 		}
 		if (dependencies.get("y") == null) {
 			if (!dependencies.containsKey("y"))
-				System.err.println("Failed to load dependency y for procedure EnergyExtraction!");
+				GratestInventionsMod.LOGGER.warn("Failed to load dependency y for procedure EnergyExtraction!");
 			return;
 		}
 		if (dependencies.get("z") == null) {
 			if (!dependencies.containsKey("z"))
-				System.err.println("Failed to load dependency z for procedure EnergyExtraction!");
+				GratestInventionsMod.LOGGER.warn("Failed to load dependency z for procedure EnergyExtraction!");
 			return;
 		}
 		if (dependencies.get("world") == null) {
 			if (!dependencies.containsKey("world"))
-				System.err.println("Failed to load dependency world for procedure EnergyExtraction!");
+				GratestInventionsMod.LOGGER.warn("Failed to load dependency world for procedure EnergyExtraction!");
 			return;
 		}
 		double x = dependencies.get("x") instanceof Integer ? (int) dependencies.get("x") : (double) dependencies.get("x");
@@ -66,68 +67,68 @@ public class EnergyExtractionProcedure extends GratestInventionsModElements.ModE
 		ub = (boolean) (false);
 		db = (boolean) (false);
 		charging = (double) (new Object() {
-			public double getValue(BlockPos pos, String tag) {
+			public double getValue(IWorld world, BlockPos pos, String tag) {
 				TileEntity tileEntity = world.getTileEntity(pos);
 				if (tileEntity != null)
 					return tileEntity.getTileData().getDouble(tag);
 				return -1;
 			}
-		}.getValue(new BlockPos((int) x, (int) y, (int) z), "charging"));
+		}.getValue(world, new BlockPos((int) x, (int) y, (int) z), "charging"));
 		extracted = (double) (charging);
 		n = (double) (new Object() {
-			public int extractEnergySimulate(BlockPos pos, int _amount) {
+			public int extractEnergySimulate(IWorld world, BlockPos pos, int _amount) {
 				AtomicInteger _retval = new AtomicInteger(0);
 				TileEntity _ent = world.getTileEntity(pos);
 				if (_ent != null)
 					_ent.getCapability(CapabilityEnergy.ENERGY, null).ifPresent(capability -> _retval.set(capability.extractEnergy(_amount, true)));
 				return _retval.get();
 			}
-		}.extractEnergySimulate(new BlockPos((int) (x + 1), (int) y, (int) z), (int) (charging)));
+		}.extractEnergySimulate(world, new BlockPos((int) (x + 1), (int) y, (int) z), (int) (charging)));
 		e = (double) (new Object() {
-			public int extractEnergySimulate(BlockPos pos, int _amount) {
+			public int extractEnergySimulate(IWorld world, BlockPos pos, int _amount) {
 				AtomicInteger _retval = new AtomicInteger(0);
 				TileEntity _ent = world.getTileEntity(pos);
 				if (_ent != null)
 					_ent.getCapability(CapabilityEnergy.ENERGY, null).ifPresent(capability -> _retval.set(capability.extractEnergy(_amount, true)));
 				return _retval.get();
 			}
-		}.extractEnergySimulate(new BlockPos((int) x, (int) y, (int) (z + 1)), (int) (charging)));
+		}.extractEnergySimulate(world, new BlockPos((int) x, (int) y, (int) (z + 1)), (int) (charging)));
 		s = (double) (new Object() {
-			public int extractEnergySimulate(BlockPos pos, int _amount) {
+			public int extractEnergySimulate(IWorld world, BlockPos pos, int _amount) {
 				AtomicInteger _retval = new AtomicInteger(0);
 				TileEntity _ent = world.getTileEntity(pos);
 				if (_ent != null)
 					_ent.getCapability(CapabilityEnergy.ENERGY, null).ifPresent(capability -> _retval.set(capability.extractEnergy(_amount, true)));
 				return _retval.get();
 			}
-		}.extractEnergySimulate(new BlockPos((int) (x - 1), (int) y, (int) z), (int) (charging)));
+		}.extractEnergySimulate(world, new BlockPos((int) (x - 1), (int) y, (int) z), (int) (charging)));
 		w = (double) (new Object() {
-			public int extractEnergySimulate(BlockPos pos, int _amount) {
+			public int extractEnergySimulate(IWorld world, BlockPos pos, int _amount) {
 				AtomicInteger _retval = new AtomicInteger(0);
 				TileEntity _ent = world.getTileEntity(pos);
 				if (_ent != null)
 					_ent.getCapability(CapabilityEnergy.ENERGY, null).ifPresent(capability -> _retval.set(capability.extractEnergy(_amount, true)));
 				return _retval.get();
 			}
-		}.extractEnergySimulate(new BlockPos((int) x, (int) y, (int) (z - 1)), (int) (charging)));
+		}.extractEnergySimulate(world, new BlockPos((int) x, (int) y, (int) (z - 1)), (int) (charging)));
 		u = (double) (new Object() {
-			public int extractEnergySimulate(BlockPos pos, int _amount) {
+			public int extractEnergySimulate(IWorld world, BlockPos pos, int _amount) {
 				AtomicInteger _retval = new AtomicInteger(0);
 				TileEntity _ent = world.getTileEntity(pos);
 				if (_ent != null)
 					_ent.getCapability(CapabilityEnergy.ENERGY, null).ifPresent(capability -> _retval.set(capability.extractEnergy(_amount, true)));
 				return _retval.get();
 			}
-		}.extractEnergySimulate(new BlockPos((int) x, (int) (y + 1), (int) z), (int) (charging)));
+		}.extractEnergySimulate(world, new BlockPos((int) x, (int) (y + 1), (int) z), (int) (charging)));
 		d = (double) (new Object() {
-			public int extractEnergySimulate(BlockPos pos, int _amount) {
+			public int extractEnergySimulate(IWorld world, BlockPos pos, int _amount) {
 				AtomicInteger _retval = new AtomicInteger(0);
 				TileEntity _ent = world.getTileEntity(pos);
 				if (_ent != null)
 					_ent.getCapability(CapabilityEnergy.ENERGY, null).ifPresent(capability -> _retval.set(capability.extractEnergy(_amount, true)));
 				return _retval.get();
 			}
-		}.extractEnergySimulate(new BlockPos((int) x, (int) (y - 1), (int) z), (int) (charging)));
+		}.extractEnergySimulate(world, new BlockPos((int) x, (int) (y - 1), (int) z), (int) (charging)));
 		repeater = (double) 6;
 		for (int index0 = 0; index0 < (int) (6); index0++) {
 			small = (double) Double.POSITIVE_INFINITY;

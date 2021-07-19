@@ -1,5 +1,5 @@
 {
-  "_fv": 12,
+  "_fv": 18,
   "_type": "tag",
   "definition": {
     "type": "Blocks",
@@ -7,9 +7,6 @@
     "blocks": [
       {
         "value": "CUSTOM:BasicGrinder"
-      },
-      {
-        "value": "CUSTOM:CoalGenerator"
       }
     ],
     "functions": [],
